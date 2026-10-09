@@ -1,0 +1,160 @@
+# AI-Assisted Learning and Analysis {#sec-ai-assisted-learning}
+
+::: {.guiding-question}
+Guiding question: **How can AI support my scientific workflow without replacing my own reasoning?**
+:::
+
+In this area you will learn how to: work effectively with your AI learning buddy,
+formulate useful prompts, use AI to support coding and analysis, verify AI-generated
+suggestions and reflect critically on the role of AI in scientific work.
+
+## AI as a Learning Navigator, Not an Answer Machine
+
+This module places AI at the centre of its "digital literacy" goal, not as a shortcut
+around learning but as practice for a skill you will use throughout your career: working
+productively with an AI system that does not simply hand you finished answers. Recall
+from [the welcome page](index.qmd#meet-acemate-your-learning-buddy): your AI learning
+buddy structures problems, identifies competencies, recommends exercises, answers
+comprehension questions and supports interpretation and reflection. It does not select
+your methods, check your code for you, evaluate your data quality, interpret your
+results, or draw your scientific conclusions. Those stay yours.
+
+## Socratic Dialogue and Computational Offloading
+
+This module's AI approach is built on two linked ideas:
+
+- **Socratic dialogue.** Rather than asking your AI learning buddy "what's the answer?",
+  you engage it in a back-and-forth: you propose an approach, it asks a clarifying or
+  challenging question, you refine your thinking and so on. This mirrors how a good
+  human tutor works: the value is in the questions, not just the final statement.
+- **Computational offloading.** You can legitimately hand off *mechanical* work to AI —
+  boilerplate code, syntax lookups, first-draft phrasing — so you can spend your own
+  cognitive effort on the parts that require judgement: which method fits the question,
+  whether a result makes scientific sense, what a finding actually means.
+
+> *Analogy:* a calculator offloads arithmetic so you can focus on which calculation to
+> run. AI can offload writing a `ggplot2` boilerplate or a `dplyr` pipeline skeleton, so
+> you can focus on which plot answers your research question and whether the numbers it
+> produces make physical sense.
+
+The distinction matters because the two are easy to blur: offloading the *typing* of a
+regression call is fine; offloading the *decision* of which predictors belong in your
+model, or what your R² means for your specific climate-data question, defeats the
+purpose of the module.
+
+## Prompt Literacy
+
+A vague prompt gets a vague, generic answer. **Prompt literacy** is the skill of asking
+in a way that gets you a useful, checkable response — for coding and for conceptual
+questions alike.
+
+| Weak prompt | Stronger prompt |
+|---|---|
+| "Fix my code" | "This `ggplot2` call throws `object 'Sunshine_hours' not found`. Here is my code and `str(climate)` output — what's the mismatch?" |
+| "Explain regression" | "I have a multiple regression with `Sunshine_hours`, `Year` and `Region` predicting `Temperature_C`. Explain what the `Region` coefficients mean, using my variable names." |
+| "Is my p-value good?" | "My hypothesis test gives p < 0.001 comparing temperature in 1991–2000 vs. 2015–2024 at n = 50 observations per group. Walk me through, step by step, what conclusions I can and cannot draw — including effect size." |
+
+Notice the pattern: the stronger prompts give **context** (your actual variables, your
+actual numbers, your actual error message) and ask for **reasoning**, not just a
+verdict.
+
+::: {.acemate-box}
+If you paste a lesson's R code into your learning buddy and it "fixes" a line you didn't
+ask about, don't just accept the change — ask it to explain why the original line was
+wrong. If its explanation doesn't hold up against what you learned in the chapter, the
+original line was probably fine.
+:::
+
+::: {.exercise-box}
+### Exercise 6.3 — Rewrite three weak prompts
+
+Take three prompts you have actually typed into an AI tool during this module (or would
+be tempted to). For each, rewrite it following the pattern above: add concrete context
+and ask for the reasoning rather than only the answer.
+
+**Q1.** Which of your three rewrites do you expect would produce the most different
+(and more useful) response from the original? Why?
+:::
+
+## Verifying AI-Generated Code and Explanations
+
+AI-generated code and explanations can be wrong in ways that are easy to miss, because
+they are typically fluent and confident-sounding regardless of correctness. A working
+verification habit, for every substantial AI suggestion you use in this module:
+
+1. **Run it, don't just read it.** Does the code actually execute against your real
+   data, or only against an imagined version of it?
+2. **Check the output against what you already know.** Does a claimed "mean annual
+   temperature of 45°C for Bayern" pass a basic sanity check against the ranges you saw
+   in [Chapter 2](02-exploring-visualizing.qmd)?
+3. **Ask "why", not just "is this right".** A one-word confirmation from an AI tool is
+   not verification. Ask it to explain *why* a line of code works and check that
+   explanation against what you independently know.
+4. **Cross-check statistical claims against the module content.** If an AI explanation
+   of a p-value sounds like a yes/no verdict rather than the effect-size-plus-sample-size
+   picture from [Chapter 3](03-statistical-inference.qmd#beyond-the-p-value), that's a
+   red flag, not a fact to copy into your report.
+
+::: {.exercise-box}
+### Exercise 6.4 — Spot the AI mistake
+
+Below is a plausible-sounding but flawed AI explanation. Find the error(s) and correct
+them using what you've learned in this module.
+
+> *"I ran `lm(Temperature_C ~ Sunshine_hours, data = states)` and got R² = 0.08 with
+> p < 0.001, so sunshine duration clearly causes higher temperature in a strong,
+> practically important way. Since p < 0.05, we can conclude the relationship is real
+> and important."*
+
+**Q2.** List every claim in this explanation that overreaches and explain — in your own
+words, referencing the relevant earlier chapter — what would need to be added or
+qualified for the statement to be defensible.
+:::
+
+## Reflect on Your Own AI Use
+
+::: {.exercise-box}
+### Exercise 6.5 — A short reflection (for your final report's Methods section)
+
+Answer briefly, for inclusion in your final scientific report:
+
+- Where in your challenge did you use AI for computational offloading (mechanical,
+  low-judgement tasks)?
+- Where did you deliberately keep a decision to yourself, even though AI could have
+  suggested an answer? Why?
+- Name one instance where you checked (and, ideally, caught) an AI suggestion that was
+  wrong or only partially right.
+:::
+
+::: {.differentiation-box}
+::: {.struggling}
+If writing an effective prompt still feels like guesswork: Anthropic's own [prompt
+engineering overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)
+walks through concrete, beginner-friendly techniques (being specific, giving examples,
+asking for step-by-step reasoning) with worked before/after prompts.
+:::
+::: {.deeper}
+If you want the research grounding behind "computational offloading" and AI as a
+learning support rather than an answer machine: Ng et al. (2021), *"AI and Education: A
+20-Year Roadmap"*, discusses the pedagogical role of AI tutoring systems that this
+module's AI-learning-buddy concept (Acemate) draws on.
+:::
+:::
+
+::: {.sources-box}
+[Anthropic — Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview) ·
+Ng et al. (2021), *AI and Education: A 20-Year Roadmap*.
+Full list with descriptions: [Resources](resources.qmd#ai-assisted-learning-and-analysis).
+:::
+
+## Check your understanding
+
+- Can you explain the difference between computational offloading and outsourcing a
+  scientific judgement?
+- Given a vague prompt, could you rewrite it to include concrete context and ask for
+  reasoning rather than a verdict?
+- Do you have a habit — not just an intention — for verifying an AI-generated result
+  before using it?
+
+Continue to
+[Chapter 7, Sustainability Problem Solving](07-sustainability-problem-solving.qmd).

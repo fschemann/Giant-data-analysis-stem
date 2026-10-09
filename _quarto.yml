@@ -1,0 +1,58 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Data Analysis in STEM"
+  subtitle: "A problem-based, AI-supported learning module"
+  author: "University of Cologne & Indian Institute of Science"
+  date: last-modified
+  page-footer:
+    left: "Global Citizenship and Environmental Stewardship (DAAD/BMBF, P24)"
+    right: "CC BY 4.0"
+  # repo-url / repo-actions intentionally omitted: no public repository exists yet.
+  # Once the module is pushed to its real GitHub org, add:
+  #   repo-url: https://github.com/<real-org>/<real-repo>
+  #   repo-actions: [edit, issue]
+  sidebar:
+    style: docked
+    background: light
+  chapters:
+    - index.qmd
+    - part: "Competency Areas"
+      chapters:
+        - 01-understanding-data.qmd
+        - 02-exploring-visualizing.qmd
+        - 03-statistical-inference.qmd
+        - 04-statistical-modelling.qmd
+        - 05-reproducible-research.qmd
+        - 06-ai-assisted-learning.qmd
+        - 07-sustainability-problem-solving.qmd
+        - 08-scientific-communication.qmd
+    - resources.qmd
+  page-navigation: true
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+    code-fold: show
+    code-tools: true
+    code-link: true
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+
+execute:
+  freeze: auto
+  warning: false
+  message: false
+  echo: true
+
+editor: visual

@@ -1,0 +1,95 @@
+<!--
+LESSON TEMPLATE — not part of the book navigation (not listed in _quarto.yml's
+`chapters:`), so it never appears in the sidebar or renders into the published site.
+
+HOW TO USE THIS FILE
+1. Copy it to a new file, e.g. `09-new-topic.qmd`.
+2. Add that filename to the `chapters:` list in `_quarto.yml`, in the position you
+   want it to appear.
+3. Replace every [PLACEHOLDER] below. Delete these HTML comments when you're done —
+   they never render, so it's safe to leave a few behind while you're still drafting,
+   but clean them up before publishing.
+4. Keep the box types below (guiding-question / exercise-box / acemate-box /
+   expected-output) — they are the module's shared design system, defined once in
+   `styles.css` and used identically in every existing chapter (see 01-08). Reusing
+   them is what makes the whole module feel like one product instead of eight
+   differently-formatted documents. See INTERN_GUIDE.md for the full list and when to
+   use each one.
+-->
+
+# [Lesson Title] {#sec-[short-slug]}
+
+::: {.guiding-question}
+Guiding question: **[The one question this lesson answers — copy the phrasing style
+from an existing chapter, e.g. "What patterns can I discover in the data?"]**
+:::
+
+[One short paragraph: what will the student learn how to *do* by the end of this
+lesson? Name the focus areas as a sentence, and cite which open resource(s) this
+lesson draws on — see resources.qmd for the list assigned to this competency area.]
+
+::: {.callout-note}
+## Practice dataset
+[State which dataset this lesson uses — normally
+`data/clean/dwd_climate_clean.csv` unless there's a specific reason to use the raw
+version or a different dataset. Keep using the shared dataset unless you have a good
+reason not to: it lets students carry intuition forward from one lesson to the next.]
+:::
+
+```r
+library(tidyverse)
+climate <- read_csv("data/clean/dwd_climate_clean.csv")
+```
+
+## [X.1 First Concept]
+
+[Explain the concept. Existing chapters use a consistent voice: start from a plain-
+language definition, then ground it with ONE concrete real-world analogy (see how
+01-understanding-data.qmd uses "eggs in a carton" for discrete variables, or
+"a broken bicycle chain link" for a missing value / `NA`). Keep analogies to one per
+concept — more than that gets confusing, not clearer.]
+
+> *Analogy:* [one sentence, plain language, no jargon]
+
+::: {.exercise-box}
+### Exercise [X.1] — [short, active-voice title]
+
+```r
+# runnable R code the student can execute as-is against the shared dataset
+```
+
+::: {.expected-output}
+**Expected:** [what a correct run should show — a number range, a shape, a specific
+finding. Only include this box when there's something concrete to check against;
+skip it for open-ended exercises.]
+:::
+
+**Q1.** [A question that makes the student interpret the output, not just run code —
+"what does this mean" rather than "what number did you get".]
+
+**Q2.** [A second question, ideally one that connects back to an earlier lesson or
+forward to how this will matter for the student's own challenge dataset.]
+:::
+
+## [X.2 Second Concept]
+
+[Repeat the pattern: explain → analogy → exercise box, for as many sub-sections as
+the competency area genuinely needs. Existing lessons run 3–5 sub-sections; that's a
+reasonable target, not a hard rule.]
+
+::: {.acemate-box}
+[Optional — only include where there's a genuine AI-use tension worth flagging, as
+in 06-ai-assisted-learning.qmd. Not every lesson needs one. When you do include one,
+it should nudge the student toward a specific, checkable habit
+("ask your learning buddy to explain why, not just whether, X is correct"), not a
+generic "you can also ask your learning buddy about this". Phrase it as "your learning
+buddy", not "Acemate" by name — the box's icon label is generic on purpose, so the
+module still reads correctly for anyone using a different AI tool.]
+:::
+
+## Check Your Understanding
+
+- [3–4 self-check questions the student should be able to answer confidently before
+  moving on — mirror the style at the end of each existing chapter.]
+
+Continue to [Chapter [X+1], [Next Chapter Title]]([next-file].qmd).

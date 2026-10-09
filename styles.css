@@ -1,0 +1,105 @@
+/* GIANT Data Analysis in STEM — light custom styling on top of the Cosmo/Darkly themes */
+
+.guiding-question {
+  border-left: 4px solid #2c8c99;
+  background: rgba(44, 140, 153, 0.08);
+  padding: 0.75em 1em;
+  font-style: italic;
+  margin: 1.2em 0;
+}
+
+.acemate-box {
+  border: 1px dashed #7a5cff;
+  border-radius: 8px;
+  padding: 0.9em 1.1em;
+  background: rgba(122, 92, 255, 0.06);
+  margin: 1.2em 0;
+}
+
+.acemate-box::before {
+  content: "🤖 Ask your learning buddy";
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4em;
+  color: #5b3fd6;
+}
+
+.exercise-box {
+  border-left: 4px solid #d98c2b;
+  background: rgba(217, 140, 43, 0.07);
+  padding: 0.9em 1.1em;
+  margin: 1.2em 0;
+}
+
+.expected-output {
+  border-left: 4px solid #2ba84a;
+  background: rgba(43, 168, 74, 0.07);
+  padding: 0.7em 1em;
+  margin: 0.8em 0;
+  font-size: 0.95em;
+}
+
+.sources-box {
+  border: 1px solid #c9cdd3;
+  border-radius: 8px;
+  padding: 0.9em 1.1em;
+  background: rgba(120, 130, 145, 0.06);
+  margin: 1.6em 0 1.2em 0;
+  font-size: 0.95em;
+}
+
+.sources-box::before {
+  content: "\1F4DA  Sources for this lesson";
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4em;
+  color: #4a5568;
+}
+
+.differentiation-box {
+  border-radius: 8px;
+  padding: 0.9em 1.1em;
+  background: rgba(30, 130, 120, 0.05);
+  border: 1px solid rgba(30, 130, 120, 0.35);
+  margin: 1.2em 0;
+}
+
+.differentiation-box::before {
+  content: "\1F3AF  Go at your own pace";
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: #1e6b62;
+}
+
+.differentiation-box .struggling::before {
+  content: "Finding this hard? Start here: ";
+  font-weight: 600;
+}
+
+.differentiation-box .deeper::before {
+  content: "Want to go deeper? ";
+  font-weight: 600;
+}
+
+.differentiation-box .struggling,
+.differentiation-box .deeper {
+  margin: 0.4em 0;
+}
+
+.reflection-box {
+  border-left: 4px solid #a6486e;
+  background: rgba(166, 72, 110, 0.07);
+  padding: 0.9em 1.1em;
+  margin: 1.2em 0;
+  font-style: italic;
+}
+
+.reflection-box::before {
+  content: "\1FA9E  Reflect";
+  display: block;
+  font-weight: 600;
+  font-style: normal;
+  margin-bottom: 0.4em;
+  color: #7a3355;
+}

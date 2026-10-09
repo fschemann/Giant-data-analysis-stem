@@ -1,0 +1,211 @@
+# Sustainability Problem Solving {#sec-sustainability-problem-solving}
+
+::: {.guiding-question}
+Guiding question: **How can data contribute to understanding and addressing this sustainability challenge?**
+:::
+
+In this area you will learn how to: translate an environmental problem into an
+analytical question, use data as evidence, consider different possible explanations
+and develop an evidence-based response.
+
+This chapter is different from Chapters 1–6: it is not primarily a set of techniques,
+but a way of thinking that connects them all back to why you're doing this module in the
+first place — this module's broader aim of **environmental stewardship**, taking
+responsibility for global challenges and actively contributing to solving them, not only
+analysing them from a distance.
+
+## Why "Global" Matters: Data, Perspective and Responsibility
+
+Data never arrives from nowhere. Someone decided what to measure, who would measure it
+and which categories a value could fall into: decisions shaped by the priorities,
+language and institutions of wherever that data comes from. Working with a dataset from
+a context other than your own is a chance to notice your own **frame of reference**, the
+assumptions you bring to a number without realising you brought them (Mezirow, 1997). If
+a figure surprises you, or a category doesn't map neatly onto what you expected, that
+moment of friction is worth sitting with rather than smoothing over. It is usually where
+real learning starts.
+
+This module's idea of environmental stewardship follows Global Citizenship Education's
+emancipatory strand (Rieckmann, 2021): environmental problems and the data describing
+them are shared across borders rather than isolated to wherever they happen to be
+measured. A warming trend measured in one place and a shifting rainfall pattern measured
+somewhere else are two local readings of one connected global system. Practising that
+recognition is itself part of this competency area, alongside the technical skill of
+turning a broad problem into a data-answerable question.
+
+## From a Wicked Problem to an Analytical Question
+
+Real sustainability problems — shifting regional climates, urban heat stress, extreme
+weather becoming more frequent, biodiversity loss — start out broad, contested and not
+directly "answerable" with a dataset. The core move of this competency area is narrowing
+a broad problem into one specific, data-answerable question, **without losing what made
+the problem matter in the first place**.
+
+Consider this example problem statement:
+
+> *"Are the monitored weather stations showing signs of a shifting climate?"*
+
+This is not yet an analytical question — no single dataset or statistic settles it. A
+possible learning path, mirroring how your learning buddy would walk through it with you:
+
+::: {.acemate-box}
+**Your learning buddy asks:** Which data would be relevant? Which variables do you need?
+How would you initially examine the data?
+→ points you to [Rubric 1, Understanding and Managing Data](01-understanding-data.qmd)
+
+**Students work on:** understanding variables, getting to know the dataset, checking
+data quality.
+
+**Your learning buddy, back at the problem:** "Now that you understand the dataset, how
+could you explore possible patterns?"
+→ [Rubric 2, Exploring and Visualising Data](02-exploring-visualizing.qmd)
+
+**Your learning buddy:** "Can you justify whether the 1991–2000-vs-2015–2024 difference
+you saw is meaningful, or could it just be random variation?"
+→ [Rubric 3, Statistical Inference](03-statistical-inference.qmd)
+
+**Your learning buddy:** "Can you model the relationship between temperature and other
+climate variables and how much of the pattern each one explains?"
+→ [Rubric 4, Statistical Modelling](04-statistical-modelling.qmd)
+
+**Your learning buddy, at the end:** "Document your analysis and make it reproducible."
+→ [Rubric 5, Reproducible Research](05-reproducible-research.qmd)
+:::
+
+Notice what happened: the broad, contested problem ("is this safe?") got narrowed into a
+sequence of specific, data-answerable sub-questions, each pointing to a competency area —
+without the original stewardship question disappearing. You return to it explicitly at
+the end (§7.4).
+
+::: {.exercise-box}
+### Exercise 7.1 — Narrow your own challenge
+
+Take the Real-World Challenge you selected in [the overview](index.qmd#select-a-real-world-challenge).
+Write down: (a) the broad problem in one sentence, (b) the specific, data-answerable
+research question you formulated and (c) one thing your narrower question necessarily
+leaves out of scope. Being explicit about (c) is not a weakness in your work — it is
+exactly the kind of limitation a strong Discussion section names openly.
+:::
+
+## Data as Evidence, Not Proof
+
+A dataset provides **evidence** toward answering a sustainability question — it does not
+provide proof in the way a mathematical theorem does. Two examples worth sitting with:
+
+- Finding that mean temperature across five German regions is statistically higher in
+  2015–2024 than in 1991–2000 (Chapter 3) is evidence consistent with a real warming
+  trend — but it is not, by itself, proof of a cause and 34 years of data from five
+  regions of one country cannot establish a global climate mechanism on their own.
+- A GHG-emissions dataset showing "higher share of renewable energy correlates with
+  lower emissions" across countries is evidence for the plausibility of the claim — but
+  correlation across countries conflates many differences (industrial structure, wealth,
+  policy history) that a single scatterplot cannot separate out.
+
+This is why Chapters 3 and 4 exist: statistical inference and modelling are the tools
+that let you say, carefully, *how much* evidential weight a pattern actually carries.
+
+## Considering Alternative Explanations
+
+Before treating a pattern as *the* explanation, deliberately generate at least one
+competing explanation and check whether your data can distinguish between them.
+
+::: {.exercise-box}
+### Exercise 7.3 — Generate competing explanations
+
+**Example:** *"Does a higher share of renewable energy correlate with lower greenhouse
+gas emissions?"* (the example challenge from an early rubric proposal for this module).
+
+**Q1.** List at least two explanations for an observed negative correlation between
+renewable-energy share and emissions, *other than* "renewables directly cause lower
+emissions" (for instance: wealthier countries can afford both more renewables and
+stricter industrial regulation; the causal arrow could run the other way if emissions
+targets drove renewable investment).
+
+**Q2.** For your own challenge question, do the same: name one alternative explanation
+for the pattern you expect (or found) in your data and state whether your current
+dataset lets you rule it out, partially address it, or not address it at all.
+:::
+
+## From Evidence to an Evidence-Based Response
+
+The final step connects your analysis back to the sustainability problem you started
+from and to who might act on it. A useful check: could a specific, named audience (a regional climate-adaptation office, an EU
+policy team, a citizen-science group) actually do something differently based on your
+conclusion, stated as you've written it?
+
+::: {.exercise-box}
+### Exercise 7.4 — Write your evidence-based response
+
+In 3–5 sentences, connect your Exercise 7.1 findings back to the original broad problem:
+what does your evidence support, what does it leave open and who could act on it and
+how? This paragraph is close to a first draft of your final report's *Conclusion*
+section (see [Chapter 8](08-scientific-communication.qmd)).
+:::
+
+## A Short Self-Check: Global Citizenship Competencies
+
+Goodale, Gilmore and Griffiths (2024) describe six observable competencies that
+environmental stewardship draws on. You don't need to master all six to complete this
+module, but pausing to check where you already stand and where this challenge pushed
+you, is itself useful material for your final report's *Discussion* section.
+
+::: {.reflection-box}
+Rate yourself briefly, a sentence each is enough, on:
+
+1. **Intergroup empathy.** Can you describe how this environmental issue is experienced
+   differently in a country or community other than your own?
+2. **Valuing diversity.** Did your analysis consider more than one region's, country's
+   or group's perspective?
+3. **Social justice orientation.** Did you consider who is most affected by this
+   problem and whether that differs from who has the most power to address it?
+4. **Willingness to sustain the environment.** Has working through this challenge
+   changed anything about your own everyday choices, even a small one?
+5. **Intergroup helping.** Does your Exercise 7.4 response name who could act on it,
+   beyond "someone should do something"?
+6. **Responsibility to act.** Is there one concrete next step you personally could take
+   or advocate for, based on what you found?
+:::
+
+::: {.differentiation-box}
+::: {.struggling}
+If "narrowing a wicked problem into a data question" feels abstract with no example to
+anchor it: [Our World in Data](https://ourworldindata.org/) shows, across hundreds of
+real topics, how broad global challenges get turned into specific, chart-able questions
+— browse a few entries close to your own challenge topic before starting Exercise 7.1.
+:::
+::: {.deeper}
+If you want the deeper conceptual framing behind treating sustainability as
+interconnected systems rather than isolated problems: Kate Raworth's *Doughnut
+Economics* (2017) is the widely-cited starting point and pairs well with this module's
+stewardship framing. For the transformative-learning and Global Citizenship Education
+ideas in this chapter's opening section, Mezirow (1997) and Rieckmann (2021) are the
+primary sources; Lotz-Sisitka, Wals, Kronlid and McGarry (2015) go further into
+transgressive social learning for anyone writing more deeply on this in their final
+report.
+:::
+:::
+
+::: {.sources-box}
+[Our World in Data](https://ourworldindata.org/) ·
+Raworth, K. (2017), *Doughnut Economics* ·
+Mezirow, J. (1997), *Transformative Learning: Theory to Practice* ·
+Rieckmann, M. (2021), *Emancipatory and Transformative Global Citizenship Education* ·
+Goodale, T. M., Gilmore, S., & Griffiths, M. (2024), *21st-Century Stewardship: An
+Interdisciplinary Approach to Cultivating Global Citizenship* ·
+Hernández Guzmán, A. & García de Velazco, J. (2024), *Global Citizenship: Towards a
+Concept for Participatory Environmental Protection*.
+Full list with descriptions: [Resources](resources.qmd#sustainability-problem-solving).
+:::
+
+## Check your understanding
+
+- Can you narrow a broad sustainability problem into a specific, data-answerable
+  question while keeping the original problem visible in your final conclusion?
+- Can you name, for your own challenge, at least one alternative explanation for the
+  pattern you found?
+- Can you state clearly what your evidence *does* and *does not* establish?
+- Can you name one assumption your own frame of reference brought to your dataset,
+  especially if it comes from a context other than your own?
+
+Continue to
+[Chapter 8, Scientific Communication](08-scientific-communication.qmd).

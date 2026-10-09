@@ -1,0 +1,176 @@
+# Reproducible Research {#sec-reproducible-research}
+
+::: {.guiding-question}
+Guiding question: **Could someone else reproduce my analysis?**
+:::
+
+In this area you will learn how to: document your analysis, combine code, text and
+results in Quarto, organise and share your work using GitHub and make your analytical
+process transparent and reproducible. This chapter leans more heavily on external open
+resources than Chapters 1–4, because reproducibility is best learned by doing it in your
+own project, not by working through another isolated exercise dataset.
+
+::: {.callout-note}
+## This module practises what it teaches
+Everything you've read so far — text, code, figures — lives in a Quarto project, version
+controlled on GitHub, released under CC-BY. Reproducibility isn't a separate add-on
+skill here; it's the format the whole module is built in.
+:::
+
+## Why Reproducibility Matters
+
+A result you cannot reproduce is a result no one — including future you — can fully
+trust. In environmental science specifically, claims often feed into policy; being able
+to show *exactly* how a number was produced, from raw download to final figure, is part
+of the scientific claim itself, not an optional extra.
+
+> *Analogy:* a recipe that only works because the cook "just knows" to add a pinch of an
+> unlisted ingredient is not a reproducible recipe, however good the dish tastes. A
+> reproducible analysis is a recipe precise enough that someone else, in a different
+> kitchen, gets the same dish.
+
+The FAIR principles, widely used in Open Science, capture this as a checklist for data
+and code: **F**indable, **A**ccessible, **I**nteroperable, **R**eusable. A well-organised
+Quarto + GitHub project addresses all four almost automatically.
+
+## From Scripts to Literate Programming
+
+A plain `.R` script separates code from explanation — comments help, but the reasoning
+usually lives in your head or a separate document. **Literate programming** (the idea
+behind Quarto and R Markdown before it) interleaves narrative text, code and the code's
+*output* — tables, figures, model summaries — in a single document that renders to
+HTML, PDF or a website. This entire module is one example; your final report and
+dashboard should be another.
+
+::: {.callout-tip}
+## Get started with Quarto
+The official [Quarto guide](https://quarto.org/docs/guide/) covers installation and the
+basics in under 30 minutes. If you already know R Markdown, the concepts transfer
+almost directly.
+:::
+
+::: {.exercise-box}
+### Guided task 5.2 — Your first Quarto document
+
+1. Install Quarto (bundled with recent RStudio, or standalone from quarto.org).
+2. Create a new `.qmd` file with a YAML header (title, author, `format: html`).
+3. Add one text section, one code chunk that loads `data/clean/dwd_climate_clean.csv`
+   and prints `glimpse()` and one `ggplot2` figure.
+4. Render it (`quarto render your_file.qmd` or the Render button in RStudio/Positron).
+
+**Reflect:** what changed in how you *wrote* the analysis, compared to a plain script
+with separate comments?
+:::
+
+## Organising a Reproducible Project
+
+Good project structure is a form of documentation in itself. A minimal, defensible
+layout:
+
+```
+my-challenge/
+├── data/              # raw, locked data + a data dictionary (README.md)
+├── R/                 # reusable functions, if any
+├── analysis.qmd        # the literate-programming narrative (or several, numbered)
+├── dashboard.qmd        # the interactive dashboard
+├── _quarto.yml          # project configuration
+└── README.md            # what this project is, how to run it
+```
+
+This directly extends the data-management principle from
+[Chapter 1](01-understanding-data.qmd#data-management): the raw download never
+changes, every transformation is code and every code file has a clear place. Compare
+this module's own repository structure — it follows exactly this pattern.
+
+::: {.acemate-box}
+Ask your learning buddy to critique your folder structure against this checklist and to explain
+*why* a given convention exists (e.g. "why keep `data/` separate from analysis code?")
+rather than asking it to generate the structure for you sight unseen — you need to be
+able to justify your own project's organisation in your report.
+:::
+
+## Version Control with Git and GitHub
+
+Git tracks every change to your files over time; GitHub hosts that history online so
+others (and future you) can see it and so you have an off-machine backup. For this
+module, you need a working subset of Git, not the whole tool:
+
+- `git init` / cloning an existing repository
+- `git add`, `git commit -m "message"` — saving a snapshot with a clear description
+- `git push` / `git pull` — syncing with GitHub
+- Writing a short, useful `README.md` at the project root
+
+::: {.callout-tip}
+## Learn Git without the jargon
+[Happy Git and GitHub for the useR](https://happygitwithr.com/) is written specifically
+for researchers coming from R and is the recommended path if this is your first time
+with version control. Work through its "Connect to GitHub" and first-commit chapters
+before your challenge deadline, not the night before.
+:::
+
+::: {.exercise-box}
+### Guided task 5.4 — Put your challenge under version control
+
+1. Create a GitHub repository for your challenge analysis (public, CC-BY licence, unless
+   your data source's licence requires otherwise).
+2. Commit your project in stages, with meaningful commit messages, as you go — not one
+   giant commit at the end. Three to five commits across the challenge is a reasonable
+   minimum.
+3. Write a `README.md` that a stranger could use to understand what the project does and
+   how to reproduce it, in under two minutes of reading.
+
+**Reflect:** look at your own commit history. Would *you*, reading it back in six
+months, understand what each commit changed and why?
+:::
+
+::: {.differentiation-box}
+::: {.struggling}
+If the command line and `git add`/`commit`/`push` feel like too much at once before your
+deadline: [GitHub Desktop](https://desktop.github.com/) gives you the same version
+control through a point-and-click interface — [Happy Git and
+GitHub for the useR](https://happygitwithr.com/) covers it alongside the command line.
+:::
+::: {.deeper}
+If Git already feels comfortable and you want to understand *why* it works the way it
+does (branches, the object model, merging): [Pro Git](https://git-scm.com/book/en/v2)
+(free online) is the standard reference, far beyond what this module needs but useful
+for later projects.
+:::
+:::
+
+## Documentation and Open Science
+
+Documentation is not an afterthought written at the end — it is the parts of §5.3's
+project structure that explain themselves: a data dictionary next to the raw data (as in
+this module's own `data/README.md`), comments explaining *why* a non-obvious cleaning
+decision was made (not just *what* the code does) and a README that states the
+project's purpose, data sources and how to re-run it.
+
+**Open Science practice**, concretely, for this module:
+
+- Publish your code and (where licensing allows) your data openly, with a clear licence
+  (this module and its practice dataset are CC-BY 4.0).
+- Cite your data sources properly, including dataset codes and access dates (Eurostat
+  datasets are versioned and updated — record *when* you pulled the data).
+- Make your dashboard and report's methodology fully traceable back to the code that
+  produced it — the requirement stated at the end of [the overview](index.qmd#complete-your-final-challenge).
+
+::: {.sources-box}
+[Quarto Guide](https://quarto.org/docs/guide/) ·
+[Happy Git and GitHub for the useR](https://happygitwithr.com/) ·
+[GitHub Desktop](https://desktop.github.com/) ·
+[R Packages (2e) — Documentation](https://r-pkgs.org/).
+Full list with descriptions: [Resources](resources.qmd#reproducible-research).
+:::
+
+## Check your understanding
+
+- Can you explain the FAIR principles in your own words, with one climate-data example
+  each?
+- Could someone unfamiliar with your project clone your repository and reproduce your
+  dashboard from the README alone?
+- Can you point to at least one commit message in your own repository that clearly
+  explains *why*, not just *what*, changed?
+
+Continue to
+[Chapter 6, AI-Assisted Learning and Analysis](06-ai-assisted-learning.qmd).

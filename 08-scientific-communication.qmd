@@ -1,0 +1,233 @@
+# Scientific Communication {#sec-scientific-communication}
+
+::: {.guiding-question}
+Guiding question: **How can I communicate my findings clearly and responsibly?**
+:::
+
+In this area you will learn how to: present findings clearly, select effective
+visualisations, explain uncertainties and limitations, adapt communication to different
+audiences and create scientific reports, briefs or dashboards. *(Source materials:
+*Data Visualization: A Practical Introduction* (socviz.co), *Fundamentals of Data
+Visualization* (clauswilke.com/dataviz) — see [Resources](resources.qmd).)*
+
+This chapter is where your work from every other competency area comes together into
+the two required final outputs from [the overview](index.qmd#complete-your-final-challenge):
+an **interactive dashboard** and a **short scientific report**.
+
+## Know Your Audience
+
+The same finding needs different framing for different readers. Before building
+anything, decide:
+
+- **A specialist reader** (e.g. another data-science student, your instructor) wants
+  methodological detail, model diagnostics and explicit uncertainty.
+- **A policy or general audience** wants the headline finding, its practical
+  implications and honest caveats — without needing to parse a regression table.
+
+Your scientific report is written mainly for the first audience; your dashboard is
+usually written for something closer to the second, even though both draw on the same
+underlying analysis.
+
+## Selecting Effective Visualisations
+
+A good visualisation answers a specific question at a glance; a bad one requires a
+paragraph of explanation to be understood at all. A few working rules, building directly
+on the Grammar of Graphics from [Chapter 2](02-exploring-visualizing.qmd#data-visualisation-the-grammar-of-graphics):
+
+- **Match the geometry to the question.** Comparing categories → bars. Showing change
+  over time → lines. Showing a relationship between two continuous variables →
+  scatterplot. Showing a distribution → histogram or boxplot. Don't default to a bar
+  chart out of habit when a line or scatterplot answers the question more directly.
+- **Label everything a stranger would need.** Axis titles with units, a clear legend, a
+  data source and access date and — for any interval or model estimate — a visible
+  indication of uncertainty (error bars, a shaded confidence band).
+- **Avoid chartjunk.** 3D effects, unnecessary gridlines and decorative colour gradients
+  cost attention without adding information. Every visual element should earn its place.
+- **Choose colour deliberately.** Use a sequential palette for an ordered quantity, a
+  qualitative palette for unordered categories and check your plot still reads correctly
+  in greyscale or to a colour-blind viewer (`scale_colour_viridis_d()` in `ggplot2` is a
+  reliable default).
+
+::: {.exercise-box}
+### Exercise 8.2 — Critique a chart
+
+Take the temperature–sunshine scatterplot you built in
+[Exercise 2.4](02-exploring-visualizing.qmd#exercise-2.4-beginner-write-the-syntax).
+
+**Q1.** Would a policy audience understand this plot without your commentary? What is
+missing — labels, a title that states the finding rather than just the variable names,
+a caption noting the data source?
+
+**Q2.** Rebuild it with a title that states a *finding* (e.g. "More sunshine, slightly
+higher temperatures, across all five regions"), proper axis labels with units and a
+caption citing the data source (remember: this is real DWD data, CC BY 4.0 — the
+caption should say so).
+:::
+
+## Communicating Uncertainty and Limitations Honestly
+
+A dashboard or report that hides its uncertainty is not more convincing — it is less
+trustworthy once a careful reader notices what's missing. Concretely:
+
+- State confidence intervals, not just point estimates, wherever you computed one in
+  [Chapter 3](03-statistical-inference.qmd).
+- Name your model's assumptions and any you couldn't fully verify (recall the
+  repeated-measures limitation from [Exercise 4.4](04-statistical-modelling.qmd#exercise-4.4-check-before-you-trust)) —
+  it's better to name a limitation openly than to present a coefficient as if it came
+  from an ideal, unlimited dataset.
+- Distinguish explicitly between what your evidence *supports* and what it *does not
+  establish* — this is exactly the Exercise 7.4 sentence you already drafted in
+  [Chapter 7](07-sustainability-problem-solving.qmd#from-evidence-to-an-evidence-based-response).
+
+## Building the Interactive Dashboard
+
+Your final dashboard must be built with **[`shinydashboard`](https://rstudio.github.io/shinydashboard/)**,
+the R package that gives a Shiny app a structured dashboard layout (header, sidebar menu
+and a grid of boxes) instead of a plain single-page app. This is a deliberate, required
+choice for this module — not one option among several — because it gives every student's
+final output the same recognisable structure and because live, user-driven filtering
+(picking a region or year range and watching every panel update) is itself part of
+what this competency area is assessing.
+
+```{.r filename="app.R — minimal shinydashboard skeleton"}
+library(shiny)
+library(shinydashboard)
+library(tidyverse)
+library(plotly)
+
+climate <- read_csv("data/clean/dwd_climate_clean.csv")
+
+ui <- dashboardPage(
+  dashboardHeader(title = "German Regional Climate — DWD, 1991-2024"),
+  dashboardSidebar(
+    selectInput("period", "Period:", choices = c("1991-2000", "2015-2024", "Both"), selected = "Both"),
+    selectInput("region", "Region:", choices = c("All", unique(climate$Region)))
+  ),
+  dashboardBody(
+    fluidRow(
+      box(title = "Temperature over time", width = 6, plotlyOutput("temp_plot")),
+      box(title = "Precipitation by region",  width = 6, plotlyOutput("precip_plot"))
+    ),
+    fluidRow(
+      box(title = "Key finding", width = 12, textOutput("finding_text"))
+    )
+  )
+)
+
+server <- function(input, output) {
+  # filter `climate` reactively based on input$period / input$region,
+  # then render each plotlyOutput() and the finding_text from that filtered data
+}
+
+shinyApp(ui, server)
+```
+
+**Required elements** — your submitted dashboard must include all of the following, not
+just a working app shell:
+
+1. **At least two linked, interactive panels** (`box()`es) built with `plotly` outputs,
+   each addressing a distinct part of your research question — not two views of the same
+   single chart.
+2. **At least one input control** (`selectInput()`, `sliderInput()`, or similar) that
+   actually changes what the panels show — a dashboard where every widget is decorative
+   does not meet this requirement.
+3. **Labels a stranger would need**: axis titles with units, a legend where relevant and
+   a visible data-source caption (dataset name and access/generation date) somewhere on
+   the page.
+4. **A visible indication of uncertainty** on at least one panel where you computed one in
+   [Chapter 3](03-statistical-inference.qmd) (a confidence band, error bars, or the
+   interval stated in a caption) — a dashboard that only shows point estimates hides
+   exactly the information §8.3 asks you to communicate honestly.
+5. **One short, written "key finding" panel or caption** stating, in plain language, what
+   the dashboard's main pattern is — the same discipline as a plot title that states a
+   finding rather than just variable names (§8.2).
+6. **A short qualitative reflection panel**, alongside the key-finding panel: in a
+   sentence or two, who is affected by this pattern, whose data or perspective might be
+   missing from your dataset and why does this local result matter beyond this one
+   place? This is the quantitative-and-qualitative pairing this module asks for and the same
+   habit of mind from [Chapter 7](07-sustainability-problem-solving.qmd#why-global-matters-data-perspective-and-responsibility) —
+   your dashboard should say something in words, not only in charts.
+7. **Deployability.** Your `app.R` (or `ui.R`/`server.R`) must run with `shiny::runApp()`
+   from a clean checkout of your repository — see the [Resources page](resources.qmd) for
+   `shinydashboard` setup and deployment tutorials (including free hosting via
+   shinyapps.io, if you want a shareable link rather than a local-only app).
+
+::: {.exercise-box}
+### Exercise 8.4 — Build your shinydashboard
+
+Using the skeleton above as a starting point, build your dashboard against your own
+challenge dataset, meeting all seven required elements listed above.
+
+**Q3.** Show your dashboard to a classmate who hasn't seen your data. Can they state your
+main finding back to you, correctly, within 30 seconds of using it? If not, what would
+you change — a clearer input label, a better chart title, a more prominent key-finding
+panel?
+
+**Q4.** Which input control did you choose and why does it matter for *your* research
+question specifically (not just "because dashboards usually have filters")?
+:::
+
+## Writing the Short Scientific Report
+
+Revisit the required structure from
+[the overview's final-challenge section](index.qmd#complete-your-final-challenge): Research Question,
+Environmental Context, Data, Methods, Results, Discussion, Conclusion, References and
+Data Sources. Write it in the order it will finally appear — this is also the order a
+reader experiences it in:
+
+1. **Introduction** (your Research Question) — state the problem and the specific,
+   data-answerable question you're addressing.
+2. **A short theoretical framing** (your Environmental Context) — a few sentences
+   grounding the problem in why it matters and what is already known, not a full
+   literature review.
+3. **Methods** — document your steps precisely; this doubles as your reproducibility
+   documentation from [Chapter 5](05-reproducible-research.qmd).
+4. **Results** — the figures and numbers from Chapters 2–4.
+5. **Discussion**, drawing directly on your Chapter 7 evidence-based response.
+6. **Conclusion.**
+
+::: {.acemate-box}
+Ask your learning buddy to read a draft section back to you and ask "what would a reader still want
+to know here?" rather than asking it to write the section for you outright — the
+Discussion and Conclusion in particular need to reflect *your* judgement about what the
+evidence does and doesn't support.
+:::
+
+::: {.differentiation-box}
+::: {.struggling}
+If `shinydashboard`'s `ui`/`server` split feels confusing at first: RStudio's own
+[Shiny tutorial](https://shiny.posit.co/r/getting-started/) builds up a basic app step by
+step before introducing the dashboard layout on top of it — work through that first if
+the skeleton above doesn't yet make sense.
+:::
+::: {.deeper}
+If you want to go beyond the required elements — better chart design, storytelling
+structure, or a more polished report: [*Storytelling with
+Data*](https://www.storytellingwithdata.com/books) (Cole Nussbaumer Knaflic) is the
+widely-used reference for turning correct charts into genuinely persuasive ones.
+:::
+:::
+
+::: {.sources-box}
+[`shinydashboard` documentation](https://rstudio.github.io/shinydashboard/) ·
+[Shiny — Getting Started](https://shiny.posit.co/r/getting-started/) ·
+[Data Visualization: A Practical Introduction](https://socviz.co/) ·
+[Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) ·
+[Storytelling with Data](https://www.storytellingwithdata.com/books).
+Full list with descriptions: [Resources](resources.qmd#scientific-communication).
+:::
+
+## Check your understanding
+
+- Can you justify, for each figure in your dashboard, why that chart type fits that
+  question better than the alternatives?
+- Does every figure state its data source, units and (where relevant) its uncertainty?
+- Could a reader unfamiliar with your project state your main finding correctly after
+  reading your report's Conclusion alone?
+
+::: {.callout-tip}
+This completes the eight competency areas. Return to
+[the overview](index.qmd#complete-your-final-challenge) to check your final submission
+against the full requirements, or browse the [Resources](resources.qmd) page for the
+underlying open materials each chapter draws on.
+:::

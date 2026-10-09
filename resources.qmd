@@ -1,0 +1,130 @@
+# Resources {.unnumbered #sec-resources}
+
+This page collects the open resources referenced throughout the module, plus the
+practice dataset used in Rubrics 1–4. Everything here is either open-access or
+explicitly licensed for reuse — check each source's own licence before adapting it.
+
+## Practice Dataset
+
+The worked example used across [Chapter 1](01-understanding-data.qmd) through
+[Chapter 4](04-statistical-modelling.qmd) is **real, open climate data** from the
+Deutscher Wetterdienst (DWD, Germany's national meteorological service): annual
+regional averages of air temperature, precipitation and sunshine duration for five
+German Bundesländer (Bayern, Sachsen, Nordrhein-Westfalen, Schleswig-Holstein,
+Baden-Württemberg) plus the national "Deutschland" series, covering 1991–2024 (34
+years — long enough to see a real, substantial warming trend). Source:
+[DWD Climate Data Center, regional averages](https://opendata.dwd.de/climate_environment/CDC/regional_averages_DE/annual/),
+licensed **CC BY 4.0**. `data/raw/dwd_climate_raw.csv` (the real DWD values, with a
+small number of disclosed, deliberately reintroduced formatting issues for Chapter 1's
+data-quality exercises) and `data/clean/dwd_climate_clean.csv` (tidy, analysis-ready).
+Full column definitions, exact source URLs and a full disclosure of exactly what was
+changed for teaching purposes are in `data/README.md` in the project folder. Regenerate
+the dataset with `data/generate_climate_dataset.py`.
+
+## By Competency Area
+
+### Understanding and Managing Data {#understanding-and-managing-data}
+*(Rubric 1 — [Chapter 1](01-understanding-data.qmd))*
+
+- [Environmental Statistics with R](https://chrisbogner.github.io/environmental_stat/) — Christina Bogner's open lecture notes; the module's overall blueprint. See especially "Data", "Import, Explore, Visualize" and "Tidyverse".
+- [`statistik_uebung`](https://chrisbogner.github.io/statistik_uebung/) — statistics exercises (German-language companion material).
+- [OpenIntro Modern Statistics — Data](https://openintro-ims.netlify.app/data-hello#sec-variable-types) — variable types and structure.
+- [DataCamp — Data Analyst with R career track](https://app.datacamp.com/learn/career-tracks/data-analyst-with-r)
+- *Beginner:* [Hands-On Programming with R](https://rstudio-education.github.io/hopr/) — starts from zero R syntax.
+- *Going deeper:* [R for Data Science (2e) — Data Tidying](https://r4ds.hadley.nz/data-tidy)
+
+### Exploring and Visualising Data {#exploring-and-visualising-data}
+*(Rubric 2 — [Chapter 2](02-exploring-visualizing.qmd))*
+
+- [R for Data Science (r4ds)](https://r4ds.hadley.nz/) — the standard reference for `dplyr`/`ggplot2` workflows.
+- [DataCamp — Data Analyst with R career track](https://app.datacamp.com/learn/career-tracks/data-analyst-with-r)
+- [Data Visualization: A Practical Introduction (socviz.co)](https://socviz.co/)
+- [Fundamentals of Data Visualization (clauswilke.com/dataviz)](https://clauswilke.com/dataviz/)
+- *Beginner:* [swirl](https://swirlstats.com/students.html) — interactive R exercises in your own console.
+- *Going deeper:* [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)
+
+### Statistical Inference {#statistical-inference}
+*(Rubric 3 — [Chapter 3](03-statistical-inference.qmd))*
+
+- [`statistik_uebung`](https://chrisbogner.github.io/statistik_uebung/)
+- [OpenIntro Modern Statistics (IMS)](https://openintro-ims.netlify.app/index.html)
+- [IMS Tutorials](https://openintrostat.github.io/ims-tutorials/)
+- *Beginner:* [Seeing Theory](https://seeing-theory.brown.edu/) — interactive visual introduction to probability and inference.
+- *Going deeper:* [`infer` package documentation](https://infer.tidymodels.org/)
+
+### Statistical Modelling {#statistical-modelling}
+*(Rubric 4 — [Chapter 4](04-statistical-modelling.qmd))*
+
+- [OpenIntro IMS — Inference for Regression](https://openintro-ims.netlify.app/inf-model-slr)
+- [OpenIntro IMS — Regression Modeling](https://openintro-ims.netlify.app/regression-modeling)
+- *Beginner:* [StatQuest — Linear Regression, Clearly Explained](https://www.youtube.com/watch?v=nk2CQITm_eo)
+- *Going deeper:* [Tidy Modeling with R](https://www.tmwr.org/)
+
+### Reproducible Research {#reproducible-research}
+*(Rubric 5 — [Chapter 5](05-reproducible-research.qmd))*
+
+- [Quarto Guide](https://quarto.org/docs/guide/)
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+- [R for Data Science (r4ds)](https://r4ds.hadley.nz/)
+- *Beginner:* [GitHub Desktop](https://desktop.github.com/) — point-and-click Git, no command line required.
+- *Going deeper:* [Pro Git](https://git-scm.com/book/en/v2)
+
+### AI-Assisted Learning and Analysis {#ai-assisted-learning-and-analysis}
+*(Rubric 6 — [Chapter 6](06-ai-assisted-learning.qmd))*
+
+- Your AI learning buddy's documentation *(internal: add Acemate's onboarding link here
+  once available)*.
+- General prompt-literacy practice: apply the pattern in
+  [Chapter 6](06-ai-assisted-learning.qmd#prompt-literacy) to your own tool.
+- *Beginner:* [Anthropic — Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)
+- *Going deeper:* Ng et al. (2021), *AI and Education: A 20-Year Roadmap*.
+
+### Sustainability Problem Solving {#sustainability-problem-solving}
+*(Rubric 7 — [Chapter 7](07-sustainability-problem-solving.qmd))*
+
+- [Eurostat Data Browser — Environment](https://ec.europa.eu/eurostat/databrowser/explore/all/envir?sort=category&lang=en&display=list)
+- [Open Government Data (OGD) Platform India](https://www.data.gov.in/) — GODL-India
+  licensed datasets from bodies such as the India Meteorological Department (IMD) and
+  the Central Pollution Control Board (CPCB); an Indian alternative to Eurostat for your
+  own challenge dataset.
+- [Environmental Data Science courses (earthdatascience.org)](https://earthdatascience.org/courses/)
+- *Beginner:* [Our World in Data](https://ourworldindata.org/) — real examples of broad problems turned into data questions.
+- *Going deeper:* Raworth, K. (2017), *Doughnut Economics*.
+
+**Transformative learning and Global Citizenship Education**, the theoretical grounding
+behind Chapter 7's opening section and its reflection prompts:
+
+- Mezirow, J. (1997), *Transformative Learning: Theory to Practice*, New Directions for
+  Adult and Continuing Education.
+- Rieckmann, M. (2021), *Emancipatory and Transformative Global Citizenship Education:
+  Rethinking Political Agency*.
+- Goodale, T. M., Gilmore, S., & Griffiths, M. (2024), *21st-Century Stewardship: An
+  Interdisciplinary Approach to Cultivating Global Citizenship* — source of the
+  six-competency self-check used at the end of Chapter 7.
+- Hernández Guzmán, A. & García de Velazco, J. (2024), *Global Citizenship: Towards a
+  Concept for Participatory Environmental Protection*.
+- *Going further:* Lotz-Sisitka, H., Wals, A. E. J., Kronlid, D., & McGarry, D. (2015),
+  *Transformative, Transgressive Social Learning: Rethinking Higher Education Pedagogy in
+  Times of Systemic Global Dysfunction*; Yanniris, C. (2021), *Education for
+  Sustainability, Peace, and Global Citizenship: An Integrated Approach*.
+
+### Scientific Communication {#scientific-communication}
+*(Rubric 8 — [Chapter 8](08-scientific-communication.qmd))*
+
+- [Data Visualization: A Practical Introduction (socviz.co)](https://socviz.co/)
+- [Fundamentals of Data Visualization (clauswilke.com/dataviz)](https://clauswilke.com/dataviz/)
+- [`shinydashboard`](https://rstudio.github.io/shinydashboard/) — **required** for the final interactive dashboard (see [Chapter 8](08-scientific-communication.qmd#building-the-interactive-dashboard) for the exact requirements).
+- [Shiny — Getting Started](https://shiny.posit.co/r/getting-started/) — build a basic Shiny app first if `shinydashboard` feels like a big jump.
+- *Beginner:* the Shiny tutorial above.
+- *Going deeper:* [Storytelling with Data](https://www.storytellingwithdata.com/books)
+
+## About the Blueprint
+
+This module's structure and tone take inspiration from Christina Bogner's
+[*Environmental Statistics*](https://chrisbogner.github.io/environmental_stat/)
+lecture notes (Bookdown, CC BY-NC-SA 4.0) — numbered chapters building from data
+basics through modelling, worked exercises throughout and an appendix of further
+resources. This module is built in **Quarto** rather than Bookdown (Quarto is
+Bookdown/R Markdown's direct successor, same underlying idea, actively developed),
+which is why the two sites look different, but the pedagogical shape is deliberately
+close.

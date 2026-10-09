@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Exploring and Visualising Data – Data Analysis in STEM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-statistical-inference.html" rel="next">
+<link href="./01-understanding-data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-08731ecd0d226a52c85d4cd3313dadfd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2213e3bfb2ceb1e73a7d7364ae98b957.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-understanding-data.html">Competency Areas</a></li><li class="breadcrumb-item"><a href="./02-exploring-visualizing.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring and Visualising Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Analysis in STEM</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Competency Areas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-understanding-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding and Managing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-exploring-visualizing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring and Visualising Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-statistical-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-statistical-modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Statistical Modelling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-reproducible-research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ai-assisted-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">AI-Assisted Learning and Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-sustainability-problem-solving.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sustainability Problem Solving</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-scientific-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Scientific Communication</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link active" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">2.1</span> Exploratory Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2.1-a-first-handshake" id="toc-exercise-2.1-a-first-handshake" class="nav-link" data-scroll-target="#exercise-2.1-a-first-handshake">Exercise 2.1 — A first handshake</a></li>
+  </ul></li>
+  <li><a href="#distributions" id="toc-distributions" class="nav-link" data-scroll-target="#distributions"><span class="header-section-number">2.2</span> Distributions</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2.2-describe-a-distribution" id="toc-exercise-2.2-describe-a-distribution" class="nav-link" data-scroll-target="#exercise-2.2-describe-a-distribution">Exercise 2.2 — Describe a distribution</a></li>
+  </ul></li>
+  <li><a href="#outliers" id="toc-outliers" class="nav-link" data-scroll-target="#outliers"><span class="header-section-number">2.3</span> Outliers</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2.3-find-and-classify-an-outlier" id="toc-exercise-2.3-find-and-classify-an-outlier" class="nav-link" data-scroll-target="#exercise-2.3-find-and-classify-an-outlier">Exercise 2.3 — Find and classify an outlier</a></li>
+  <li><a href="#a-quick-look-at-a-second-variable" id="toc-a-quick-look-at-a-second-variable" class="nav-link" data-scroll-target="#a-quick-look-at-a-second-variable">A Quick Look at a Second Variable</a></li>
+  </ul></li>
+  <li><a href="#data-visualisation-the-grammar-of-graphics" id="toc-data-visualisation-the-grammar-of-graphics" class="nav-link" data-scroll-target="#data-visualisation-the-grammar-of-graphics"><span class="header-section-number">2.4</span> Data Visualisation — the Grammar of Graphics</a></li>
+  <li><a href="#comparing-two-points-in-time" id="toc-comparing-two-points-in-time" class="nav-link" data-scroll-target="#comparing-two-points-in-time"><span class="header-section-number">2.5</span> Comparing Two Points in Time</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2.5-two-years-then-a-more-robust-comparison" id="toc-exercise-2.5-two-years-then-a-more-robust-comparison" class="nav-link" data-scroll-target="#exercise-2.5-two-years-then-a-more-robust-comparison">Exercise 2.5 — Two years, then a more robust comparison</a></li>
+  </ul></li>
+  <li><a href="#check-your-understanding" id="toc-check-your-understanding" class="nav-link" data-scroll-target="#check-your-understanding"><span class="header-section-number">2.6</span> Check your understanding</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-understanding-data.html">Competency Areas</a></li><li class="breadcrumb-item"><a href="./02-exploring-visualizing.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring and Visualising Data</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-exploring-visualizing" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring and Visualising Data</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="guiding-question">
+<p>Guiding question: <strong>What patterns can I discover in the data?</strong></p>
+</div>
+<p>In this area you will learn how to: explore datasets, recognise distributions and outliers, identify patterns and relationships, select appropriate visualisations and create graphs using R and <code>ggplot2</code>. <em>(Source materials: DataCamp “Data Analyst with R” track, r4ds.hadley.nz — see <a href="./resources.html">Resources</a>.)</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Practice dataset
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>From here on we use the cleaned version, <code>data/clean/dwd_climate_clean.csv</code>, so that exploration is not blocked by the raw-data problems you already tackled in <a href="./01-understanding-data.html">Chapter 1</a>. It is real DWD data — see <a href="data/README.md"><code>data/README.md</code></a> for the exact source and license (CC BY 4.0). This chapter follows one variable — <strong>annual mean temperature</strong> — all the way through, since that is the one this whole module ultimately asks you to relate across time. Precipitation makes one short guest appearance later on, purely to show that the same outlier-detection method applies to any variable, not just this one.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>climate <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/clean/dwd_climate_clean.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> climate <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Region <span class="sc">!=</span> <span class="st">"Deutschland"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>de <span class="ot">&lt;-</span> climate <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"Deutschland"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Code walkthrough
+</summary>
+<ul>
+<li><code>states</code> — the 5 regions, excluding the national series.</li>
+<li><code>de</code> — the national series alone (<code>"Deutschland"</code> = Germany).</li>
+</ul>
+</details>
+<p><strong>Reading the pipe (<code>%&gt;%</code>).</strong> You will see <code>%&gt;%</code> constantly from here on — it means “take what’s on the left, and feed it into the next step.” Think of it as a conveyor belt: <code>climate %&gt;% filter(...)</code> takes <code>climate</code>, sends it down the belt into <code>filter()</code>, and whatever comes out the other end gets stored in <code>states</code>. Read a pipeline top to bottom, one step at a time, rather than trying to hold the whole line in your head at once — each <code>%&gt;%</code> is just “…and then…”.</p>
+<section id="exploratory-data-analysis" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="exploratory-data-analysis"><span class="header-section-number">2.1</span> Exploratory Data Analysis</h2>
+<p>Before plotting anything, understand the fundamental characteristics of what you downloaded. The <code>dplyr</code> package is the most fundamental tool for exploring and manipulating data — EDA is like a handshake between you and the data before you start drawing conclusions from it.</p>
+<ul>
+<li><strong>Dimensions.</strong> <code>dim()</code> gives the shape of the data matrix: how many observations and variables.</li>
+<li><strong>Structure.</strong> <code>str()</code> or <code>glimpse()</code> shows the internal blueprint — the type of every column.</li>
+<li><strong>Slicing and filtering.</strong> <code>select()</code> isolates specific columns, <code>filter()</code> extracts specific rows.</li>
+<li><strong>Summarising.</strong> <code>summary()</code> prints a quick six-number overview of a numeric column (minimum, the two middle quartiles, mean, maximum) — a fast way to notice something unusual before you have drawn a single plot.</li>
+</ul>
+<section id="exercise-2.1-a-first-handshake" class="level3 exercise-box">
+<h3 class="anchored" data-anchor-id="exercise-2.1-a-first-handshake">Exercise 2.1 — A first handshake</h3>
+<!-- Checks: get comfortable with the shape and structure of a new dataset before analysing it and pull out one specific row using `filter()`. -->
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(states)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(states)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>states <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"Sachsen"</span>, Year <span class="sc">==</span> <span class="dv">2003</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Region, Year, Temperature_C, Precipitation_mm, Sunshine_hours)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Code walkthrough
+</summary>
+<ul>
+<li><code>dim(states)</code> — rows × columns: how many observations, how many variables.</li>
+<li><code>glimpse(states)</code> — every column’s name, type and first few values, at a glance.</li>
+<li><code>filter(Region == "Sachsen", Year == 2003)</code> — keeps only the row(s) matching <em>both</em> conditions (a comma inside <code>filter()</code> means “and”).</li>
+<li><code>select(...)</code> — keeps only the listed columns and drops the rest.</li>
+</ul>
+</details>
+<p><strong>Q1.</strong> How many regions and how many years does each one contribute? (Hint: <code>count(states, Region)</code>.) Does every region have the same number of rows?</p>
+<p><strong>Q2.</strong> Compute <code>summary()</code> on <code>Temperature_C</code> for one region, then for another. What is your first impression, before any plot?</p>
+</section>
+</section>
+<section id="distributions" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="distributions"><span class="header-section-number">2.2</span> Distributions</h2>
+<p>A <strong>distribution</strong> describes how often different values occur in a dataset. Across 34 years and 5 regions, the distribution of annual temperature tells you the spread, frequency and pattern of German climate — it answers “how much does this variable actually vary, year to year and place to place?”</p>
+<p>Three ideas to hold onto:</p>
+<ul>
+<li><strong>Central tendency</strong> — the middle of your data. The <strong>mean</strong> is the arithmetic average, sensitive to extreme years. The <strong>median</strong> is the physical middle value when sorted, telling you what a <em>typical</em> year looks like without being pulled by a single extreme one.</li>
+<li><strong>Spread and variance</strong> — how tightly or loosely the data hugs the centre. A region with low year-to-year variance has a stable climate; high variance suggests larger swings between mild and extreme years.</li>
+<li><strong>Skewness.</strong> Not every variable is a symmetric bell curve — some have a longer tail stretching out on one side. <em>Analogy:</em> think of a class’s exam scores. If most students do well but a handful fail badly, those low scores drag a long tail out to the left (<strong>left-skewed</strong>, or negative skew). If most score low but a few ace it, the tail stretches to the right instead (<strong>right-skewed</strong>, positive skew). You will check whether temperature leans either way in Exercise 2.2.</li>
+</ul>
+<section id="exercise-2.2-describe-a-distribution" class="level3 exercise-box">
+<h3 class="anchored" data-anchor-id="exercise-2.2-describe-a-distribution">Exercise 2.2 — Describe a distribution</h3>
+<!-- Checks: read the shape, centre and spread of a distribution from a histogram alone, without running a formal test. -->
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Temperature_C)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of annual mean temperature, 5 regions x 1991-2024"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Temperature (°C)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Code walkthrough
+</summary>
+<ul>
+<li><code>binwidth = 0.5</code> — width of each histogram bar, in °C. Try 0.2 or 1 to see how the shape of the histogram changes.</li>
+</ul>
+</details>
+<p><strong>Q3.</strong> Is the temperature distribution roughly symmetric, or does it have a longer tail on one side? Compare <code>mean()</code> and <code>median()</code> — are they close together, or noticeably different?</p>
+</section>
+<div id="fig-temp-distribution" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Histogram of annual mean temperature in degrees Celsius, pooled across five German regions and the years 1991 to 2024. The distribution is roughly bell-shaped and centred around 9 to 9.5 degrees Celsius.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig-temp-distribution.png" class="img-fluid figure-img" alt="Histogram of annual mean temperature in degrees Celsius, pooled across five German regions and the years 1991 to 2024. The distribution is roughly bell-shaped and centred around 9 to 9.5 degrees Celsius.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Distribution of annual mean temperature across 5 regions and 34 years — a fairly symmetric, bell-like shape, with most region-years clustered between about 8°C and 10.5°C.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="outliers" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="outliers"><span class="header-section-number">2.3</span> Outliers</h2>
+<p>An <strong>outlier</strong> is an observation that lies an abnormal distance from the other values in a sample. In a real climate dataset, that is a year that stands out sharply from a region’s normal range — and, unlike a sensor malfunction, a real climate outlier is usually a genuine, well-documented event.</p>
+<p><strong>Detecting outliers.</strong> Mathematically isolate them using the interquartile range (IQR) on a boxplot: any point more than 1.5 × IQR past the upper or lower quartile is flagged. <em>Analogy:</em> the IQR is the “normal middle 50%” of your data — like the middle half of runners in a race, once you ignore the fastest and slowest quarter. A boxplot draws that middle 50% as a box; a point that lands far outside it (more than 1.5 times the box’s own width past either edge) gets flagged as a dot on its own.</p>
+<p><strong>Classifying outliers.</strong> Real environmental data mostly gives you one kind:</p>
+<ul>
+<li><strong>Genuine environmental extremes.</strong> Real events that are scientifically meaningful, not measurement problems — cold snaps, heatwaves, exceptionally wet or dry years. You must never delete these; they are often exactly what you are trying to study.</li>
+<li><strong>Sensor or reporting errors.</strong> You already met this kind in Chapter 1 (the unit-suffix strings, the duplicated rows) — but notice that once cleaned, this <em>real</em> dataset does not contain any impossible physical values. That is worth stating explicitly, not assuming.</li>
+</ul>
+<section id="exercise-2.3-find-and-classify-an-outlier" class="level3 exercise-box">
+<h3 class="anchored" data-anchor-id="exercise-2.3-find-and-classify-an-outlier">Exercise 2.3 — Find and classify an outlier</h3>
+<!-- Checks: apply the IQR rule to flag a statistical outlier and correctly judge that a flagged point should be kept and explained, not silently deleted. -->
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Region, <span class="at">y =</span> Temperature_C)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Code walkthrough
+</summary>
+<ul>
+<li><code>geom_boxplot()</code> — draws the box (the IQR), the whiskers, and any flagged outlier points, one box per region.</li>
+<li><code>coord_flip()</code> — turns the whole chart on its side, so the region names are easy to read instead of squeezed along the bottom.</li>
+</ul>
+</details>
+<p><strong>Q4.</strong> Look at the red-flagged points on the boxplot below. Which year do nearly all of them share? Is that year flagged as an outlier in <em>every</em> region, or only in some — and what does that tell you about how “outlier” depends on a region’s own year-to-year spread, not just on the raw value?</p>
+<p><strong>Q5.</strong> 1996 turns out to be Germany’s coldest year on record in this 34-year dataset (national annual mean 7.2°C, against a 34-year average of about 9.4°C). Why would deleting this year before computing “typical German temperature” be a mistake?</p>
+</section>
+<div id="fig-temp-outliers-by-region" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal boxplots of annual mean temperature in degrees Celsius for five German regions, 1991 to 2024. Nordrhein-Westfalen, Sachsen and Schleswig-Holstein each show one or two low outlier points, all from 1996 or 2010; Bayern and Baden-Wuerttemberg show no flagged outliers despite 1996 also being their coldest year.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-outliers-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig-temp-outliers-by-region.png" class="img-fluid figure-img" alt="Horizontal boxplots of annual mean temperature in degrees Celsius for five German regions, 1991 to 2024. Nordrhein-Westfalen, Sachsen and Schleswig-Holstein each show one or two low outlier points, all from 1996 or 2010; Bayern and Baden-Wuerttemberg show no flagged outliers despite 1996 also being their coldest year.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-outliers-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Annual mean temperature by region — 1996 (and, in Nordrhein-Westfalen, also 2010) shows up as a genuine cold outlier in three of the five regions and as each region’s coldest or near-coldest year even where its own natural variability is too wide for the IQR rule to flag it.
+</figcaption>
+</figure>
+</div>
+<section id="a-quick-look-at-a-second-variable" class="level3">
+<h3 class="anchored" data-anchor-id="a-quick-look-at-a-second-variable">A Quick Look at a Second Variable</h3>
+<p>Outlier detection is not unique to temperature — the same method applies to any numeric column. Running it on <code>Precipitation_mm</code> turns up a different, equally real story:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Region, <span class="at">y =</span> Precipitation_mm)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>(Same two functions as the boxplot above — see the code walkthrough in Exercise 2.3 if you need a refresher.)</em></p>
+<p>Only one region-year clears the 1.5×IQR threshold: <strong>Baden-Württemberg, 2002, at 1231.6mm</strong> — more than 200mm above that region’s own upper quartile. 2002 was the year of the catastrophic Elbe and Danube flooding across Central Europe, a real, independently documented event — exactly the kind of outlier you must keep, not delete.</p>
+<div id="fig-precip-by-region" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal boxplots of annual precipitation in millimetres for five German regions, 1991 to 2024. Only Baden-Wuerttemberg shows a flagged outlier, a single high value from 2002.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-precip-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig-precip-by-region.png" class="img-fluid figure-img" alt="Horizontal boxplots of annual precipitation in millimetres for five German regions, 1991 to 2024. Only Baden-Wuerttemberg shows a flagged outlier, a single high value from 2002.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-precip-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Annual precipitation by region — the single flagged outlier is Baden-Württemberg, 2002 (the real Elbe/Danube flood year), not a low-end value.
+</figcaption>
+</figure>
+</div>
+<p>Two other years are worth knowing by name if you explore this dataset further: <strong>2003</strong> and <strong>2018</strong> are the two driest years nationally in the full 1991–2024 record (608mm and 586mm, against a 34-year average of roughly 800mm) — both real, widely documented German drought years. Checking the <em>temperature</em> record, though, only 2018 was also unusually warm nationally; 2003’s famous summer heatwave does not stand out in the <em>annual</em> mean the way it does in that summer’s own monthly figures. That is a useful reminder on its own: an annual average can hide a dramatic season, so always ask what time window a number was aggregated over before you trust a claim built on it.</p>
+</section>
+</section>
+<section id="data-visualisation-the-grammar-of-graphics" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="data-visualisation-the-grammar-of-graphics"><span class="header-section-number">2.4</span> Data Visualisation — the Grammar of Graphics</h2>
+<p><code>ggplot2</code> treats visualisation like building the layers of a map — reading a plot is like reading a paragraph: data layer → aesthetics layer → geometric layer → facet layer → themes and labels.</p>
+<ul>
+<li><strong>The canvas (<code>ggplot()</code>).</strong> Initialises the plot and links it to your data frame.</li>
+<li><strong>Aesthetics (<code>aes()</code>).</strong> Maps variables to physical dimensions: what goes on the x-axis, the y-axis and whether a variable controls colour, shape or size.</li>
+<li><strong>Geometries (<code>geom_*</code>).</strong> The actual visual marks: <code>geom_point()</code> for scatterplots, <code>geom_line()</code> for time series, <code>geom_boxplot()</code> for spotting outliers.</li>
+</ul>
+<p><strong>Identifying relationships.</strong> To see whether two variables are physically linked, look at their joint pattern on a scatterplot:</p>
+<ul>
+<li><strong>Positive correlation</strong> — points trend upward left-to-right.</li>
+<li><strong>Negative correlation</strong> — the trend slopes downward.</li>
+</ul>
+<p><strong>Recognising hidden patterns via faceting.</strong> With five regions over 34 years, plotting everything on one chart can create an unreadable blob (“overplotting”). <code>facet_wrap()</code> or <code>facet_grid()</code> split your data into a grid of small, clean subplots by a categorical variable — e.g.&nbsp;a separate mini-timeline per region — letting you compare patterns across space and time without the signal drowning in noise. <a href="./04-statistical-modelling.html">Chapter 4</a> picks sunshine duration back up as one explanation for temperature, so it is worth meeting the relationship visually first.</p>
+<div class="exercise-box">
+<section id="exercise-2.4-beginner-write-the-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2.4-beginner-write-the-syntax">Exercise 2.4 — Beginner: write the syntax</h3>
+<!-- Checks: build a scatterplot with `ggplot2` from scratch and use `facet_wrap()` to break an overplotted chart into readable pieces. -->
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Sunshine_hours, <span class="at">y =</span> Temperature_C, <span class="at">colour =</span> Region)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Temperature vs. sunshine duration"</span>, <span class="at">x =</span> <span class="st">"Sunshine duration (hours)"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Temperature (°C)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Code walkthrough
+</summary>
+<ul>
+<li><code>alpha = 0.6</code> — point transparency, from 0 (invisible) to 1 (fully solid). A lower value makes overlapping points easier to see, since darker areas mean more points are stacked on top of each other.</li>
+</ul>
+</details>
+<p><strong>Q6.</strong> Add <code>facet_wrap(~Region)</code> to the plot above. What changes about what you can now see?</p>
+</section>
+<section id="exercise-2.4-intermediate-interpret-the-result" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2.4-intermediate-interpret-the-result">Exercise 2.4 — Intermediate: interpret the result</h3>
+<p><strong>Q7.</strong> Using the faceted plot, does the temperature–sunshine relationship look the same across all five regions? Would you call it a strong or a weak relationship?</p>
+</section>
+</div>
+<div id="fig-temp-vs-sunshine" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot of annual mean temperature against annual sunshine duration in hours, coloured by region. Points trend gently upward but are widely scattered, indicating a weak positive relationship.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-vs-sunshine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig-temp-vs-sunshine.png" class="img-fluid figure-img" alt="Scatterplot of annual mean temperature against annual sunshine duration in hours, coloured by region. Points trend gently upward but are widely scattered, indicating a weak positive relationship.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-vs-sunshine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Temperature vs.&nbsp;sunshine duration, by region — a real, but fairly weak, positive relationship (points are scattered, not tightly clustered).
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="comparing-two-points-in-time" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="comparing-two-points-in-time"><span class="header-section-number">2.5</span> Comparing Two Points in Time</h2>
+<p>The simplest way to ask “has it gotten warmer?” is to compare exactly two numbers: the temperature in one year against the temperature in another. Germany’s national annual mean temperature was <strong>8.35°C in 1991</strong> and <strong>10.89°C in 2024</strong>, a difference of <strong>+2.54°C</strong> across the 34-year record.</p>
+<section id="exercise-2.5-two-years-then-a-more-robust-comparison" class="level3 exercise-box">
+<h3 class="anchored" data-anchor-id="exercise-2.5-two-years-then-a-more-robust-comparison">Exercise 2.5 — Two years, then a more robust comparison</h3>
+<!-- Checks: judge when comparing two single points is enough and recognise when you need something more robust than that. -->
+<p><strong>Q8.</strong> A single year can be unusually warm or cold on its own (recall 1996 from Exercise 2.3). Does resting a claim like “Germany has warmed” on just two single years, 1991 and 2024, worry you? Why or why not?</p>
+<p>To guard against exactly that risk, average across a full <strong>decade</strong> on each side instead of trusting one single year:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>de <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&lt;=</span> <span class="dv">2000</span> <span class="sc">|</span> Year <span class="sc">&gt;=</span> <span class="dv">2015</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Period =</span> <span class="fu">if_else</span>(Year <span class="sc">&lt;=</span> <span class="dv">2000</span>, <span class="st">"1991-2000"</span>, <span class="st">"2015-2024"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Period) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_temp =</span> <span class="fu">mean</span>(Temperature_C))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Code walkthrough
+</summary>
+<ul>
+<li><code>filter(Year &lt;= 2000 | Year &gt;= 2015)</code> — keep only rows from the two decades we’re comparing (<code>|</code> means “or”).</li>
+<li><code>mutate(Period = if_else(...))</code> — <code>mutate()</code> adds a new column; <code>if_else()</code> fills each row of it with a yes/no test: “is this row’s <code>Year &lt;= 2000</code>?” → label it “1991-2000”, otherwise “2015-2024”.</li>
+<li><code>group_by(Period)</code> — split the rows into two groups, one per <code>Period</code> label.</li>
+<li><code>summarise(mean_temp = mean(Temperature_C))</code> — collapse each group down to a single number: its own mean.</li>
+</ul>
+</details>
+<p><strong>Q9.</strong> Compare the two ten-year windows: 1991–2000 against 2015–2024. Roughly how many degrees warmer does the recent decade look? Keep this number in mind — <a href="./03-statistical-inference.html">Chapter 3</a> asks whether a gap this size is one you can trust as more than random year-to-year noise, or whether it could be chance.</p>
+</section>
+<div id="fig-temp-decade-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Bar chart comparing Germany's annual mean temperature in 1991 to 2000 versus 2015 to 2024, with dashed lines marking each decade's mean. The recent decade's bars sit almost entirely above the early decade's mean line.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-decade-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig-temp-decade-comparison.png" class="img-fluid figure-img" alt="Bar chart comparing Germany's annual mean temperature in 1991 to 2000 versus 2015 to 2024, with dashed lines marking each decade's mean. The recent decade's bars sit almost entirely above the early decade's mean line.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-decade-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Germany’s national average temperature, grouped into an early decade (1991–2000) and a recent decade (2015–2024). The two groups barely overlap.
+</figcaption>
+</figure>
+</div>
+<div class="acemate-box">
+<p>If a plot looks “off” (empty, all one colour, points stacked in a corner), ask your learning buddy to help you debug the <code>aes()</code> mapping rather than asking it to just “make the plot” for you — you will need that debugging skill for your own challenge dataset, which won’t come with a working example to copy.</p>
+</div>
+<div class="differentiation-box">
+<div class="struggling">
+<p>If <code>ggplot()</code> still feels like memorising magic incantations rather than composing layers: <a href="https://swirlstats.com/students.html">swirl</a> runs short interactive R exercises directly in your own console, including a “Data Visualization” module built for exactly this stage.</p>
+</div>
+<div class="deeper">
+<p>Exercise 2.5 compares just two snapshots. If you are curious whether the warming shows up gradually across the whole 34-year record and whether every individual region warms at the same pace or one stands out, here is the full picture: the national average year by year, then the same data broken down by region.</p>
+<div id="fig-temp-trend-national" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line chart of Germany's national annual mean temperature in degrees Celsius from 1991 to 2024, noisy year to year but with a clear rising trend, dropping sharply to a record low around 1996 and reaching its highest points in the final years.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-trend-national-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig-temp-trend-national.png" class="img-fluid figure-img" alt="Line chart of Germany's national annual mean temperature in degrees Celsius from 1991 to 2024, noisy year to year but with a clear rising trend, dropping sharply to a record low around 1996 and reaching its highest points in the final years.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-trend-national-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: Germany’s national annual mean temperature, 1991–2024, noisy year to year, with a fitted linear trend of about +0.5°C per decade.
+</figcaption>
+</figure>
+</div>
+<div id="fig-temp-trend-by-region" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line chart of annual mean temperature in degrees Celsius for five German regions and the national average, 1991 to 2024. All lines show a noisy year-to-year path with a clear overall upward trend, with 1996 and 2010 standing out as unusually cold years.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-temp-trend-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig-temp-trend-by-region.png" class="img-fluid figure-img" alt="Line chart of annual mean temperature in degrees Celsius for five German regions and the national average, 1991 to 2024. All lines show a noisy year-to-year path with a clear overall upward trend, with 1996 and 2010 standing out as unusually cold years.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temp-trend-by-region-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: Annual mean temperature by region, 1991–2024, with the national average in black, a real, visibly noisy but unmistakably rising trend in every region.
+</figcaption>
+</figure>
+</div>
+<p>If the Grammar of Graphics idea clicked and you want the complete system behind it: <a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis</a> (free online) is the authoritative deep dive, written by the package’s own author.</p>
+</div>
+</div>
+<div class="sources-box">
+<p><a href="https://r4ds.hadley.nz/">R for Data Science (r4ds)</a> · <a href="https://app.datacamp.com/learn/career-tracks/data-analyst-with-r">DataCamp — Data Analyst with R</a> · <a href="https://socviz.co/">Data Visualization: A Practical Introduction</a> · <a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization</a>. Full list with descriptions: <a href="./resources.html#exploring-and-visualising-data">Resources</a>.</p>
+</div>
+</section>
+<section id="check-your-understanding" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="check-your-understanding"><span class="header-section-number">2.6</span> Check your understanding</h2>
+<ul>
+<li>Can you explain, to someone who has never seen <code>ggplot2</code>, what each layer (data → aes → geom → facet) contributes?</li>
+<li>Given a new numeric variable, could you describe its distribution in words (centre, spread, skew) from a histogram alone?</li>
+<li>Can you distinguish a genuine environmental extreme from a data-quality problem and say what should happen to each?</li>
+</ul>
+<p>Continue to <a href="./03-statistical-inference.html">Chapter 3, Statistical Inference</a>.</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-understanding-data.html" class="pagination-link" aria-label="Understanding and Managing Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding and Managing Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-statistical-inference.html" class="pagination-link" aria-label="Statistical Inference">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exploring and Visualising Data {#sec-exploring-visualizing}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>::: {.guiding-question}</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Guiding question: **What patterns can I discover in the data?**</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>In this area you will learn how to: explore datasets, recognise distributions and</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>outliers, identify patterns and relationships, select appropriate visualisations and</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>create graphs using R and <span class="in">`ggplot2`</span>. *(Source materials: DataCamp "Data Analyst with R"</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>track, r4ds.hadley.nz — see <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources.qmd)</span>.)*</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practice dataset</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>From here on we use the cleaned version, <span class="in">`data/clean/dwd_climate_clean.csv`</span>, so that</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>exploration is not blocked by the raw-data problems you already tackled in</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](01-understanding-data.qmd)</span>. It is real DWD data — see</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`data/README.md`</span><span class="co">](data/README.md)</span> for the exact source and license (CC BY 4.0). This</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>chapter follows one variable — **annual mean temperature** — all the way through, since</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>that is the one this whole module ultimately asks you to relate across time. Precipitation</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>makes one short guest appearance later on, purely to show that the same outlier-detection</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>method applies to any variable, not just this one.</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>climate <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/clean/dwd_climate_clean.csv"</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> climate <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Region <span class="sc">!=</span> <span class="st">"Deutschland"</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>de <span class="ot">&lt;-</span> climate <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"Deutschland"</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Code walkthrough&lt;/summary&gt;</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`states`</span> — the 5 regions, excluding the national series.</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`de`</span> — the national series alone (<span class="in">`"Deutschland"`</span> = Germany).</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>**Reading the pipe (`%&gt;%`).** You will see <span class="in">`%&gt;%`</span> constantly from here on — it means</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>"take what's on the left, and feed it into the next step." Think of it as a conveyor</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>belt: <span class="in">`climate %&gt;% filter(...)`</span> takes <span class="in">`climate`</span>, sends it down the belt into <span class="in">`filter()`</span>,</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>and whatever comes out the other end gets stored in <span class="in">`states`</span>. Read a pipeline top to</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>bottom, one step at a time, rather than trying to hold the whole line in your head at</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>once — each <span class="in">`%&gt;%`</span> is just "…and then…".</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exploratory Data Analysis</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>Before plotting anything, understand the fundamental characteristics of what you</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>downloaded. The <span class="in">`dplyr`</span> package is the most fundamental tool for exploring and</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>manipulating data — EDA is like a handshake between you and the data before you start</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>drawing conclusions from it.</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dimensions.** <span class="in">`dim()`</span> gives the shape of the data matrix: how many observations and</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>  variables.</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Structure.** <span class="in">`str()`</span> or <span class="in">`glimpse()`</span> shows the internal blueprint — the type of every</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>  column.</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Slicing and filtering.** <span class="in">`select()`</span> isolates specific columns, <span class="in">`filter()`</span> extracts</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>  specific rows.</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Summarising.** <span class="in">`summary()`</span> prints a quick six-number overview of a numeric column</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>  (minimum, the two middle quartiles, mean, maximum) — a fast way to notice something</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>  unusual before you have drawn a single plot.</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>::: {.exercise-box}</span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2.1 — A first handshake</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: get comfortable with the shape and structure of a new dataset before analysing it and pull out one specific row using `filter()`. --&gt;</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(states)</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(states)</span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>states <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"Sachsen"</span>, Year <span class="sc">==</span> <span class="dv">2003</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Region, Year, Temperature_C, Precipitation_mm, Sunshine_hours)</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Code walkthrough&lt;/summary&gt;</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`dim(states)`</span> — rows × columns: how many observations, how many variables.</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`glimpse(states)`</span> — every column's name, type and first few values, at a glance.</span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`filter(Region == "Sachsen", Year == 2003)`</span> — keeps only the row(s) matching *both*</span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>  conditions (a comma inside <span class="in">`filter()`</span> means "and").</span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`select(...)`</span> — keeps only the listed columns and drops the rest.</span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>**Q1.** How many regions and how many years does each one contribute? (Hint:</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a><span class="in">`count(states, Region)`</span>.) Does every region have the same number of rows?</span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>**Q2.** Compute <span class="in">`summary()`</span> on <span class="in">`Temperature_C`</span> for one region, then for another. What</span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>is your first impression, before any plot?</span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## Distributions</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>A **distribution** describes how often different values occur in a dataset. Across 34</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>years and 5 regions, the distribution of annual temperature tells you the spread,</span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>frequency and pattern of German climate — it answers "how much does this variable</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>actually vary, year to year and place to place?"</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>Three ideas to hold onto:</span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Central tendency** — the middle of your data. The **mean** is the arithmetic</span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>  average, sensitive to extreme years. The **median** is the physical middle value when</span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>  sorted, telling you what a *typical* year looks like without being pulled by a single</span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>  extreme one.</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Spread and variance** — how tightly or loosely the data hugs the centre. A region</span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>  with low year-to-year variance has a stable climate; high variance suggests larger</span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>  swings between mild and extreme years.</span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Skewness.** Not every variable is a symmetric bell curve — some have a longer tail</span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>  stretching out on one side. *Analogy:* think of a class's exam scores. If most students</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>  do well but a handful fail badly, those low scores drag a long tail out to the left</span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>  (**left-skewed**, or negative skew). If most score low but a few ace it, the tail</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>  stretches to the right instead (**right-skewed**, positive skew). You will check</span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>  whether temperature leans either way in Exercise 2.2.</span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>::: {.exercise-box}</span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2.2 — Describe a distribution</span></span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: read the shape, centre and spread of a distribution from a histogram alone, without running a formal test. --&gt;</span></span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Temperature_C)) <span class="sc">+</span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of annual mean temperature, 5 regions x 1991-2024"</span>,</span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Temperature (°C)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Code walkthrough&lt;/summary&gt;</span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`binwidth = 0.5`</span> — width of each histogram bar, in °C. Try 0.2 or 1 to see how the</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a>  shape of the histogram changes.</span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a>**Q3.** Is the temperature distribution roughly symmetric, or does it have a longer tail</span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a>on one side? Compare <span class="in">`mean()`</span> and <span class="in">`median()`</span> — are they close together, or noticeably</span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>different?</span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a>![Distribution of annual mean temperature across 5 regions and 34 years — a fairly</span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>symmetric, bell-like shape, with most region-years clustered between about 8°C and</span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>10.5°C.](images/fig-temp-distribution.png){#fig-temp-distribution fig-alt="Histogram of annual mean temperature in degrees Celsius, pooled across five German regions and the years 1991 to 2024. The distribution is roughly bell-shaped and centred around 9 to 9.5 degrees Celsius."}</span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a><span class="fu">## Outliers</span></span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a>An **outlier** is an observation that lies an abnormal distance from the other values in</span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a>a sample. In a real climate dataset, that is a year that stands out sharply from a</span>
+<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a>region's normal range — and, unlike a sensor malfunction, a real climate outlier is</span>
+<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a>usually a genuine, well-documented event.</span>
+<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a>**Detecting outliers.** Mathematically isolate them using the interquartile range (IQR)</span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a>on a boxplot: any point more than 1.5 × IQR past the upper or lower quartile is flagged.</span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a>*Analogy:* the IQR is the "normal middle 50%" of your data — like the middle half of</span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a>runners in a race, once you ignore the fastest and slowest quarter. A boxplot draws that</span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a>middle 50% as a box; a point that lands far outside it (more than 1.5 times the box's own</span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a>width past either edge) gets flagged as a dot on its own.</span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a>**Classifying outliers.** Real environmental data mostly gives you one kind:</span>
+<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Genuine environmental extremes.** Real events that are scientifically meaningful,</span>
+<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a>  not measurement problems — cold snaps, heatwaves, exceptionally wet or dry years. You</span>
+<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a>  must never delete these; they are often exactly what you are trying to study.</span>
+<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Sensor or reporting errors.** You already met this kind in Chapter 1 (the</span>
+<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a>  unit-suffix strings, the duplicated rows) — but notice that once cleaned, this</span>
+<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a>  *real* dataset does not contain any impossible physical values. That is worth stating</span>
+<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a>  explicitly, not assuming.</span>
+<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a>::: {.exercise-box}</span>
+<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2.3 — Find and classify an outlier</span></span>
+<span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: apply the IQR rule to flag a statistical outlier and correctly judge that a flagged point should be kept and explained, not silently deleted. --&gt;</span></span>
+<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Region, <span class="at">y =</span> Temperature_C)) <span class="sc">+</span></span>
+<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Code walkthrough&lt;/summary&gt;</span>
+<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`geom_boxplot()`</span> — draws the box (the IQR), the whiskers, and any flagged outlier</span>
+<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a>  points, one box per region.</span>
+<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`coord_flip()`</span> — turns the whole chart on its side, so the region names are easy to</span>
+<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a>  read instead of squeezed along the bottom.</span>
+<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a>**Q4.** Look at the red-flagged points on the boxplot below. Which year do nearly all of</span>
+<span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a>them share? Is that year flagged as an outlier in *every* region, or only in some — and</span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a>what does that tell you about how "outlier" depends on a region's own year-to-year</span>
+<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a>spread, not just on the raw value?</span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a>**Q5.** 1996 turns out to be Germany's coldest year on record in this 34-year dataset</span>
+<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a>(national annual mean 7.2°C, against a 34-year average of about 9.4°C). Why would</span>
+<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a>deleting this year before computing "typical German temperature" be a mistake?</span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a>![Annual mean temperature by region — 1996 (and, in Nordrhein-Westfalen, also 2010)</span>
+<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a>shows up as a genuine cold outlier in three of the five regions and as each region's</span>
+<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>coldest or near-coldest year even where its own natural variability is too wide for the</span>
+<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a>IQR rule to flag it.](images/fig-temp-outliers-by-region.png){#fig-temp-outliers-by-region fig-alt="Horizontal boxplots of annual mean temperature in degrees Celsius for five German regions, 1991 to 2024. Nordrhein-Westfalen, Sachsen and Schleswig-Holstein each show one or two low outlier points, all from 1996 or 2010; Bayern and Baden-Wuerttemberg show no flagged outliers despite 1996 also being their coldest year."}</span>
+<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### A Quick Look at a Second Variable</span></span>
+<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a>Outlier detection is not unique to temperature — the same method applies to any numeric</span>
+<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>column. Running it on <span class="in">`Precipitation_mm`</span> turns up a different, equally real story:</span>
+<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Region, <span class="at">y =</span> Precipitation_mm)) <span class="sc">+</span></span>
+<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a>*(Same two functions as the boxplot above — see the code walkthrough in Exercise 2.3 if</span>
+<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a>you need a refresher.)*</span>
+<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a>Only one region-year clears the 1.5×IQR threshold: **Baden-Württemberg, 2002, at</span>
+<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a>1231.6mm** — more than 200mm above that region's own upper quartile. 2002 was the year of</span>
+<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a>the catastrophic Elbe and Danube flooding across Central Europe, a real, independently</span>
+<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a>documented event — exactly the kind of outlier you must keep, not delete.</span>
+<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a>![Annual precipitation by region — the single flagged outlier is Baden-Württemberg, 2002</span>
+<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a>(the real Elbe/Danube flood year), not a low-end</span>
+<span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a>value.](images/fig-precip-by-region.png){#fig-precip-by-region fig-alt="Horizontal boxplots of annual precipitation in millimetres for five German regions, 1991 to 2024. Only Baden-Wuerttemberg shows a flagged outlier, a single high value from 2002."}</span>
+<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a>Two other years are worth knowing by name if you explore this dataset further: **2003**</span>
+<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a>and **2018** are the two driest years nationally in the full 1991–2024 record (608mm and</span>
+<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a>586mm, against a 34-year average of roughly 800mm) — both real, widely documented German</span>
+<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a>drought years. Checking the *temperature* record, though, only 2018 was also unusually</span>
+<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a>warm nationally; 2003's famous summer heatwave does not stand out in the *annual* mean</span>
+<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a>the way it does in that summer's own monthly figures. That is a useful reminder on its</span>
+<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a>own: an annual average can hide a dramatic season, so always ask what time window a</span>
+<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a>number was aggregated over before you trust a claim built on it.</span>
+<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Visualisation — the Grammar of Graphics</span></span>
+<span id="cb8-227"><a href="#cb8-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a><span class="in">`ggplot2`</span> treats visualisation like building the layers of a map — reading a plot is</span>
+<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a>like reading a paragraph: data layer → aesthetics layer → geometric layer → facet layer →</span>
+<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a>themes and labels.</span>
+<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The canvas (`ggplot()`).** Initialises the plot and links it to your data frame.</span>
+<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Aesthetics (`aes()`).** Maps variables to physical dimensions: what goes on the</span>
+<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a>  x-axis, the y-axis and whether a variable controls colour, shape or size.</span>
+<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Geometries (`geom_*`).** The actual visual marks: <span class="in">`geom_point()`</span> for scatterplots,</span>
+<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a>  <span class="in">`geom_line()`</span> for time series, <span class="in">`geom_boxplot()`</span> for spotting outliers.</span>
+<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a>**Identifying relationships.** To see whether two variables are physically linked, look</span>
+<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a>at their joint pattern on a scatterplot:</span>
+<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Positive correlation** — points trend upward left-to-right.</span>
+<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Negative correlation** — the trend slopes downward.</span>
+<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-244"><a href="#cb8-244" aria-hidden="true" tabindex="-1"></a>**Recognising hidden patterns via faceting.** With five regions over 34 years, plotting</span>
+<span id="cb8-245"><a href="#cb8-245" aria-hidden="true" tabindex="-1"></a>everything on one chart can create an unreadable blob ("overplotting"). <span class="in">`facet_wrap()`</span></span>
+<span id="cb8-246"><a href="#cb8-246" aria-hidden="true" tabindex="-1"></a>or <span class="in">`facet_grid()`</span> split your data into a grid of small, clean subplots by a categorical</span>
+<span id="cb8-247"><a href="#cb8-247" aria-hidden="true" tabindex="-1"></a>variable — e.g. a separate mini-timeline per region — letting you compare patterns</span>
+<span id="cb8-248"><a href="#cb8-248" aria-hidden="true" tabindex="-1"></a>across space and time without the signal drowning in noise. <span class="co">[</span><span class="ot">Chapter 4</span><span class="co">](04-statistical-modelling.qmd)</span></span>
+<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a>picks sunshine duration back up as one explanation for temperature, so it is worth</span>
+<span id="cb8-250"><a href="#cb8-250" aria-hidden="true" tabindex="-1"></a>meeting the relationship visually first.</span>
+<span id="cb8-251"><a href="#cb8-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-252"><a href="#cb8-252" aria-hidden="true" tabindex="-1"></a>::: {.exercise-box}</span>
+<span id="cb8-253"><a href="#cb8-253" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2.4 — Beginner: write the syntax</span></span>
+<span id="cb8-254"><a href="#cb8-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: build a scatterplot with `ggplot2` from scratch and use `facet_wrap()` to break an overplotted chart into readable pieces. --&gt;</span></span>
+<span id="cb8-256"><a href="#cb8-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-257"><a href="#cb8-257" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb8-258"><a href="#cb8-258" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(states, <span class="fu">aes</span>(<span class="at">x =</span> Sunshine_hours, <span class="at">y =</span> Temperature_C, <span class="at">colour =</span> Region)) <span class="sc">+</span></span>
+<span id="cb8-259"><a href="#cb8-259" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb8-260"><a href="#cb8-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Temperature vs. sunshine duration"</span>, <span class="at">x =</span> <span class="st">"Sunshine duration (hours)"</span>,</span>
+<span id="cb8-261"><a href="#cb8-261" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Temperature (°C)"</span>)</span>
+<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-263"><a href="#cb8-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Code walkthrough&lt;/summary&gt;</span>
+<span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`alpha = 0.6`</span> — point transparency, from 0 (invisible) to 1 (fully solid). A lower</span>
+<span id="cb8-266"><a href="#cb8-266" aria-hidden="true" tabindex="-1"></a>  value makes overlapping points easier to see, since darker areas mean more points are</span>
+<span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a>  stacked on top of each other.</span>
+<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb8-269"><a href="#cb8-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a>**Q6.** Add <span class="in">`facet_wrap(~Region)`</span> to the plot above. What changes about what you can</span>
+<span id="cb8-271"><a href="#cb8-271" aria-hidden="true" tabindex="-1"></a>now see?</span>
+<span id="cb8-272"><a href="#cb8-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2.4 — Intermediate: interpret the result</span></span>
+<span id="cb8-274"><a href="#cb8-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-275"><a href="#cb8-275" aria-hidden="true" tabindex="-1"></a>**Q7.** Using the faceted plot, does the temperature–sunshine relationship look the</span>
+<span id="cb8-276"><a href="#cb8-276" aria-hidden="true" tabindex="-1"></a>same across all five regions? Would you call it a strong or a weak relationship?</span>
+<span id="cb8-277"><a href="#cb8-277" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-278"><a href="#cb8-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-279"><a href="#cb8-279" aria-hidden="true" tabindex="-1"></a>![Temperature vs. sunshine duration, by region — a real, but fairly weak, positive</span>
+<span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a>relationship (points are scattered, not tightly</span>
+<span id="cb8-281"><a href="#cb8-281" aria-hidden="true" tabindex="-1"></a>clustered).](images/fig-temp-vs-sunshine.png){#fig-temp-vs-sunshine fig-alt="Scatterplot of annual mean temperature against annual sunshine duration in hours, coloured by region. Points trend gently upward but are widely scattered, indicating a weak positive relationship."}</span>
+<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-283"><a href="#cb8-283" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparing Two Points in Time</span></span>
+<span id="cb8-284"><a href="#cb8-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-285"><a href="#cb8-285" aria-hidden="true" tabindex="-1"></a>The simplest way to ask "has it gotten warmer?" is to compare exactly two numbers: the</span>
+<span id="cb8-286"><a href="#cb8-286" aria-hidden="true" tabindex="-1"></a>temperature in one year against the temperature in another. Germany's national annual</span>
+<span id="cb8-287"><a href="#cb8-287" aria-hidden="true" tabindex="-1"></a>mean temperature was **8.35°C in 1991** and **10.89°C in 2024**, a difference of</span>
+<span id="cb8-288"><a href="#cb8-288" aria-hidden="true" tabindex="-1"></a>**+2.54°C** across the 34-year record.</span>
+<span id="cb8-289"><a href="#cb8-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-290"><a href="#cb8-290" aria-hidden="true" tabindex="-1"></a>::: {.exercise-box}</span>
+<span id="cb8-291"><a href="#cb8-291" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2.5 — Two years, then a more robust comparison</span></span>
+<span id="cb8-292"><a href="#cb8-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-293"><a href="#cb8-293" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: judge when comparing two single points is enough and recognise when you need something more robust than that. --&gt;</span></span>
+<span id="cb8-294"><a href="#cb8-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-295"><a href="#cb8-295" aria-hidden="true" tabindex="-1"></a>**Q8.** A single year can be unusually warm or cold on its own (recall 1996 from</span>
+<span id="cb8-296"><a href="#cb8-296" aria-hidden="true" tabindex="-1"></a>Exercise 2.3). Does resting a claim like "Germany has warmed" on just two single years,</span>
+<span id="cb8-297"><a href="#cb8-297" aria-hidden="true" tabindex="-1"></a>1991 and 2024, worry you? Why or why not?</span>
+<span id="cb8-298"><a href="#cb8-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-299"><a href="#cb8-299" aria-hidden="true" tabindex="-1"></a>To guard against exactly that risk, average across a full **decade** on each side</span>
+<span id="cb8-300"><a href="#cb8-300" aria-hidden="true" tabindex="-1"></a>instead of trusting one single year:</span>
+<span id="cb8-301"><a href="#cb8-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-302"><a href="#cb8-302" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb8-303"><a href="#cb8-303" aria-hidden="true" tabindex="-1"></a>de <span class="sc">%&gt;%</span></span>
+<span id="cb8-304"><a href="#cb8-304" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&lt;=</span> <span class="dv">2000</span> <span class="sc">|</span> Year <span class="sc">&gt;=</span> <span class="dv">2015</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-305"><a href="#cb8-305" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Period =</span> <span class="fu">if_else</span>(Year <span class="sc">&lt;=</span> <span class="dv">2000</span>, <span class="st">"1991-2000"</span>, <span class="st">"2015-2024"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-306"><a href="#cb8-306" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Period) <span class="sc">%&gt;%</span></span>
+<span id="cb8-307"><a href="#cb8-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_temp =</span> <span class="fu">mean</span>(Temperature_C))</span>
+<span id="cb8-308"><a href="#cb8-308" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-309"><a href="#cb8-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-310"><a href="#cb8-310" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Code walkthrough&lt;/summary&gt;</span>
+<span id="cb8-311"><a href="#cb8-311" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`filter(Year &lt;= 2000 | Year &gt;= 2015)`</span> — keep only rows from the two decades we're</span>
+<span id="cb8-312"><a href="#cb8-312" aria-hidden="true" tabindex="-1"></a>  comparing (<span class="in">`|`</span> means "or").</span>
+<span id="cb8-313"><a href="#cb8-313" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`mutate(Period = if_else(...))`</span> — <span class="in">`mutate()`</span> adds a new column; <span class="in">`if_else()`</span> fills each</span>
+<span id="cb8-314"><a href="#cb8-314" aria-hidden="true" tabindex="-1"></a>  row of it with a yes/no test: "is this row's <span class="in">`Year &lt;= 2000`</span>?" → label it "1991-2000",</span>
+<span id="cb8-315"><a href="#cb8-315" aria-hidden="true" tabindex="-1"></a>  otherwise "2015-2024".</span>
+<span id="cb8-316"><a href="#cb8-316" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`group_by(Period)`</span> — split the rows into two groups, one per <span class="in">`Period`</span> label.</span>
+<span id="cb8-317"><a href="#cb8-317" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`summarise(mean_temp = mean(Temperature_C))`</span> — collapse each group down to a single</span>
+<span id="cb8-318"><a href="#cb8-318" aria-hidden="true" tabindex="-1"></a>  number: its own mean.</span>
+<span id="cb8-319"><a href="#cb8-319" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb8-320"><a href="#cb8-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-321"><a href="#cb8-321" aria-hidden="true" tabindex="-1"></a>**Q9.** Compare the two ten-year windows: 1991–2000 against 2015–2024. Roughly how many</span>
+<span id="cb8-322"><a href="#cb8-322" aria-hidden="true" tabindex="-1"></a>degrees warmer does the recent decade look? Keep this number in mind — [Chapter</span>
+<span id="cb8-323"><a href="#cb8-323" aria-hidden="true" tabindex="-1"></a>3](03-statistical-inference.qmd) asks whether a gap this size is one you can trust as</span>
+<span id="cb8-324"><a href="#cb8-324" aria-hidden="true" tabindex="-1"></a>more than random year-to-year noise, or whether it could be chance.</span>
+<span id="cb8-325"><a href="#cb8-325" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-326"><a href="#cb8-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-327"><a href="#cb8-327" aria-hidden="true" tabindex="-1"></a>![Germany's national average temperature, grouped into an early decade (1991–2000) and</span>
+<span id="cb8-328"><a href="#cb8-328" aria-hidden="true" tabindex="-1"></a>a recent decade (2015–2024). The two groups barely</span>
+<span id="cb8-329"><a href="#cb8-329" aria-hidden="true" tabindex="-1"></a>overlap.](images/fig-temp-decade-comparison.png){#fig-temp-decade-comparison fig-alt="Bar chart comparing Germany's annual mean temperature in 1991 to 2000 versus 2015 to 2024, with dashed lines marking each decade's mean. The recent decade's bars sit almost entirely above the early decade's mean line."}</span>
+<span id="cb8-330"><a href="#cb8-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-331"><a href="#cb8-331" aria-hidden="true" tabindex="-1"></a>::: {.acemate-box}</span>
+<span id="cb8-332"><a href="#cb8-332" aria-hidden="true" tabindex="-1"></a>If a plot looks "off" (empty, all one colour, points stacked in a corner), ask your learning buddy to</span>
+<span id="cb8-333"><a href="#cb8-333" aria-hidden="true" tabindex="-1"></a>help you debug the <span class="in">`aes()`</span> mapping rather than asking it to just "make the plot" for you</span>
+<span id="cb8-334"><a href="#cb8-334" aria-hidden="true" tabindex="-1"></a>— you will need that debugging skill for your own challenge dataset, which won't come</span>
+<span id="cb8-335"><a href="#cb8-335" aria-hidden="true" tabindex="-1"></a>with a working example to copy.</span>
+<span id="cb8-336"><a href="#cb8-336" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-337"><a href="#cb8-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-338"><a href="#cb8-338" aria-hidden="true" tabindex="-1"></a>::: {.differentiation-box}</span>
+<span id="cb8-339"><a href="#cb8-339" aria-hidden="true" tabindex="-1"></a>::: {.struggling}</span>
+<span id="cb8-340"><a href="#cb8-340" aria-hidden="true" tabindex="-1"></a>If <span class="in">`ggplot()`</span> still feels like memorising magic incantations rather than composing</span>
+<span id="cb8-341"><a href="#cb8-341" aria-hidden="true" tabindex="-1"></a>layers: <span class="co">[</span><span class="ot">swirl</span><span class="co">](https://swirlstats.com/students.html)</span> runs short interactive R exercises</span>
+<span id="cb8-342"><a href="#cb8-342" aria-hidden="true" tabindex="-1"></a>directly in your own console, including a "Data Visualization" module built for exactly</span>
+<span id="cb8-343"><a href="#cb8-343" aria-hidden="true" tabindex="-1"></a>this stage.</span>
+<span id="cb8-344"><a href="#cb8-344" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-345"><a href="#cb8-345" aria-hidden="true" tabindex="-1"></a>::: {.deeper}</span>
+<span id="cb8-346"><a href="#cb8-346" aria-hidden="true" tabindex="-1"></a>Exercise 2.5 compares just two snapshots. If you are curious whether the warming shows</span>
+<span id="cb8-347"><a href="#cb8-347" aria-hidden="true" tabindex="-1"></a>up gradually across the whole 34-year record and whether every individual region warms</span>
+<span id="cb8-348"><a href="#cb8-348" aria-hidden="true" tabindex="-1"></a>at the same pace or one stands out, here is the full picture: the national average</span>
+<span id="cb8-349"><a href="#cb8-349" aria-hidden="true" tabindex="-1"></a>year by year, then the same data broken down by region.</span>
+<span id="cb8-350"><a href="#cb8-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-351"><a href="#cb8-351" aria-hidden="true" tabindex="-1"></a>![Germany's national annual mean temperature, 1991–2024, noisy year to year, with a</span>
+<span id="cb8-352"><a href="#cb8-352" aria-hidden="true" tabindex="-1"></a>fitted linear trend of about +0.5°C per</span>
+<span id="cb8-353"><a href="#cb8-353" aria-hidden="true" tabindex="-1"></a>decade.](images/fig-temp-trend-national.png){#fig-temp-trend-national fig-alt="Line chart of Germany's national annual mean temperature in degrees Celsius from 1991 to 2024, noisy year to year but with a clear rising trend, dropping sharply to a record low around 1996 and reaching its highest points in the final years."}</span>
+<span id="cb8-354"><a href="#cb8-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-355"><a href="#cb8-355" aria-hidden="true" tabindex="-1"></a>![Annual mean temperature by region, 1991–2024, with the national average in black, a</span>
+<span id="cb8-356"><a href="#cb8-356" aria-hidden="true" tabindex="-1"></a>real, visibly noisy but unmistakably rising trend in every</span>
+<span id="cb8-357"><a href="#cb8-357" aria-hidden="true" tabindex="-1"></a>region.](images/fig-temp-trend-by-region.png){#fig-temp-trend-by-region fig-alt="Line chart of annual mean temperature in degrees Celsius for five German regions and the national average, 1991 to 2024. All lines show a noisy year-to-year path with a clear overall upward trend, with 1996 and 2010 standing out as unusually cold years."}</span>
+<span id="cb8-358"><a href="#cb8-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-359"><a href="#cb8-359" aria-hidden="true" tabindex="-1"></a>If the Grammar of Graphics idea clicked and you want the complete system behind it:</span>
+<span id="cb8-360"><a href="#cb8-360" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">ggplot2: Elegant Graphics for Data Analysis</span><span class="co">](https://ggplot2-book.org/)</span> (free online) is</span>
+<span id="cb8-361"><a href="#cb8-361" aria-hidden="true" tabindex="-1"></a>the authoritative deep dive, written by the package's own author.</span>
+<span id="cb8-362"><a href="#cb8-362" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-363"><a href="#cb8-363" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-364"><a href="#cb8-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-365"><a href="#cb8-365" aria-hidden="true" tabindex="-1"></a>::: {.sources-box}</span>
+<span id="cb8-366"><a href="#cb8-366" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">R for Data Science (r4ds)</span><span class="co">](https://r4ds.hadley.nz/)</span> ·</span>
+<span id="cb8-367"><a href="#cb8-367" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">DataCamp — Data Analyst with R</span><span class="co">](https://app.datacamp.com/learn/career-tracks/data-analyst-with-r)</span> ·</span>
+<span id="cb8-368"><a href="#cb8-368" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Data Visualization: A Practical Introduction</span><span class="co">](https://socviz.co/)</span> ·</span>
+<span id="cb8-369"><a href="#cb8-369" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Fundamentals of Data Visualization</span><span class="co">](https://clauswilke.com/dataviz/)</span>.</span>
+<span id="cb8-370"><a href="#cb8-370" aria-hidden="true" tabindex="-1"></a>Full list with descriptions: <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources.qmd#exploring-and-visualising-data)</span>.</span>
+<span id="cb8-371"><a href="#cb8-371" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-372"><a href="#cb8-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-373"><a href="#cb8-373" aria-hidden="true" tabindex="-1"></a><span class="fu">## Check your understanding</span></span>
+<span id="cb8-374"><a href="#cb8-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-375"><a href="#cb8-375" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Can you explain, to someone who has never seen <span class="in">`ggplot2`</span>, what each layer</span>
+<span id="cb8-376"><a href="#cb8-376" aria-hidden="true" tabindex="-1"></a>  (data → aes → geom → facet) contributes?</span>
+<span id="cb8-377"><a href="#cb8-377" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Given a new numeric variable, could you describe its distribution in words (centre,</span>
+<span id="cb8-378"><a href="#cb8-378" aria-hidden="true" tabindex="-1"></a>  spread, skew) from a histogram alone?</span>
+<span id="cb8-379"><a href="#cb8-379" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Can you distinguish a genuine environmental extreme from a data-quality problem and</span>
+<span id="cb8-380"><a href="#cb8-380" aria-hidden="true" tabindex="-1"></a>  say what should happen to each?</span>
+<span id="cb8-381"><a href="#cb8-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-382"><a href="#cb8-382" aria-hidden="true" tabindex="-1"></a>Continue to <span class="co">[</span><span class="ot">Chapter 3, Statistical Inference</span><span class="co">](03-statistical-inference.qmd)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Global Citizenship and Environmental Stewardship (DAAD/BMBF, P24)</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>CC BY 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,453 @@
+# Welcome {.unnumbered}
+
+::: {.callout-tip appearance="simple"}
+## Module principle
+You will investigate a real-world environmental challenge using a dataset from Eurostat
+or an Indian open-data source such as data.gov.in, the India Meteorological Department,
+or the Central Pollution Control Board.
+You may complete only the competency areas you need for your challenge, or work through
+all areas for a comprehensive overview of data analysis in STEM. An **AI learning
+buddy** (Acemate, for example) accompanies you throughout the process.
+
+**Required final outputs:** an interactive dashboard and a short scientific report.
+:::
+
+## 1. Welcome to the Module
+
+Environmental decisions increasingly depend on data. Researchers, policymakers and
+communities use data to understand environmental change, compare possible solutions and
+make informed decisions.
+
+However, working with data involves more than creating graphs or calculating statistical
+values. You also need to ask:
+
+- Where does the data come from?
+- Is the data reliable?
+- Which methods are appropriate?
+- What conclusions can be drawn?
+- What uncertainties and limitations remain?
+- How can the results be communicated responsibly?
+
+In this module, you will learn to work with real environmental data and use it to
+investigate a relevant sustainability challenge.
+
+To make these skills concrete rather than abstract, competency areas 1–4 all use the
+**same worked example**: real, open climate data from the Deutscher Wetterdienst (DWD),
+covering five German regions across 34 years (1991–2024, CC BY 4.0) so you can practice
+comparing meaningfully different time periods against each other. You will meet its
+raw, messy version in Chapter 1, clean it yourself and then reuse the tidy result in
+every chapter after that — so each new method (a plot, a confidence interval, a
+regression model) is applied to data you already understand, instead of a new
+unfamiliar dataset every time.
+
+::: {.callout-important}
+## Your central goal
+Use data analysis to investigate and respond to a real-world environmental challenge.
+:::
+
+Numbers alone rarely tell the whole story. Alongside the quantitative analysis, this
+module also asks you to build a qualitative view: noticing where your data comes from
+and what it leaves out. That's what the occasional reflection exercise you'll meet along
+the way is for; [Chapter
+7](07-sustainability-problem-solving.qmd#why-global-matters-data-perspective-and-responsibility)
+picks this up once you have a challenge and dataset of your own to practice it on.
+
+The learning resources and exercises in this module will help you develop the
+competencies required to complete this task.
+
+## 2. How This Module Works
+
+This module is **not** organised as a fixed sequence of chapters that everyone must
+complete in the same order. It has two parts:
+
+- **This overview page:** orientation, self-assessment and selecting your Real-World
+  Challenge and challenge dataset (Eurostat or an Indian open-data source).
+- **The eight lessons that follow:** competency areas you draw on as your challenge
+  requires them.
+
+You will begin by selecting a Real-World Challenge. You will then analyse the task and
+identify which data, methods and competencies you need. Your learning process will
+generally follow these steps:
+
+1. Select a Real-World Challenge.
+2. Understand and structure the problem.
+3. Identify the data and competencies you need.
+4. Complete relevant learning units and exercises.
+5. Apply your new skills to the challenge.
+6. Interpret, communicate and reflect on your findings.
+
+You may move between the challenge and the learning resources several times. When you
+encounter a new question or difficulty, your AI learning buddy can help you identify the
+next useful learning step.
+
+::: {.callout-note}
+## One dataset, all the way through Rubrics 1–4
+Rubrics 1–4 use a common worked example — real, open annual climate data (temperature,
+precipitation, sunshine duration) for five German regions from the Deutscher
+Wetterdienst, 1991–2024, CC BY 4.0 — so that you can build the core skills on a
+real, well-documented dataset before applying them to your own, messier Eurostat
+challenge dataset. You clean it yourself in Chapter 1; the exact same clean dataset then
+carries through the exploration, inference and modelling chapters, so every technique you
+learn is demonstrated on data you're already familiar with — including comparing an
+early decade (1991–2000) against a recent one (2015–2024), the same kind of
+period-over-period comparison your own challenge dataset may call for. See
+[Resources → Practice dataset](resources.qmd#practice-dataset) for the full data
+dictionary.
+:::
+
+## 3. Explore the Competency Areas
+
+The module contains eight competency areas. These are not compulsory chapters that must
+always be completed in order. They form a collection of learning resources you can use
+according to the needs of your challenge.
+
+| # | Competency area | Guiding question |
+|---|---|---|
+| 1 | [Understanding and Managing Data](01-understanding-data.qmd) | What data do I have and how reliable is it? |
+| 2 | [Exploring and Visualising Data](02-exploring-visualizing.qmd) | What patterns can I discover in the data? |
+| 3 | [Statistical Inference](03-statistical-inference.qmd) | Can I trust the patterns I observe? |
+| 4 | [Statistical Modelling](04-statistical-modelling.qmd) | Which factors may explain the observed patterns? |
+| 5 | [Reproducible Research](05-reproducible-research.qmd) | Could someone else reproduce my analysis? |
+| 6 | [AI-Assisted Learning and Analysis](06-ai-assisted-learning.qmd) | How can AI support my scientific workflow without replacing my own reasoning? |
+| 7 | [Sustainability Problem Solving](07-sustainability-problem-solving.qmd) | How can data contribute to understanding and addressing this sustainability challenge? |
+| 8 | [Scientific Communication](08-scientific-communication.qmd) | How can I communicate my findings clearly and responsibly? |
+
+Each chapter opens with the underlying environmental question, works through the concept
+with a real-world analogy, gives you a hands-on exercise and points you to further open
+resources if you want to go deeper.
+
+## 4. Choose Your Learning Path
+
+There are two main ways to use this module.
+
+**Challenge-Based Learning Path.** Complete only the competency areas you need for your
+selected challenge. For example, comparing greenhouse gas emissions in two different
+years may mainly require *Understanding and Managing Data*, *Exploring and Visualising
+Data* and *Scientific Communication*. A more complex investigation of the factors
+influencing emissions may additionally require *Statistical Inference*, *Statistical
+Modelling* and *Reproducible Research*. Your AI learning buddy can help you decide which
+areas are relevant to your task.
+
+**Full Data Analysis Learning Path.** Complete all competency areas for a comprehensive
+overview of the complete data analysis process in STEM — from understanding and
+preparing data to visualisation, statistical inference, modelling, reproducibility and
+communication.
+
+::: {.callout-important}
+## Important
+You do not have to complete every competency area to solve your challenge. However,
+completing all areas will provide you with a comprehensive overview of data analysis in
+STEM.
+:::
+
+## 5. Meet Your AI Learning Buddy {#meet-acemate-your-learning-buddy}
+
+Your AI learning buddy accompanies you throughout the module as a **learning
+navigator**, not an answer generator. You can ask it for support when you:
+
+- do not fully understand the challenge
+- need help structuring your investigation
+- are unsure which competencies you need
+- are looking for a suitable exercise or learning resource
+- need an explanation of a statistical concept
+- encounter a problem with R code
+- want to check your understanding
+- need help interpreting a result
+- are unsure about your next learning step
+
+::: {.acemate-box}
+**What it can do:** explain concepts in different ways · recommend relevant
+resources · guide you through intermediate steps · ask questions to check your
+understanding · give feedback on your reasoning · help you plan your learning path.
+
+**What it will not do:** complete the challenge for you. You remain responsible for
+selecting appropriate methods, checking code and calculations, evaluating data quality,
+interpreting results and drawing scientific conclusions.
+:::
+
+::: {.callout-warning}
+## Use AI critically
+Your AI learning buddy supports your scientific thinking. It does not replace it. Always check
+AI-generated code, explanations and interpretations critically — see
+[Chapter 6, AI-Assisted Learning and Analysis](06-ai-assisted-learning.qmd) for how to
+do this well.
+:::
+
+Working effectively with your AI learning buddy is itself a competency taught in this
+module (Rubric 6): the module models a **Socratic dialogue** style of AI use, in which
+it asks questions back rather than handing you finished answers, so that you practice
+"computational offloading" of routine steps while keeping the scientific judgement with
+you.
+
+::: {.callout-tip}
+## No access to Acemate? Any AI learning buddy works just as well
+Acemate is this module's default recommendation for an AI learning buddy. But the module
+doesn't depend on it: if your Acemate access ever lapses (e.g. a licence renewal gap) or
+you simply prefer a different tool, any
+general-purpose AI assistant can fill the same role, using the same Socratic-dialogue
+approach described above.
+
+- **General chat assistants** (ChatGPT, Claude, Gemini, …) — paste the relevant lesson
+  text, or your own code and question, directly into the chat.
+- **[NotebookLM](https://notebooklm.google/)** is particularly well suited to this
+  module, because it answers *grounded in documents you give it* rather than from
+  general knowledge alone. Add this module's pages as sources (one web-page link per
+  chapter — NotebookLM accepts up to 50 sources per notebook, far more than the ten
+  pages here), or, if the site isn't hosted online, add the `.qmd` files directly:
+  NotebookLM also accepts plain text and Markdown files, so it can read this module's
+  chapters exactly as written.
+
+Whichever tool you use, the boundary described above ("what it should and shouldn't do
+for you") still applies — that's a property of *how* you use AI, not of *which* AI you
+use.
+:::
+
+## 6. Assess Your Starting Point
+
+Before selecting your challenge, complete this short, **ungraded** self-assessment. Its
+purpose is to help you (and your AI learning buddy) identify your prior experience and likely learning
+needs — it does not determine whether you can participate in the module.
+
+::: {.exercise-box}
+**Self-assessment prompts** (talk these through with your AI learning buddy if you like):
+
+1. Have you worked with R before? At what level (never / a little / comfortably)?
+2. Can you distinguish between numerical and categorical variables?
+3. Can you interpret common data visualisations (histograms, boxplots, scatterplots)?
+4. Are you familiar with confidence intervals or hypothesis tests?
+5. Have you worked with regression models?
+6. Have you used Quarto or GitHub before?
+7. Have you previously used an AI tool to support data analysis? How?
+
+There are no right or wrong starting points. You do not need previous experience in
+every area. Your AI learning buddy can use your answers to recommend suitable
+introductory or advanced material within each chapter.
+:::
+
+## 7. Select a Real-World Challenge
+
+You will now explore the **Challenge Library** and select an environmental or
+sustainability topic that interests you. For your investigation, you will use an
+environmental dataset from **either** of two sources:
+
+- **Eurostat**, which provides comparable statistical data for European countries
+  across a wide range of environmental topics and time periods; or
+- **an Indian open-data source**, most straightforwardly the [Open Government
+  Data (OGD) Platform India](https://www.data.gov.in/) (data.gov.in), which publishes
+  datasets from bodies such as the India Meteorological Department (IMD) and the
+  Central Pollution Control Board (CPCB) under the Government Open Data License – India
+  (GODL) — attribution-required and functionally comparable to CC BY, but not the same
+  license, so cite it by its own name, not as "CC BY 4.0".
+
+Both options are equally valid starting points; pick whichever matches your challenge
+topic and interests you more. What matters is that the source is a recognised public
+body (not a blog, a news article's chart, or an unsourced spreadsheet) and that its
+licence is clear enough to cite properly in your final report.
+
+[Explore environmental data in the Eurostat Data
+Browser](https://ec.europa.eu/eurostat/databrowser/explore/all/envir?sort=category&lang=en&display=list){target="_blank"}
+· [Explore Indian open data on
+data.gov.in](https://www.data.gov.in/){target="_blank"}
+
+Possible challenge areas include:
+
+- climate change and greenhouse gas emissions
+- renewable energy
+- water use and water availability
+- waste generation and recycling (incl. microplastics)
+- air pollution
+- biodiversity
+- land-use change
+- environmental pressures from economic activities
+
+For each challenge, you will need to:
+
+- prepare a short introduction to the environmental issue
+- draft a specific analytical task
+- find a suitable dataset (Eurostat or an Indian open-data source)
+- select possible countries, regions, sectors or years to compare
+- indicate the level of difficulty
+- choose recommended competency areas
+- create a personal learning pathway toward a dashboard and scientific report
+
+You may select one of the suggested challenges or develop your own analytical question
+based on an appropriate Eurostat or Indian environmental dataset. If your interest leans
+toward climate change, temperature trends, or extreme-weather frequency, you will
+already be warmed up from the practice dataset used across Rubrics 1–4 — the same kind
+of region-level, period-over-period comparison you practiced there (Chapters 2–4)
+transfers directly, whether your own dataset ends up being Eurostat's temperature series
+or IMD's regional rainfall records. If your interest leans instead toward water,
+wastewater, or groundwater, Eurostat's water-use, water-quality and water-stress
+indicators, or India's Central Water Commission and CPCB data are natural starting
+points too.
+
+### Example Challenge: Greenhouse Gas Emissions in Europe
+
+The European Union has committed to reducing greenhouse gas emissions. However,
+emissions have not developed equally across all countries and economic sectors.
+
+**Your task:** Compare greenhouse gas emissions in two selected years. Identify which
+countries or sectors contributed most to the observed changes and explain the
+environmental significance of your findings.
+
+**Available data:** Eurostat greenhouse gas emissions data. You may, for example,
+compare two selected years, compare several European countries, compare economic
+sectors, identify the largest absolute or relative changes, or examine developments
+over a longer time period.
+
+::: {.callout-important}
+## Required final output
+You will present your results in an interactive dashboard, built with
+**[`shinydashboard`](https://rstudio.github.io/shinydashboard/)** and a short scientific
+report. The dashboard should make the most important patterns and comparisons
+accessible. The report should explain your analytical question, methods, results,
+uncertainties and conclusions.
+:::
+
+### Your Challenge Selection Task
+
+Before beginning your data analysis, submit a short proposal for your Real-World
+Challenge. This proposal forms the starting point for your further work in the module.
+
+::: {.exercise-box}
+**1. Introduce the Real-World Challenge.** Briefly describe the environmental or
+sustainability issue you would like to investigate: what the central environmental
+problem is, which geographical area, countries or sectors are involved, why the issue is
+relevant and how data analysis can contribute to a better understanding of it. Ground
+this in at least one or two academic or scientific sources (a journal article, a
+report chapter from a body like the IPCC or UNEP, a textbook) rather than only news
+articles or the dataset's own metadata, so your framing of the problem is scientifically
+informed. Keep this concise — its purpose is environmental context.
+
+**2. Formulate a Research Question.** Develop one clear, manageable research question
+answerable with the selected data. It should specify the environmental indicator or
+phenomenon, the countries/sectors/categories and the period or years to compare. Example:
+*"How did greenhouse gas emissions from different economic sectors change in Germany
+between 2005 and 2023 and which sectors contributed most to the overall reduction?"*
+Your question may be adjusted later if initial exploration shows the required data are
+unavailable or the question is too broad.
+
+**3. Select and Justify a Dataset (Eurostat or an Indian source).** Provide the
+dataset title, code (where available), a link, a short description and a
+justification: which variables does it contain, which countries/regions/sectors and
+years are included, in which units and are there visible gaps or limitations? State
+the licence explicitly (e.g. "Eurostat — free re-use with attribution" or "data.gov.in —
+GODL-India") — this is the same provenance discipline from [Chapter
+1](01-understanding-data.qmd). Do not select a dataset only because it is related to
+your general topic — make sure its variables, geographical coverage and time frame
+actually match your research question.
+
+**4. Define the Temporal Scope.** Choose between:
+
+- *Minimum requirement:* comparison of at least two years (e.g. a baseline year and the
+  most recent available year, or years before/after a policy intervention).
+- *Advanced option:* a time-series analysis across several consecutive years, to
+  identify long-term trends, periods of increase or decline and cross-country/sector
+  comparisons.
+
+**Required submission** (≈300–500 words): title, environmental problem (with at least
+one or two academic or scientific sources cited), research question, selected dataset
+(source, link + code/identifier, licence), justification, selected
+countries/regions/sectors/categories/indicators, temporal approach and why the time
+period is meaningful.
+:::
+
+::: {.acemate-box}
+Your AI learning buddy can help you narrow down a broad environmental topic, formulate a
+clear and answerable research question, identify the data required, examine whether a
+dataset matches your question, compare possible Eurostat or Indian datasets and check
+whether your selected years are meaningful. It may ask: *"What exactly do
+you want to compare?"*, *"Does the dataset contain the countries or regions, sectors and
+years you need?"*, *"Would a two-year comparison be sufficient, or would a time series
+give a more meaningful answer?"* — but you remain responsible for the final choice and
+its justification.
+:::
+
+## 8. Understand and Narrow Down Your Challenge
+
+Most environmental challenges are initially broad and complex. Before beginning your
+analysis, turn your selected topic into a specific, manageable investigation. Your AI
+learning buddy can guide you through questions such as: What is the central environmental problem? What
+exactly are you expected to investigate? Which countries, regions, sectors or years
+could you compare? Which variables might be relevant? What information is available in
+the dataset? What do you already know and what do you still need to find out? What
+would a convincing answer look like?
+
+At the end of this stage you should have: a clearly defined analytical question, a
+selected dataset, a comparison or analytical focus and an initial idea of the required
+methods.
+
+## 9. Create Your Personal Learning Path
+
+After narrowing down your challenge, create a personal learning path with support from
+your AI learning buddy. First, consider: which parts of the dataset do you need to understand? Do you
+need to clean or transform the data? Which visualisations could help investigate the
+question? Do you need a statistical test? Do you need to model relationships between
+variables? How will you document and communicate your results?
+
+A possible learning path:
+
+::: {layout-ncol="1"}
+Understanding and Managing Data → Exploring and Visualising Data → Statistical Inference
+→ Statistical Modelling → Reproducible Research → Scientific Communication
+:::
+
+Your learning path is flexible and may change during your investigation. For example,
+after visualising the data, your AI learning buddy may ask: *"You have identified
+differences between the two years. Would you now like to assess whether these
+differences are statistically meaningful?"* You may then decide to work on Statistical
+Inference before returning to your challenge.
+
+## 10. Complete Your Final Challenge
+
+Your final task is to answer your analytical question using data and to document your
+process transparently.
+
+::: {.callout-important}
+## Required final outputs
+You will produce two connected outputs: (1) an interactive dashboard built with
+[`shinydashboard`](https://rstudio.github.io/shinydashboard/) and (2) a short scientific
+report.
+:::
+
+**1. Interactive Dashboard.** Built with **`shinydashboard`** (not a static plot or a
+plain Shiny app without the dashboard layout — see
+[Chapter 8's exact requirements](08-scientific-communication.qmd#building-the-interactive-dashboard)),
+it must give a clear, accessible overview of the most important findings — not simply a
+display of all available data. Depending on your challenge and dataset, it should
+include key environmental indicators, comparisons between countries/sectors/years,
+appropriate charts, at least one working input control that filters what's shown, short
+explanations, clear units and sources and relevant limitations. Present your findings
+**both quantitatively and qualitatively**: alongside the charts, a short written panel
+should say who is affected by the pattern shown and why it matters beyond this one place
+(see [Chapter 7](07-sustainability-problem-solving.qmd#why-global-matters-data-perspective-and-responsibility)).
+Your visualisations should be scientifically accurate, clearly labelled, suitable for the
+data type, accessible to the intended audience and directly connected to your research
+question. See [Chapter 8, Scientific Communication](08-scientific-communication.qmd) for
+the full, worked dashboard build with all required elements listed.
+
+**2. Short Scientific Report**, with sections: *Research Question*, *Environmental
+Context*, *Data* (dataset, variables, coverage, units, limitations), *Methods* (cleaning,
+comparisons, visualisations, statistical methods/models), *Results*, *Discussion*
+(interpretation, uncertainty, limitations, what cannot be concluded), *Conclusion* and
+*References and Data Sources*.
+
+**Reproducibility.** The dashboard and report should share the same transparent
+analytical workflow. Submit: the original data source, the code used to prepare and
+analyse the data, the code used to create the visualisations and dashboard and enough
+documentation for someone else to understand and reproduce your analysis (see
+[Chapter 5, Reproducible Research](05-reproducible-research.qmd)).
+
+The Real-World Challenge is both the central learning activity and the final
+demonstration of your competencies. You are not expected to use every method in the
+module — you are expected to select and apply the methods appropriate for your question
+and explain your decisions. By completing the dashboard and report, you demonstrate that
+you can investigate an environmental problem using real data, select and apply
+appropriate analytical methods, visualise findings effectively, critically evaluate
+evidence and uncertainty, work reproducibly and communicate scientific results to
+different audiences.
+
+::: {.callout-tip}
+Ready? Start with [Chapter 1, Understanding and Managing Data](01-understanding-data.qmd),
+or jump straight to whichever competency area your challenge needs.
+:::

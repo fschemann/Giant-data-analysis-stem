@@ -1,0 +1,769 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Analysis in STEM",
+    "section": "",
+    "text": "Welcome",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#welcome-to-the-module",
+    "href": "index.html#welcome-to-the-module",
+    "title": "Data Analysis in STEM",
+    "section": "1. Welcome to the Module",
+    "text": "1. Welcome to the Module\nEnvironmental decisions increasingly depend on data. Researchers, policymakers and communities use data to understand environmental change, compare possible solutions and make informed decisions.\nHowever, working with data involves more than creating graphs or calculating statistical values. You also need to ask:\n\nWhere does the data come from?\nIs the data reliable?\nWhich methods are appropriate?\nWhat conclusions can be drawn?\nWhat uncertainties and limitations remain?\nHow can the results be communicated responsibly?\n\nIn this module, you will learn to work with real environmental data and use it to investigate a relevant sustainability challenge.\nTo make these skills concrete rather than abstract, competency areas 1–4 all use the same worked example: real, open climate data from the Deutscher Wetterdienst (DWD), covering five German regions across 34 years (1991–2024, CC BY 4.0) so you can practice comparing meaningfully different time periods against each other. You will meet its raw, messy version in Chapter 1, clean it yourself and then reuse the tidy result in every chapter after that — so each new method (a plot, a confidence interval, a regression model) is applied to data you already understand, instead of a new unfamiliar dataset every time.\n\n\n\n\n\n\nYour central goal\n\n\n\nUse data analysis to investigate and respond to a real-world environmental challenge.\n\n\nNumbers alone rarely tell the whole story. Alongside the quantitative analysis, this module also asks you to build a qualitative view: noticing where your data comes from and what it leaves out. That’s what the occasional reflection exercise you’ll meet along the way is for; Chapter 7 picks this up once you have a challenge and dataset of your own to practice it on.\nThe learning resources and exercises in this module will help you develop the competencies required to complete this task.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#how-this-module-works",
+    "href": "index.html#how-this-module-works",
+    "title": "Data Analysis in STEM",
+    "section": "2. How This Module Works",
+    "text": "2. How This Module Works\nThis module is not organised as a fixed sequence of chapters that everyone must complete in the same order. It has two parts:\n\nThis overview page: orientation, self-assessment and selecting your Real-World Challenge and challenge dataset (Eurostat or an Indian open-data source).\nThe eight lessons that follow: competency areas you draw on as your challenge requires them.\n\nYou will begin by selecting a Real-World Challenge. You will then analyse the task and identify which data, methods and competencies you need. Your learning process will generally follow these steps:\n\nSelect a Real-World Challenge.\nUnderstand and structure the problem.\nIdentify the data and competencies you need.\nComplete relevant learning units and exercises.\nApply your new skills to the challenge.\nInterpret, communicate and reflect on your findings.\n\nYou may move between the challenge and the learning resources several times. When you encounter a new question or difficulty, your AI learning buddy can help you identify the next useful learning step.\n\n\n\n\n\n\nOne dataset, all the way through Rubrics 1–4\n\n\n\nRubrics 1–4 use a common worked example — real, open annual climate data (temperature, precipitation, sunshine duration) for five German regions from the Deutscher Wetterdienst, 1991–2024, CC BY 4.0 — so that you can build the core skills on a real, well-documented dataset before applying them to your own, messier Eurostat challenge dataset. You clean it yourself in Chapter 1; the exact same clean dataset then carries through the exploration, inference and modelling chapters, so every technique you learn is demonstrated on data you’re already familiar with — including comparing an early decade (1991–2000) against a recent one (2015–2024), the same kind of period-over-period comparison your own challenge dataset may call for. See Resources → Practice dataset for the full data dictionary.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#explore-the-competency-areas",
+    "href": "index.html#explore-the-competency-areas",
+    "title": "Data Analysis in STEM",
+    "section": "3. Explore the Competency Areas",
+    "text": "3. Explore the Competency Areas\nThe module contains eight competency areas. These are not compulsory chapters that must always be completed in order. They form a collection of learning resources you can use according to the needs of your challenge.\n\n\n\n#\nCompetency area\nGuiding question\n\n\n\n\n1\nUnderstanding and Managing Data\nWhat data do I have and how reliable is it?\n\n\n2\nExploring and Visualising Data\nWhat patterns can I discover in the data?\n\n\n3\nStatistical Inference\nCan I trust the patterns I observe?\n\n\n4\nStatistical Modelling\nWhich factors may explain the observed patterns?\n\n\n5\nReproducible Research\nCould someone else reproduce my analysis?\n\n\n6\nAI-Assisted Learning and Analysis\nHow can AI support my scientific workflow without replacing my own reasoning?\n\n\n7\nSustainability Problem Solving\nHow can data contribute to understanding and addressing this sustainability challenge?\n\n\n8\nScientific Communication\nHow can I communicate my findings clearly and responsibly?\n\n\n\nEach chapter opens with the underlying environmental question, works through the concept with a real-world analogy, gives you a hands-on exercise and points you to further open resources if you want to go deeper.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#choose-your-learning-path",
+    "href": "index.html#choose-your-learning-path",
+    "title": "Data Analysis in STEM",
+    "section": "4. Choose Your Learning Path",
+    "text": "4. Choose Your Learning Path\nThere are two main ways to use this module.\nChallenge-Based Learning Path. Complete only the competency areas you need for your selected challenge. For example, comparing greenhouse gas emissions in two different years may mainly require Understanding and Managing Data, Exploring and Visualising Data and Scientific Communication. A more complex investigation of the factors influencing emissions may additionally require Statistical Inference, Statistical Modelling and Reproducible Research. Your AI learning buddy can help you decide which areas are relevant to your task.\nFull Data Analysis Learning Path. Complete all competency areas for a comprehensive overview of the complete data analysis process in STEM — from understanding and preparing data to visualisation, statistical inference, modelling, reproducibility and communication.\n\n\n\n\n\n\nImportant\n\n\n\nYou do not have to complete every competency area to solve your challenge. However, completing all areas will provide you with a comprehensive overview of data analysis in STEM.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#meet-acemate-your-learning-buddy",
+    "href": "index.html#meet-acemate-your-learning-buddy",
+    "title": "Data Analysis in STEM",
+    "section": "5. Meet Your AI Learning Buddy",
+    "text": "5. Meet Your AI Learning Buddy\nYour AI learning buddy accompanies you throughout the module as a learning navigator, not an answer generator. You can ask it for support when you:\n\ndo not fully understand the challenge\nneed help structuring your investigation\nare unsure which competencies you need\nare looking for a suitable exercise or learning resource\nneed an explanation of a statistical concept\nencounter a problem with R code\nwant to check your understanding\nneed help interpreting a result\nare unsure about your next learning step\n\n\nWhat it can do: explain concepts in different ways · recommend relevant resources · guide you through intermediate steps · ask questions to check your understanding · give feedback on your reasoning · help you plan your learning path.\nWhat it will not do: complete the challenge for you. You remain responsible for selecting appropriate methods, checking code and calculations, evaluating data quality, interpreting results and drawing scientific conclusions.\n\n\n\n\n\n\n\nUse AI critically\n\n\n\nYour AI learning buddy supports your scientific thinking. It does not replace it. Always check AI-generated code, explanations and interpretations critically — see Chapter 6, AI-Assisted Learning and Analysis for how to do this well.\n\n\nWorking effectively with your AI learning buddy is itself a competency taught in this module (Rubric 6): the module models a Socratic dialogue style of AI use, in which it asks questions back rather than handing you finished answers, so that you practice “computational offloading” of routine steps while keeping the scientific judgement with you.\n\n\n\n\n\n\nNo access to Acemate? Any AI learning buddy works just as well\n\n\n\nAcemate is this module’s default recommendation for an AI learning buddy. But the module doesn’t depend on it: if your Acemate access ever lapses (e.g. a licence renewal gap) or you simply prefer a different tool, any general-purpose AI assistant can fill the same role, using the same Socratic-dialogue approach described above.\n\nGeneral chat assistants (ChatGPT, Claude, Gemini, …) — paste the relevant lesson text, or your own code and question, directly into the chat.\nNotebookLM is particularly well suited to this module, because it answers grounded in documents you give it rather than from general knowledge alone. Add this module’s pages as sources (one web-page link per chapter — NotebookLM accepts up to 50 sources per notebook, far more than the ten pages here), or, if the site isn’t hosted online, add the .qmd files directly: NotebookLM also accepts plain text and Markdown files, so it can read this module’s chapters exactly as written.\n\nWhichever tool you use, the boundary described above (“what it should and shouldn’t do for you”) still applies — that’s a property of how you use AI, not of which AI you use.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#assess-your-starting-point",
+    "href": "index.html#assess-your-starting-point",
+    "title": "Data Analysis in STEM",
+    "section": "6. Assess Your Starting Point",
+    "text": "6. Assess Your Starting Point\nBefore selecting your challenge, complete this short, ungraded self-assessment. Its purpose is to help you (and your AI learning buddy) identify your prior experience and likely learning needs — it does not determine whether you can participate in the module.\n\nSelf-assessment prompts (talk these through with your AI learning buddy if you like):\n\nHave you worked with R before? At what level (never / a little / comfortably)?\nCan you distinguish between numerical and categorical variables?\nCan you interpret common data visualisations (histograms, boxplots, scatterplots)?\nAre you familiar with confidence intervals or hypothesis tests?\nHave you worked with regression models?\nHave you used Quarto or GitHub before?\nHave you previously used an AI tool to support data analysis? How?\n\nThere are no right or wrong starting points. You do not need previous experience in every area. Your AI learning buddy can use your answers to recommend suitable introductory or advanced material within each chapter.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#select-a-real-world-challenge",
+    "href": "index.html#select-a-real-world-challenge",
+    "title": "Data Analysis in STEM",
+    "section": "7. Select a Real-World Challenge",
+    "text": "7. Select a Real-World Challenge\nYou will now explore the Challenge Library and select an environmental or sustainability topic that interests you. For your investigation, you will use an environmental dataset from either of two sources:\n\nEurostat, which provides comparable statistical data for European countries across a wide range of environmental topics and time periods; or\nan Indian open-data source, most straightforwardly the Open Government Data (OGD) Platform India (data.gov.in), which publishes datasets from bodies such as the India Meteorological Department (IMD) and the Central Pollution Control Board (CPCB) under the Government Open Data License – India (GODL) — attribution-required and functionally comparable to CC BY, but not the same license, so cite it by its own name, not as “CC BY 4.0”.\n\nBoth options are equally valid starting points; pick whichever matches your challenge topic and interests you more. What matters is that the source is a recognised public body (not a blog, a news article’s chart, or an unsourced spreadsheet) and that its licence is clear enough to cite properly in your final report.\nExplore environmental data in the Eurostat Data Browser · Explore Indian open data on data.gov.in\nPossible challenge areas include:\n\nclimate change and greenhouse gas emissions\nrenewable energy\nwater use and water availability\nwaste generation and recycling (incl. microplastics)\nair pollution\nbiodiversity\nland-use change\nenvironmental pressures from economic activities\n\nFor each challenge, you will need to:\n\nprepare a short introduction to the environmental issue\ndraft a specific analytical task\nfind a suitable dataset (Eurostat or an Indian open-data source)\nselect possible countries, regions, sectors or years to compare\nindicate the level of difficulty\nchoose recommended competency areas\ncreate a personal learning pathway toward a dashboard and scientific report\n\nYou may select one of the suggested challenges or develop your own analytical question based on an appropriate Eurostat or Indian environmental dataset. If your interest leans toward climate change, temperature trends, or extreme-weather frequency, you will already be warmed up from the practice dataset used across Rubrics 1–4 — the same kind of region-level, period-over-period comparison you practiced there (Chapters 2–4) transfers directly, whether your own dataset ends up being Eurostat’s temperature series or IMD’s regional rainfall records. If your interest leans instead toward water, wastewater, or groundwater, Eurostat’s water-use, water-quality and water-stress indicators, or India’s Central Water Commission and CPCB data are natural starting points too.\n\nExample Challenge: Greenhouse Gas Emissions in Europe\nThe European Union has committed to reducing greenhouse gas emissions. However, emissions have not developed equally across all countries and economic sectors.\nYour task: Compare greenhouse gas emissions in two selected years. Identify which countries or sectors contributed most to the observed changes and explain the environmental significance of your findings.\nAvailable data: Eurostat greenhouse gas emissions data. You may, for example, compare two selected years, compare several European countries, compare economic sectors, identify the largest absolute or relative changes, or examine developments over a longer time period.\n\n\n\n\n\n\nRequired final output\n\n\n\nYou will present your results in an interactive dashboard, built with shinydashboard and a short scientific report. The dashboard should make the most important patterns and comparisons accessible. The report should explain your analytical question, methods, results, uncertainties and conclusions.\n\n\n\n\nYour Challenge Selection Task\nBefore beginning your data analysis, submit a short proposal for your Real-World Challenge. This proposal forms the starting point for your further work in the module.\n\n1. Introduce the Real-World Challenge. Briefly describe the environmental or sustainability issue you would like to investigate: what the central environmental problem is, which geographical area, countries or sectors are involved, why the issue is relevant and how data analysis can contribute to a better understanding of it. Ground this in at least one or two academic or scientific sources (a journal article, a report chapter from a body like the IPCC or UNEP, a textbook) rather than only news articles or the dataset’s own metadata, so your framing of the problem is scientifically informed. Keep this concise — its purpose is environmental context.\n2. Formulate a Research Question. Develop one clear, manageable research question answerable with the selected data. It should specify the environmental indicator or phenomenon, the countries/sectors/categories and the period or years to compare. Example: “How did greenhouse gas emissions from different economic sectors change in Germany between 2005 and 2023 and which sectors contributed most to the overall reduction?” Your question may be adjusted later if initial exploration shows the required data are unavailable or the question is too broad.\n3. Select and Justify a Dataset (Eurostat or an Indian source). Provide the dataset title, code (where available), a link, a short description and a justification: which variables does it contain, which countries/regions/sectors and years are included, in which units and are there visible gaps or limitations? State the licence explicitly (e.g. “Eurostat — free re-use with attribution” or “data.gov.in — GODL-India”) — this is the same provenance discipline from Chapter 1. Do not select a dataset only because it is related to your general topic — make sure its variables, geographical coverage and time frame actually match your research question.\n4. Define the Temporal Scope. Choose between:\n\nMinimum requirement: comparison of at least two years (e.g. a baseline year and the most recent available year, or years before/after a policy intervention).\nAdvanced option: a time-series analysis across several consecutive years, to identify long-term trends, periods of increase or decline and cross-country/sector comparisons.\n\nRequired submission (≈300–500 words): title, environmental problem (with at least one or two academic or scientific sources cited), research question, selected dataset (source, link + code/identifier, licence), justification, selected countries/regions/sectors/categories/indicators, temporal approach and why the time period is meaningful.\n\n\nYour AI learning buddy can help you narrow down a broad environmental topic, formulate a clear and answerable research question, identify the data required, examine whether a dataset matches your question, compare possible Eurostat or Indian datasets and check whether your selected years are meaningful. It may ask: “What exactly do you want to compare?”, “Does the dataset contain the countries or regions, sectors and years you need?”, “Would a two-year comparison be sufficient, or would a time series give a more meaningful answer?” — but you remain responsible for the final choice and its justification.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#understand-and-narrow-down-your-challenge",
+    "href": "index.html#understand-and-narrow-down-your-challenge",
+    "title": "Data Analysis in STEM",
+    "section": "8. Understand and Narrow Down Your Challenge",
+    "text": "8. Understand and Narrow Down Your Challenge\nMost environmental challenges are initially broad and complex. Before beginning your analysis, turn your selected topic into a specific, manageable investigation. Your AI learning buddy can guide you through questions such as: What is the central environmental problem? What exactly are you expected to investigate? Which countries, regions, sectors or years could you compare? Which variables might be relevant? What information is available in the dataset? What do you already know and what do you still need to find out? What would a convincing answer look like?\nAt the end of this stage you should have: a clearly defined analytical question, a selected dataset, a comparison or analytical focus and an initial idea of the required methods.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#create-your-personal-learning-path",
+    "href": "index.html#create-your-personal-learning-path",
+    "title": "Data Analysis in STEM",
+    "section": "9. Create Your Personal Learning Path",
+    "text": "9. Create Your Personal Learning Path\nAfter narrowing down your challenge, create a personal learning path with support from your AI learning buddy. First, consider: which parts of the dataset do you need to understand? Do you need to clean or transform the data? Which visualisations could help investigate the question? Do you need a statistical test? Do you need to model relationships between variables? How will you document and communicate your results?\nA possible learning path:\n\n\n\n\n\n\nUnderstanding and Managing Data → Exploring and Visualising Data → Statistical Inference → Statistical Modelling → Reproducible Research → Scientific Communication\n\n\n\nYour learning path is flexible and may change during your investigation. For example, after visualising the data, your AI learning buddy may ask: “You have identified differences between the two years. Would you now like to assess whether these differences are statistically meaningful?” You may then decide to work on Statistical Inference before returning to your challenge.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#complete-your-final-challenge",
+    "href": "index.html#complete-your-final-challenge",
+    "title": "Data Analysis in STEM",
+    "section": "10. Complete Your Final Challenge",
+    "text": "10. Complete Your Final Challenge\nYour final task is to answer your analytical question using data and to document your process transparently.\n\n\n\n\n\n\nRequired final outputs\n\n\n\nYou will produce two connected outputs: (1) an interactive dashboard built with shinydashboard and (2) a short scientific report.\n\n\n1. Interactive Dashboard. Built with shinydashboard (not a static plot or a plain Shiny app without the dashboard layout — see Chapter 8’s exact requirements), it must give a clear, accessible overview of the most important findings — not simply a display of all available data. Depending on your challenge and dataset, it should include key environmental indicators, comparisons between countries/sectors/years, appropriate charts, at least one working input control that filters what’s shown, short explanations, clear units and sources and relevant limitations. Present your findings both quantitatively and qualitatively: alongside the charts, a short written panel should say who is affected by the pattern shown and why it matters beyond this one place (see Chapter 7). Your visualisations should be scientifically accurate, clearly labelled, suitable for the data type, accessible to the intended audience and directly connected to your research question. See Chapter 8, Scientific Communication for the full, worked dashboard build with all required elements listed.\n2. Short Scientific Report, with sections: Research Question, Environmental Context, Data (dataset, variables, coverage, units, limitations), Methods (cleaning, comparisons, visualisations, statistical methods/models), Results, Discussion (interpretation, uncertainty, limitations, what cannot be concluded), Conclusion and References and Data Sources.\nReproducibility. The dashboard and report should share the same transparent analytical workflow. Submit: the original data source, the code used to prepare and analyse the data, the code used to create the visualisations and dashboard and enough documentation for someone else to understand and reproduce your analysis (see Chapter 5, Reproducible Research).\nThe Real-World Challenge is both the central learning activity and the final demonstration of your competencies. You are not expected to use every method in the module — you are expected to select and apply the methods appropriate for your question and explain your decisions. By completing the dashboard and report, you demonstrate that you can investigate an environmental problem using real data, select and apply appropriate analytical methods, visualise findings effectively, critically evaluate evidence and uncertainty, work reproducibly and communicate scientific results to different audiences.\n\n\n\n\n\n\nTip\n\n\n\nReady? Start with Chapter 1, Understanding and Managing Data, or jump straight to whichever competency area your challenge needs.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html",
+    "href": "01-understanding-data.html",
+    "title": "1  Understanding and Managing Data",
+    "section": "",
+    "text": "1.1 Two Questions Before Any Graph\n(Source materials: Environmental Statistics with R, DataCamp — see Resources. Real-world data: Deutscher Wetterdienst, CC BY 4.0 — see below.)\nEvery analysis in this course starts the same way, before a single plot or test: What data do I have? and How reliable is it?\nThese are not formalities. Data downloaded from a website has not been checked by anyone on your behalf. A column may have been mistyped, a value may be missing and a row may have been duplicated by an overlapping download. If you skip these questions, every later chapter (graphs, confidence intervals, regression) will produce confident-looking answers built on unchecked ground.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#two-questions-before-any-graph",
+    "href": "01-understanding-data.html#two-questions-before-any-graph",
+    "title": "1  Understanding and Managing Data",
+    "section": "",
+    "text": "The running case\nThroughout this chapter you are a student who has downloaded real climate records published by the Deutscher Wetterdienst (DWD), Germany’s national weather service — annual mean temperature, total precipitation and total sunshine duration, for five German Bundesländer and for Germany as a whole, from 1991 to 2024. The file is called dwd_climate_raw.csv and has six columns: Region, Region_Code, Year, Temperature_C, Precipitation_mm and Sunshine_hours. Of these three climate variables, annual mean temperature is the one this module follows all the way through to Chapter 4. This chapter’s cleaning exercises, though, work with whichever columns actually contain the real, disclosed formatting issues: a stray unit suffix in Precipitation_mm, three blanked values in Sunshine_hours. Inventing a fake problem in Temperature_C just to keep one column in the spotlight would break this chapter’s own promise that nothing here is invented. Once the file is clean, from Chapter 2 onward, temperature becomes the one variable you follow all the way through.\n\n\n\n\n\n\nAbout the data in this document\n\n\n\n\n\nEverything you see in this chapter’s numbers is real, official DWD data — nothing is invented. On top of those real values, a small number of formatting issues were deliberately added and fully disclosed (a stray unit suffix, some duplicated rows, a few blanked-out readings) so this chapter has something concrete to practice finding and fixing. Every one of these is listed exactly, with exact counts, in data/README.md — nothing here pretends a teaching device is a genuine DWD error. The file is produced by data/generate_climate_dataset.py, which contains every real value plus the source URLs it was read from, so you can regenerate it (or verify it against DWD’s own files) yourself.\n\n\n\n\n\n\n\n\nflowchart LR\n    A[\"Download&lt;br/&gt;dwd_climate_raw.csv\"] --&gt; B[\"Data&lt;br/&gt;Types\"]\n    B --&gt; C[\"Data quality:&lt;br/&gt;tidy, type, range\"]\n    C --&gt; D[\"Missing&lt;br/&gt;Values\"]\n    D --&gt; E[\"Data&lt;br/&gt;Management\"]\n    E --&gt; F[\"Clean file,&lt;br/&gt;ready for Ch. 2\"]\n    style A fill:#2c8c99,color:#fff\n    style F fill:#d98c2b,color:#fff",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#data-types",
+    "href": "01-understanding-data.html#data-types",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.2 Data Types",
+    "text": "1.2 Data Types\nEvery column in a dataset has a type and the type decides which summaries and plots are even mathematically valid. There are two families, each with two members.\nNumerical variables\n\nContinuous. Think of time on a stopwatch. It doesn’t jump — it moves smoothly through decimals and you can always split it into smaller and smaller fractions. A continuous variable can take a wide range of numeric values where it is sensible to add, subtract, or average and it varies without fixed gaps. Temperature_C, Precipitation_mm and Sunshine_hours are all continuous — a temperature of 9.37°C is a perfectly meaningful value.\nDiscrete. Now think of eggs in a carton. You count them in whole numbers; you cannot buy 2.5 eggs. A discrete variable can only take numeric values with jumps — typically non-negative counts. Year behaves this way here: it only takes whole values.\n\nCategorical variables\n\nNominal. Think of a box of crayons. A green crayon isn’t “higher” or “better” than a yellow one — they are simply different, unordered categories. A nominal variable’s possible values are called levels and those levels have no natural mathematical hierarchy. Region is nominal: \"Bayern\" is not more or less than \"Sachsen\", they are simply different places.\nOrdinal. Think of coffee cup sizes. They are distinct categories, not continuous numbers — but you universally know that a medium is larger than a small and smaller than a large. An ordinal variable is fundamentally categorical, but its levels have a natural order. None of our columns are ordinal here, but you will meet this type in your own challenge dataset (for example, an air-quality index reported as “good / moderate / poor”).\n\n\nIf you’re unsure whether a column is discrete or continuous, ask your learning buddy for three real-world examples of each — but check its answer against the “can you meaningfully have half of one?” test yourself, rather than taking the label on trust.\n\n\n\n\n\n\n\nA note on units\n\n\n\nStrictly speaking, the SI base unit for temperature is the kelvin — but climate science (and DWD’s own data) reports temperature in degrees Celsius (°C), precipitation in millimetres (mm) and sunshine duration in hours (h), because these are the practical, universally understood units for this domain and changing them would make the numbers harder to sanity-check, not easier. Every chart, table and figure in this module states its unit explicitly and consistently — get in the habit of checking the unit on every axis and every number before you trust it, here and in your own challenge dataset.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#understanding-datasets-and-data-quality",
+    "href": "01-understanding-data.html#understanding-datasets-and-data-quality",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.3 Understanding Datasets and Data Quality",
+    "text": "1.3 Understanding Datasets and Data Quality\nAs a student, you downloaded real climate data from a website. This is our base case. To move ahead and produce a trustworthy analysis, you first need to check the file against the tidy data rules and then check the values inside it.\nThe tidy data rules:\n\nColumns must be variables. Each column tracks exactly one thing (Temperature_C, Precipitation_mm, never both mixed into one).\nRows must be observations. Each row is a single, distinct data-collection event — here, one region in one year.\nCells must hold single values. A cell can never combine two things, such as writing \"9.4C / 60mm\" in one field. Each measurement gets its own cell.\n\nAnalogy: think of an ice-cube tray. Rows are the tray’s horizontal bars, columns are its vertical lines of pockets and each individual pocket is a cell meant to hold exactly one splash of water. If whoever built the file merged pockets together or poured data across the dividers, the structure breaks and no analysis tool can “freeze” it into something usable.\nlibrary(tidyverse)\nclimate &lt;- read_csv(\"data/raw/dwd_climate_raw.csv\")\ndim(climate)\nglimpse(climate)\n\n\nCode walkthrough\n\n\ndim(climate) — rows × columns.\nglimpse(climate) — one line per column, with its type and a few example values.\n\n\nOur file already has this shape — one row per region-year combination, one column per variable — which is exactly what lets you filter(), group_by() and plot it directly once the values inside it are clean.\n\nChecking types\nAfter opening a downloaded file in R, the very first thing to check is whether every column has the type it claims to have.\nstr(climate)\nclass(climate$Precipitation_mm)\nPrecipitation_mm should be numeric throughout — but str() shows it as character. Somewhere in the file, at least one value contains something other than digits and a decimal point and R is protecting you from silently losing information: a column can only have one type, so if even one cell contains non-numeric text, the entire column is read as text.\nclimate %&gt;%\n  filter(is.na(suppressWarnings(as.numeric(Precipitation_mm)))) %&gt;%\n  select(Region, Year, Precipitation_mm)\nThis turns up 5 entries of the form \"885.0mm\" — a real number with a stray unit suffix typed in. parse_number() (or readr’s own numeric parsing) strips the unit and recovers the real value.\nAnalogy: think of an automated conveyor-belt scanner at checkout. Instead of manually weighing every item, the scanner reads each barcode and checks it against what that product should weigh. class() is the same idea applied to a column: it checks whether what came down the belt actually matches the type it was supposed to be.\n\n\nChecking ranges\nOnce every column has the right type, check whether every value is physically plausible for what it claims to measure.\nclimate %&gt;%\n  summarise(\n    temp_min = min(Temperature_C, na.rm = TRUE), temp_max = max(Temperature_C, na.rm = TRUE),\n    precip_min = min(as.numeric(gsub(\"mm\", \"\", Precipitation_mm)), na.rm = TRUE),\n    sun_min = min(Sunshine_hours, na.rm = TRUE), sun_max = max(Sunshine_hours, na.rm = TRUE)\n  )\nAnnual mean temperatures across these five regions fall between about 6.7°C and 11.5°C — entirely plausible for Germany. Precipitation and sunshine values are likewise within the range you’d expect for a temperate European climate. This check passes. That is not a wasted step: you only know that because you looked, not because nothing seemed obviously wrong. Continuing the conveyor-belt picture: range checks are the belt’s alarm light. If a box came through weighing 500kg instead of 5kg, the light would trip — here, it stays off.\n\n\nOne more thing worth checking: duplicates\nclimate %&gt;% count(Region, Year) %&gt;% filter(n &gt; 1)\nThis turns up 4 region-year combinations appearing twice — for example, Baden-Württemberg, 1994. This isn’t a measurement error; it’s what happens when two overlapping export files get concatenated without checking. distinct() removes the repeats.\n\n\n\n\n\n\nA real detail worth knowing: where the numbers actually came from\n\n\n\n\n\nDWD’s full historical files (1881–present) list columns like Niedersachsen and Niedersachsen/Hamburg/Bremen side by side, because Hamburg and Bremen were reported jointly with Niedersachsen in earlier decades before being split out. That’s not a quality problem to fix — it’s exactly the kind of thing you can only know by reading a provider’s own documentation, not by guessing from a column name. The five regions used in this chapter were chosen specifically because each was reported as one stable region for the entire 1991–2024 period. Source: DWD Climate Data Center, CC BY 4.0, retrieved 24 September 2026.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#missing-values",
+    "href": "01-understanding-data.html#missing-values",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.4 Missing Values",
+    "text": "1.4 Missing Values\nEven a mostly-clean file can have gaps. R treats missing data as a strict structural state: it forces missing observations into a vector as NA (“Not Available”) and if a column contains even one NA, running a basic math function like mean() on it automatically returns NA too. This is a safety feature — it stops you from silently ignoring a gap — not a bug.\nclimate %&gt;%\n  summarise(across(everything(), ~ sum(is.na(.))))\nSunshine_hours has 3 missing values out of 208 raw rows — scattered across different regions and years, with no single region or year responsible for all of them. Rather than visually hunting for blank cells, is.na() lets you map every missing entry across the whole file at once:\n\nAnalogy: think of a broken link in a bicycle chain. If one link is missing, trying to pedal moves nothing — the chain simply won’t turn. That’s NA doing its job: an intentional stop sign, not something to route around silently. Appending na.rm = TRUE to a function is like removing the broken link and snapping the remaining good pieces back together so you can move forward again — deliberately, not by accident.\nBut how you go around a gap depends on what you’re trying to calculate. Three strategies, in order of how much they assume:\nStrategy A — Column-specific omission. When analysing temperature trends, use the whole row as normal. When analysing sunshine specifically, tell R to skip just the missing entries with na.rm = TRUE (e.g. mean(climate$Sunshine_hours, na.rm = TRUE)). Every other column in that row stays fully usable.\nStrategy B — Linear interpolation. Because this file is recorded once per year, you can estimate a single missing year’s value as the average of the year before and the year after, for that same region. Schleswig-Holstein’s missing 1998 sunshine value, for instance, could reasonably be estimated from its 1997 and 1999 values. This only makes sense when the gap is a single isolated point in an otherwise regular series — not when several consecutive years are missing.\nStrategy C — Complete-case analysis (listwise deletion). If your goal is specifically a multi-variable calculation that needs all three climate variables at the exact same region-year — for example, the regression in Chapter 4 — remove that row entirely with na.omit() or drop_na(). You lose the row’s other variables too, but you avoid quietly mixing real and estimated values into one model.\n\nExercise 1.1 — Decide, don’t just delete\n\nQ1. With only 3 missing values, scattered rather than concentrated, which strategy (A, B or C) would you choose for a 34-year trend line of Sunshine_hours alone? Which would you choose if you were about to fit the multiple regression from Chapter 4, which uses Sunshine_hours, Year and Region together? Justify the difference.\nQ2. Now imagine instead that all 3 missing values belonged to the same region in the same decade. Would your answer change? Why?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#data-management",
+    "href": "01-understanding-data.html#data-management",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.5 Data Management",
+    "text": "1.5 Data Management\nWeb data can change, update, or disappear from a site tomorrow. Two habits protect every analysis you build on top of today’s download:\n\nNever overwrite the raw file. Save dwd_climate_raw.csv into a dedicated, locked-down folder and never modify it by hand — not even to fix the one thing you already know is wrong. Every cleaning step (stripping the \"mm\" suffix, distinct()-ing the duplicates, deciding how to handle the 3 missing values) happens in code that reads the raw file and writes a separate clean one.\nMake cleaning reproducible. Typing a fix directly into the R console vanishes the moment you close the session. Write every adjustment into a permanent, re-runnable script file, so that any researcher — including you, in six months — can click “Run” and recreate exactly the same clean dataset from a fresh copy of the raw download.\n\n\nIf you ask your learning buddy to “clean my data,” ask it to show you the code rather than hand you an already-cleaned file — you want to be able to re-run the same steps yourself on a future download and to catch it if it silently drops a row you didn’t ask it to.\n\n\n\nIf class(), str() and the idea of a column “type” still feel unfamiliar: swirl’s “R Programming” module runs short, interactive exercises on exactly this, directly in your own R console.\n\n\nIf the tidy-data rules clicked and you want the full reasoning behind them, straight from the source: Hadley Wickham’s “Tidy Data” (Journal of Statistical Software, 2014) is the short, readable paper that defined the rules you just used.\n\n\n\nDeutscher Wetterdienst — Climate Data Center · DWD Terms of use (CC BY 4.0) · Hands-On Programming with R · R for Data Science. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#chapter-summary",
+    "href": "01-understanding-data.html#chapter-summary",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.6 Chapter Summary",
+    "text": "1.6 Chapter Summary\nYou now have a repeatable process: classify every variable by type, check a downloaded file against the tidy-data rules, check that every column’s type and range are what they claim to be, map and diagnose missing values with is.na() and protect the raw download behind a reproducible script — so that everything you build in Chapters 2–4 rests on ground you’ve actually checked, not just glanced at.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#common-mistakes",
+    "href": "01-understanding-data.html#common-mistakes",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.7 Common Mistakes",
+    "text": "1.7 Common Mistakes\n\n\n\n\n\n\n\n\nMistake\nWhy it matters\nFix\n\n\n\n\nAssuming a column is numeric because it “looks like numbers”\nOne stray text value (a unit suffix, a typo) forces the whole column to character\nAlways run class() / str() before summarising\n\n\nDeleting every row with any NA by default\nThrows away real, usable data in every other column of that row\nMatch the strategy (A/B/C) to what you’re actually calculating\n\n\nEditing the raw CSV by hand\nNot reproducible — the next download won’t get the same fix\nClean via a script that reads raw and writes clean\n\n\nTreating “nothing looked wrong” as “I didn’t need to check”\nA passing check is still a checked, reportable fact\nRun the type and range checks every time, even when the data looks fine",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#check-your-understanding",
+    "href": "01-understanding-data.html#check-your-understanding",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.8 Check Your Understanding",
+    "text": "1.8 Check Your Understanding\n\nCould you explain, to someone who has never seen this dataset, the difference between a discrete and a continuous variable using two of its actual columns?\nWhy does one stray unit suffix like \"885.0mm\" force an entire numeric column to be read as text?\nGiven 3 scattered missing values, could you explain when Strategy A, B or C is the right choice — and when it isn’t?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "01-understanding-data.html#practice-exercises",
+    "href": "01-understanding-data.html#practice-exercises",
+    "title": "1  Understanding and Managing Data",
+    "section": "1.9 Practice Exercises",
+    "text": "1.9 Practice Exercises\n\nA short set of standalone revision questions, each with a model answer to check yourself against.\n\n\n1. Classify. For each of the following, state the variable type: Region, Year, Temperature_C, a hypothetical “heatwave severity: mild/moderate/severe” column.\n\n\nAnswer\n\nRegion — categorical (nominal). Year — discrete numeric. Temperature_C — continuous numeric. The hypothetical severity column — categorical (ordinal): it has a natural order, unlike Region.\n\n\n2. Find the type error. Look at \"885.0mm\". Why does even one value like this force the whole Precipitation_mm column to be read as character instead of numeric?\n\n\nAnswer\n\nA column can only have one type in R. If even one cell contains non-numeric characters, R (or read_csv()) reads the entire column as text/character to avoid silently discarding the one bad cell.\n\n\n3. Coverage arithmetic. Five regions, 34 years each, plus one national series of 34 years and 4 duplicated rows in the raw download. How many rows should the clean file have after removing the duplicates? Show your work.\n\n\nAnswer\n\n\\(5 \\times 34 = 170\\) region-year rows, plus \\(34\\) national rows, for \\(170 + 34 = 204\\) total after distinct() removes the 4 duplicates from the 208-row raw file.\n\n\n4. Duplicates vs. legitimate repeats. Region == \"Bayern\" naturally appears 34 times (once per year) in a tidy file. How is that different from the kind of duplicate you found in the “Understanding Datasets and Data Quality” section above?\n\n\nAnswer\n\n34 rows for Bayern across 34 different years are 34 distinct observations — that’s expected. A true duplicate is the same Region-Year combination appearing more than once, which should be a single observation.\n\n\n5. Strategy choice. You need the exact multi-variable correlation between Temperature_C, Precipitation_mm and Sunshine_hours at the same region-year. One of those three values is missing for one row. Which strategy (A, B or C) fits and why would the other two be a worse fit here specifically?\n\n\nAnswer\n\nStrategy C (complete-case analysis / na.omit()): a joint multi-variable calculation needs all three real values at the same row, so estimating the missing one (B) would mix real and invented data into the correlation and column-specific omission (A) doesn’t apply once you need all three columns together.\n\n\n6. License and attribution. What does “CC BY 4.0” require you to do if you publish a chart built from this data?\n\n\nAnswer\n\nAttribute the source — e.g. “Source: Deutscher Wetterdienst (DWD), Climate Data Center, CC BY 4.0” — but you are otherwise free to use, adapt and republish it, including commercially.\n\n\n7. NA propagation. Suppose Sunshine_hours for one region’s 34 years is stored as a plain vector and you run sum(Sunshine_hours). One value in that vector is NA. What does sum() return and why? How would you correct the call so it returns the total of the non-missing values instead?\n\n\nAnswer\n\nsum() returns NA: R treats “unknown plus anything” as itself unknown, so a single missing value poisons the whole sum rather than being silently skipped. Fix it with sum(Sunshine_hours, na.rm = TRUE), which tells R explicitly to remove the NA values before summing — the same na.rm = TRUE pattern from Strategy A earlier in this chapter.\n\n\nContinue to Chapter 2, Exploring and Visualising Data.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Understanding and Managing Data</span>"
+    ]
+  },
+  {
+    "objectID": "02-exploring-visualizing.html",
+    "href": "02-exploring-visualizing.html",
+    "title": "2  Exploring and Visualising Data",
+    "section": "",
+    "text": "2.1 Exploratory Data Analysis\nIn this area you will learn how to: explore datasets, recognise distributions and outliers, identify patterns and relationships, select appropriate visualisations and create graphs using R and ggplot2. (Source materials: DataCamp “Data Analyst with R” track, r4ds.hadley.nz — see Resources.)\nReading the pipe (%&gt;%). You will see %&gt;% constantly from here on — it means “take what’s on the left, and feed it into the next step.” Think of it as a conveyor belt: climate %&gt;% filter(...) takes climate, sends it down the belt into filter(), and whatever comes out the other end gets stored in states. Read a pipeline top to bottom, one step at a time, rather than trying to hold the whole line in your head at once — each %&gt;% is just “…and then…”.\nBefore plotting anything, understand the fundamental characteristics of what you downloaded. The dplyr package is the most fundamental tool for exploring and manipulating data — EDA is like a handshake between you and the data before you start drawing conclusions from it.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploring and Visualising Data</span>"
+    ]
+  },
+  {
+    "objectID": "02-exploring-visualizing.html#exploratory-data-analysis",
+    "href": "02-exploring-visualizing.html#exploratory-data-analysis",
+    "title": "2  Exploring and Visualising Data",
+    "section": "",
+    "text": "Dimensions. dim() gives the shape of the data matrix: how many observations and variables.\nStructure. str() or glimpse() shows the internal blueprint — the type of every column.\nSlicing and filtering. select() isolates specific columns, filter() extracts specific rows.\nSummarising. summary() prints a quick six-number overview of a numeric column (minimum, the two middle quartiles, mean, maximum) — a fast way to notice something unusual before you have drawn a single plot.\n\n\nExercise 2.1 — A first handshake\n\ndim(states)\nglimpse(states)\n\nstates %&gt;% filter(Region == \"Sachsen\", Year == 2003) %&gt;%\n  select(Region, Year, Temperature_C, Precipitation_mm, Sunshine_hours)\n\n\nCode walkthrough\n\n\ndim(states) — rows × columns: how many observations, how many variables.\nglimpse(states) — every column’s name, type and first few values, at a glance.\nfilter(Region == \"Sachsen\", Year == 2003) — keeps only the row(s) matching both conditions (a comma inside filter() means “and”).\nselect(...) — keeps only the listed columns and drops the rest.\n\n\nQ1. How many regions and how many years does each one contribute? (Hint: count(states, Region).) Does every region have the same number of rows?\nQ2. Compute summary() on Temperature_C for one region, then for another. What is your first impression, before any plot?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploring and Visualising Data</span>"
+    ]
+  },
+  {
+    "objectID": "02-exploring-visualizing.html#distributions",
+    "href": "02-exploring-visualizing.html#distributions",
+    "title": "2  Exploring and Visualising Data",
+    "section": "2.2 Distributions",
+    "text": "2.2 Distributions\nA distribution describes how often different values occur in a dataset. Across 34 years and 5 regions, the distribution of annual temperature tells you the spread, frequency and pattern of German climate — it answers “how much does this variable actually vary, year to year and place to place?”\nThree ideas to hold onto:\n\nCentral tendency — the middle of your data. The mean is the arithmetic average, sensitive to extreme years. The median is the physical middle value when sorted, telling you what a typical year looks like without being pulled by a single extreme one.\nSpread and variance — how tightly or loosely the data hugs the centre. A region with low year-to-year variance has a stable climate; high variance suggests larger swings between mild and extreme years.\nSkewness. Not every variable is a symmetric bell curve — some have a longer tail stretching out on one side. Analogy: think of a class’s exam scores. If most students do well but a handful fail badly, those low scores drag a long tail out to the left (left-skewed, or negative skew). If most score low but a few ace it, the tail stretches to the right instead (right-skewed, positive skew). You will check whether temperature leans either way in Exercise 2.2.\n\n\nExercise 2.2 — Describe a distribution\n\nggplot(states, aes(x = Temperature_C)) +\n  geom_histogram(binwidth = 0.5) +\n  labs(title = \"Distribution of annual mean temperature, 5 regions x 1991-2024\",\n       x = \"Temperature (°C)\", y = \"Count\")\n\n\nCode walkthrough\n\n\nbinwidth = 0.5 — width of each histogram bar, in °C. Try 0.2 or 1 to see how the shape of the histogram changes.\n\n\nQ3. Is the temperature distribution roughly symmetric, or does it have a longer tail on one side? Compare mean() and median() — are they close together, or noticeably different?\n\n\n\n\n\n\n\nFigure 2.1: Distribution of annual mean temperature across 5 regions and 34 years — a fairly symmetric, bell-like shape, with most region-years clustered between about 8°C and 10.5°C.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploring and Visualising Data</span>"
+    ]
+  },
+  {
+    "objectID": "02-exploring-visualizing.html#outliers",
+    "href": "02-exploring-visualizing.html#outliers",
+    "title": "2  Exploring and Visualising Data",
+    "section": "2.3 Outliers",
+    "text": "2.3 Outliers\nAn outlier is an observation that lies an abnormal distance from the other values in a sample. In a real climate dataset, that is a year that stands out sharply from a region’s normal range — and, unlike a sensor malfunction, a real climate outlier is usually a genuine, well-documented event.\nDetecting outliers. Mathematically isolate them using the interquartile range (IQR) on a boxplot: any point more than 1.5 × IQR past the upper or lower quartile is flagged. Analogy: the IQR is the “normal middle 50%” of your data — like the middle half of runners in a race, once you ignore the fastest and slowest quarter. A boxplot draws that middle 50% as a box; a point that lands far outside it (more than 1.5 times the box’s own width past either edge) gets flagged as a dot on its own.\nClassifying outliers. Real environmental data mostly gives you one kind:\n\nGenuine environmental extremes. Real events that are scientifically meaningful, not measurement problems — cold snaps, heatwaves, exceptionally wet or dry years. You must never delete these; they are often exactly what you are trying to study.\nSensor or reporting errors. You already met this kind in Chapter 1 (the unit-suffix strings, the duplicated rows) — but notice that once cleaned, this real dataset does not contain any impossible physical values. That is worth stating explicitly, not assuming.\n\n\nExercise 2.3 — Find and classify an outlier\n\nggplot(states, aes(x = Region, y = Temperature_C)) +\n  geom_boxplot() +\n  coord_flip()\n\n\nCode walkthrough\n\n\ngeom_boxplot() — draws the box (the IQR), the whiskers, and any flagged outlier points, one box per region.\ncoord_flip() — turns the whole chart on its side, so the region names are easy to read instead of squeezed along the bottom.\n\n\nQ4. Look at the red-flagged points on the boxplot below. Which year do nearly all of them share? Is that year flagged as an outlier in every region, or only in some — and what does that tell you about how “outlier” depends on a region’s own year-to-year spread, not just on the raw value?\nQ5. 1996 turns out to be Germany’s coldest year on record in this 34-year dataset (national annual mean 7.2°C, against a 34-year average of about 9.4°C). Why would deleting this year before computing “typical German temperature” be a mistake?\n\n\n\n\n\n\n\nFigure 2.2: Annual mean temperature by region — 1996 (and, in Nordrhein-Westfalen, also 2010) shows up as a genuine cold outlier in three of the five regions and as each region’s coldest or near-coldest year even where its own natural variability is too wide for the IQR rule to flag it.\n\n\n\n\nA Quick Look at a Second Variable\nOutlier detection is not unique to temperature — the same method applies to any numeric column. Running it on Precipitation_mm turns up a different, equally real story:\nggplot(states, aes(x = Region, y = Precipitation_mm)) +\n  geom_boxplot() +\n  coord_flip()\n(Same two functions as the boxplot above — see the code walkthrough in Exercise 2.3 if you need a refresher.)\nOnly one region-year clears the 1.5×IQR threshold: Baden-Württemberg, 2002, at 1231.6mm — more than 200mm above that region’s own upper quartile. 2002 was the year of the catastrophic Elbe and Danube flooding across Central Europe, a real, independently documented event — exactly the kind of outlier you must keep, not delete.\n\n\n\n\n\n\nFigure 2.3: Annual precipitation by region — the single flagged outlier is Baden-Württemberg, 2002 (the real Elbe/Danube flood year), not a low-end value.\n\n\n\nTwo other years are worth knowing by name if you explore this dataset further: 2003 and 2018 are the two driest years nationally in the full 1991–2024 record (608mm and 586mm, against a 34-year average of roughly 800mm) — both real, widely documented German drought years. Checking the temperature record, though, only 2018 was also unusually warm nationally; 2003’s famous summer heatwave does not stand out in the annual mean the way it does in that summer’s own monthly figures. That is a useful reminder on its own: an annual average can hide a dramatic season, so always ask what time window a number was aggregated over before you trust a claim built on it.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploring and Visualising Data</span>"
+    ]
+  },
+  {
+    "objectID": "02-exploring-visualizing.html#data-visualisation-the-grammar-of-graphics",
+    "href": "02-exploring-visualizing.html#data-visualisation-the-grammar-of-graphics",
+    "title": "2  Exploring and Visualising Data",
+    "section": "2.4 Data Visualisation — the Grammar of Graphics",
+    "text": "2.4 Data Visualisation — the Grammar of Graphics\nggplot2 treats visualisation like building the layers of a map — reading a plot is like reading a paragraph: data layer → aesthetics layer → geometric layer → facet layer → themes and labels.\n\nThe canvas (ggplot()). Initialises the plot and links it to your data frame.\nAesthetics (aes()). Maps variables to physical dimensions: what goes on the x-axis, the y-axis and whether a variable controls colour, shape or size.\nGeometries (geom_*). The actual visual marks: geom_point() for scatterplots, geom_line() for time series, geom_boxplot() for spotting outliers.\n\nIdentifying relationships. To see whether two variables are physically linked, look at their joint pattern on a scatterplot:\n\nPositive correlation — points trend upward left-to-right.\nNegative correlation — the trend slopes downward.\n\nRecognising hidden patterns via faceting. With five regions over 34 years, plotting everything on one chart can create an unreadable blob (“overplotting”). facet_wrap() or facet_grid() split your data into a grid of small, clean subplots by a categorical variable — e.g. a separate mini-timeline per region — letting you compare patterns across space and time without the signal drowning in noise. Chapter 4 picks sunshine duration back up as one explanation for temperature, so it is worth meeting the relationship visually first.\n\n\nExercise 2.4 — Beginner: write the syntax\n\nggplot(states, aes(x = Sunshine_hours, y = Temperature_C, colour = Region)) +\n  geom_point(alpha = 0.6) +\n  labs(title = \"Temperature vs. sunshine duration\", x = \"Sunshine duration (hours)\",\n       y = \"Temperature (°C)\")\n\n\nCode walkthrough\n\n\nalpha = 0.6 — point transparency, from 0 (invisible) to 1 (fully solid). A lower value makes overlapping points easier to see, since darker areas mean more points are stacked on top of each other.\n\n\nQ6. Add facet_wrap(~Region) to the plot above. What changes about what you can now see?\n\n\nExercise 2.4 — Intermediate: interpret the result\nQ7. Using the faceted plot, does the temperature–sunshine relationship look the same across all five regions? Would you call it a strong or a weak relationship?\n\n\n\n\n\n\n\n\nFigure 2.4: Temperature vs. sunshine duration, by region — a real, but fairly weak, positive relationship (points are scattered, not tightly clustered).",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploring and Visualising Data</span>"
+    ]
+  },
+  {
+    "objectID": "02-exploring-visualizing.html#comparing-two-points-in-time",
+    "href": "02-exploring-visualizing.html#comparing-two-points-in-time",
+    "title": "2  Exploring and Visualising Data",
+    "section": "2.5 Comparing Two Points in Time",
+    "text": "2.5 Comparing Two Points in Time\nThe simplest way to ask “has it gotten warmer?” is to compare exactly two numbers: the temperature in one year against the temperature in another. Germany’s national annual mean temperature was 8.35°C in 1991 and 10.89°C in 2024, a difference of +2.54°C across the 34-year record.\n\nExercise 2.5 — Two years, then a more robust comparison\n\nQ8. A single year can be unusually warm or cold on its own (recall 1996 from Exercise 2.3). Does resting a claim like “Germany has warmed” on just two single years, 1991 and 2024, worry you? Why or why not?\nTo guard against exactly that risk, average across a full decade on each side instead of trusting one single year:\nde %&gt;%\n  filter(Year &lt;= 2000 | Year &gt;= 2015) %&gt;%\n  mutate(Period = if_else(Year &lt;= 2000, \"1991-2000\", \"2015-2024\")) %&gt;%\n  group_by(Period) %&gt;%\n  summarise(mean_temp = mean(Temperature_C))\n\n\nCode walkthrough\n\n\nfilter(Year &lt;= 2000 | Year &gt;= 2015) — keep only rows from the two decades we’re comparing (| means “or”).\nmutate(Period = if_else(...)) — mutate() adds a new column; if_else() fills each row of it with a yes/no test: “is this row’s Year &lt;= 2000?” → label it “1991-2000”, otherwise “2015-2024”.\ngroup_by(Period) — split the rows into two groups, one per Period label.\nsummarise(mean_temp = mean(Temperature_C)) — collapse each group down to a single number: its own mean.\n\n\nQ9. Compare the two ten-year windows: 1991–2000 against 2015–2024. Roughly how many degrees warmer does the recent decade look? Keep this number in mind — Chapter 3 asks whether a gap this size is one you can trust as more than random year-to-year noise, or whether it could be chance.\n\n\n\n\n\n\n\nFigure 2.5: Germany’s national average temperature, grouped into an early decade (1991–2000) and a recent decade (2015–2024). The two groups barely overlap.\n\n\n\n\nIf a plot looks “off” (empty, all one colour, points stacked in a corner), ask your learning buddy to help you debug the aes() mapping rather than asking it to just “make the plot” for you — you will need that debugging skill for your own challenge dataset, which won’t come with a working example to copy.\n\n\n\nIf ggplot() still feels like memorising magic incantations rather than composing layers: swirl runs short interactive R exercises directly in your own console, including a “Data Visualization” module built for exactly this stage.\n\n\nExercise 2.5 compares just two snapshots. If you are curious whether the warming shows up gradually across the whole 34-year record and whether every individual region warms at the same pace or one stands out, here is the full picture: the national average year by year, then the same data broken down by region.\n\n\n\n\n\n\nFigure 2.6: Germany’s national annual mean temperature, 1991–2024, noisy year to year, with a fitted linear trend of about +0.5°C per decade.\n\n\n\n\n\n\n\n\n\nFigure 2.7: Annual mean temperature by region, 1991–2024, with the national average in black, a real, visibly noisy but unmistakably rising trend in every region.\n\n\n\nIf the Grammar of Graphics idea clicked and you want the complete system behind it: ggplot2: Elegant Graphics for Data Analysis (free online) is the authoritative deep dive, written by the package’s own author.\n\n\n\nR for Data Science (r4ds) · DataCamp — Data Analyst with R · Data Visualization: A Practical Introduction · Fundamentals of Data Visualization. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploring and Visualising Data</span>"
+    ]
+  },
+  {
+    "objectID": "02-exploring-visualizing.html#check-your-understanding",
+    "href": "02-exploring-visualizing.html#check-your-understanding",
+    "title": "2  Exploring and Visualising Data",
+    "section": "2.6 Check your understanding",
+    "text": "2.6 Check your understanding\n\nCan you explain, to someone who has never seen ggplot2, what each layer (data → aes → geom → facet) contributes?\nGiven a new numeric variable, could you describe its distribution in words (centre, spread, skew) from a histogram alone?\nCan you distinguish a genuine environmental extreme from a data-quality problem and say what should happen to each?\n\nContinue to Chapter 3, Statistical Inference.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploring and Visualising Data</span>"
+    ]
+  },
+  {
+    "objectID": "03-statistical-inference.html",
+    "href": "03-statistical-inference.html",
+    "title": "3  Statistical Inference",
+    "section": "",
+    "text": "3.1 Sampling and Probability\nIn this area you will learn how to: understand samples and populations, consider probability and uncertainty, interpret confidence intervals, use hypothesis tests and assess whether observed patterns may extend beyond the available data. (Source materials: statistik_uebung, OpenIntro Modern Statistics/IMS Tutorials — see Resources.)\nThe rule of representative space. Where and how data is collected dictates what you are allowed to conclude. A pattern discovered in one place applies only to the population that place represents. Our five regions are five specific, real German Bundesländer — Bayern, Sachsen, Nordrhein-Westfalen, Schleswig-Holstein and Baden-Württemberg — not a random sample of “all of Europe,” or even of all sixteen German states.\nPopulation vs. sample. The population is the entire collective universe of individuals, objects or measurements you wish to study — in climate science, measuring every square metre of a region’s atmosphere every instant is impossible. The sample is a manageable subset collected from it. DWD’s own “regional average” is already a sample-based estimate: an area-weighted average of the weather stations within a region, standing in for the temperature of the whole region.\nSampling mechanisms:",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "03-statistical-inference.html#sampling-and-probability",
+    "href": "03-statistical-inference.html#sampling-and-probability",
+    "title": "3  Statistical Inference",
+    "section": "",
+    "text": "Simple random sampling. Every point in the population has an equal probability of selection — reduces bias, but is rarely how real weather-station networks are built.\nStratified sampling. The population is divided into distinct, non-overlapping strata and samples are drawn proportionally from each. DWD’s station network is, in effect, stratified by region this way.\nCluster sampling. The population is divided into geographic clusters; a few clusters are selected at random and every point within them is measured.\n\n\nExercise 3.1 — What can (and can’t) you conclude?\n\nQ1. Our five regions were chosen for this chapter because each has a stable definition over 1991–2024 (Chapter 1) — not because they are a random sample of German regions. What can you legitimately claim from this dataset about “Germany’s climate,” and what would be overreach?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "03-statistical-inference.html#uncertainty-and-confidence-intervals",
+    "href": "03-statistical-inference.html#uncertainty-and-confidence-intervals",
+    "title": "3  Statistical Inference",
+    "section": "3.2 Uncertainty and Confidence Intervals",
+    "text": "3.2 Uncertainty and Confidence Intervals\nVisualising uncertainty without formulas. Before z-scores, t-distributions, or rigid equations, we capture variance using computer-intensive resampling. Bootstrapping is a non-parametric method that treats your single downloaded sample as a miniature version of the population, then draws new, synthetic samples from it.\nThe technical process:\n\nOriginal data. You begin with your downloaded sample of size \\(n\\).\nResampling with replacement. A computer randomly selects one record, logs its value and puts it back into the pool — repeating this \\(n\\) times. Because it replaces the data each time, some rows are selected multiple times, some not at all. This creates one “bootstrap sample.”\nThe replicates. Repeat step 2 many times (e.g. 1,000), generating 1,000 separate bootstrap samples.\nThe bootstrap distribution. Calculate the mean of each of the 1,000 bootstrap samples. Plotting these 1,000 means creates a visual distribution whose width and spread show the structural uncertainty and standard error in your original data.\n\nThe percentile confidence interval. To find the 95% CI, sort the 1,000 bootstrap means from lowest to highest, cut off the lowest 2.5% and the highest 2.5%; the middle 95% forms your boundary.\n\nExercise 3.2 — Bootstrap a confidence interval\n\nboot_dist &lt;- states %&gt;%\n  filter(Year &gt;= 2015) %&gt;%\n  specify(response = Temperature_C) %&gt;%\n  generate(reps = 1000, type = \"bootstrap\") %&gt;%\n  calculate(stat = \"mean\")\n\nci_95 &lt;- boot_dist %&gt;% get_confidence_interval(level = 0.95, type = \"percentile\")\nvisualize(boot_dist) + shade_confidence_interval(endpoints = ci_95)\n\n\nCode walkthrough\n\n\nfilter(Year &gt;= 2015) — keep only 2015–2024 (this gives us \\(n = 50\\): 5 regions × 10 years).\nspecify(response = Temperature_C) — declare which variable we’re studying; infer’s way of saying “this is the number I care about” before doing anything to it.\ngenerate(reps = 1000, type = \"bootstrap\") — create 1,000 resampled versions of our data (steps 2–3 in the numbered list above).\ncalculate(stat = \"mean\") — for each of those 1,000 resamples, compute its mean (step 4 above); boot_dist now holds 1,000 means, one per resample.\nget_confidence_interval(...) — cut off the lowest and highest 2.5% of those 1,000 means; what’s left in the middle is the 95% confidence interval.\nvisualize(...) + shade_confidence_interval(...) — plot the 1,000 means as a histogram and shade the confidence interval on top of it.\n\n\nQ2. What is your 95% confidence interval for mean temperature across the five regions in 2015–2024 (\\(n = 50\\): 5 regions × 10 years)? How wide is it — under half a degree, or several degrees?\nQ3. In your own words (no formulas), explain to a colleague what a 95% confidence interval does and does not tell them.\n\n\n\n\n\n\n\nFigure 3.1: The bootstrap distribution of 1,000 resampled means for temperature, 5 regions x 2015–2024. The shaded band is the 95% confidence interval; the vertical line is the mean of the actual observed sample.\n\n\n\nRun it yourself and you should get something close to: \\(n = 50\\), mean \\(\\approx\n10.16\\)°C, 95% CI \\(\\approx\\) [9.96, 10.35]°C — a narrow interval, because 50 observations pooled across five regions and ten years averages out a lot of the year-to-year noise you saw in Chapter 2’s trend line.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "03-statistical-inference.html#hypothesis-testing",
+    "href": "03-statistical-inference.html#hypothesis-testing",
+    "title": "3  Statistical Inference",
+    "section": "3.3 Hypothesis Testing",
+    "text": "3.3 Hypothesis Testing\nThe scenario. Chapter 2 ended by asking whether the gap between 1991–2000 and 2015–2024 is trustworthy, or could be explained by chance alone.\n\nNull hypothesis (\\(H_0\\)). The status quo, “no effect”: the true mean temperature is the same in both ten-year windows and the gap you measured is just random year-to-year variation.\nAlternative hypothesis (\\(H_A\\)). The claim of a real, structural difference: the true mean temperature differs between the early and the recent decade.\n\n\nExercise 3.3 — Test a difference between two periods\n\nAnalogy before the code: a permutation test asks a very concrete question. If the “early” vs. “recent” label genuinely didn’t matter, and you shuffled which years got which label at random, how often would the reshuffled groups end up as far apart as your real ones? Picture shuffling two decks of labelled cards together and re-dealing them at random, over and over — most reshuffles should land close to zero difference, purely by chance. If your real, unshuffled difference is bigger than almost all 1,000 random reshuffles, that’s evidence the label really does matter.\nperiod_test &lt;- states %&gt;%\n  filter(Year &lt;= 2000 | Year &gt;= 2015) %&gt;%\n  mutate(Period = if_else(Year &lt;= 2000, \"early\", \"recent\")) %&gt;%\n  specify(Temperature_C ~ Period) %&gt;%\n  hypothesize(null = \"independence\") %&gt;%\n  generate(reps = 1000, type = \"permute\") %&gt;%\n  calculate(stat = \"diff in means\", order = c(\"recent\", \"early\"))\n\nobserved_diff &lt;- states %&gt;%\n  filter(Year &lt;= 2000 | Year &gt;= 2015) %&gt;%\n  mutate(Period = if_else(Year &lt;= 2000, \"early\", \"recent\")) %&gt;%\n  specify(Temperature_C ~ Period) %&gt;%\n  calculate(stat = \"diff in means\", order = c(\"recent\", \"early\"))\n\nperiod_test %&gt;% get_p_value(obs_stat = observed_diff, direction = \"two-sided\")\n\n\nCode walkthrough\n\n\nfilter(...) / mutate(Period = if_else(...)) — same two steps as Exercise 2.5: keep the two decades, then label each row “early” or “recent”.\nspecify(Temperature_C ~ Period) — declare the question: explain Temperature_C using the Period label.\nhypothesize(null = \"independence\") — assume \\(H_0\\) is true: Period has no real effect on Temperature_C.\ngenerate(reps = 1000, type = \"permute\") — shuffle the Period labels at random, 1,000 separate times (\"permute\" = shuffle).\ncalculate(stat = \"diff in means\", order = c(\"recent\", \"early\")) — for each shuffle: recent-label mean minus early-label mean.\nobserved_diff — the same calculation, but on the real, un-shuffled labels (no generate() step) — the one number we’re actually testing.\nget_p_value(...) — what fraction of the 1,000 shuffled differences were at least as extreme as the real one? That fraction is the p-value.\n\n\nQ4. State \\(H_0\\) and \\(H_A\\) for this test in the climate context (not in generic statistical symbols).\nQ5. Report the p-value. Using the conventional 0.05 threshold, would you reject \\(H_0\\)? Now re-read §3.4 before you write down what that decision actually means.\n\nRunning this on the full dataset (\\(n=50\\) region-years per period): the observed difference is recent-decade mean \\(-\\) early-decade mean \\(\\approx +1.18\\)°C (8.99°C vs. 10.16°C). Across permutations that shuffle the period label at random, essentially none come close to a gap that large — the permutation p-value rounds to \\(p &lt; 0.001\\).",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "03-statistical-inference.html#beyond-the-p-value",
+    "href": "03-statistical-inference.html#beyond-the-p-value",
+    "title": "3  Statistical Inference",
+    "section": "3.4 Beyond the P-Value",
+    "text": "3.4 Beyond the P-Value\nThe pitfall of \\(p &lt; 0.05\\). Students frequently treat a p-value below 0.05 as automatic, universal confirmation of truth. In environmental science, a small p-value alone does not mean an effect is large, important, or well understood in its causes.\nA mature conclusion evaluates three criteria simultaneously:\n\nEffect size. What is the actual, physical magnitude of the change? A dataset of a million readings might show a “significant” 0.002°C increase with \\(p = 0.0001\\) — practically meaningless.\nSample size. Large datasets flag almost any tiny, random variation as “statistically significant” simply because the math scales with \\(n\\).\nScope and mechanism. A significant shift measured across five German regions over 34 years is not automatically proof of why — the p-value tells you the gap is unlikely to be chance, not that you know the cause.\n\nExercise 3.3’s result is worth sitting with precisely because, this time, the numbers line up unusually cleanly: not only is \\(p &lt; 0.001\\), but computing Cohen’s \\(d\\) — the difference in means divided by the pooled standard deviation, a way of measuring an effect in “how many standard deviations apart” rather than raw units — gives \\(d \\approx\n1.45\\). As a rough guide (Cohen’s own convention): around 0.2 counts as a small effect, 0.5 medium, 0.8 or above large — so \\(d \\approx 1.45\\) is a large effect by any conventional standard, not merely a statistically-detectable one. A +1.18°C shift between two real decades, corroborated by an independently fitted trend (regressing temperature on year alone gives a slope of about +0.048°C/year ≈ +0.48°C/decade, matching the two-decade comparison closely) and by two other real signals moving the same direction (Chapter 2’s precipitation and sunshine figures both shifted too, in the direction you’d expect for a warmer, drier climate) is a case where statistical significance, a large effect size and independent corroborating evidence all agree — which is exactly the bar a genuinely trustworthy real-world finding should clear.\n\nExercise 3.4 — Judge, don’t just test\n\nQ6. Go back to your Exercise 3.3 result. What is the actual size of the temperature difference in °C (not just its p-value)? With data from only five regions, what would you be overreaching to claim about “Germany’s climate” — or “Europe’s climate” — more broadly?\nQ7. A p-value tells you a gap is unlikely to be pure chance. It does not tell you why the gap exists. What is one alternative explanation you would want to rule out before concluding this +1.18°C gap reflects a long-term warming trend rather than, say, these two particular ten-year windows happening to land on an unusually cold decade and an unusually warm one?\n\n\nA common misconception worth breaking with your learning buddy explicitly: “an observed pattern must not be confused with universal truth.” If your learning buddy’s explanation of a p-value sounds like a yes/no verdict, push back and ask it to walk through effect size and sample size alongside it.\n\n\n\nIf bootstrapping, p-values and confidence intervals feel abstract with no visual anchor: Seeing Theory (Brown University) lets you interact with sampling distributions and confidence intervals directly before you touch the R code again.\n\n\nIf you want the full toolbox behind specify()/generate()/calculate(): the infer package documentation covers more test types and statistics than this lesson uses, all built on the same tidy grammar.\n\n\n\nstatistik_uebung · OpenIntro Modern Statistics — Inference · infer package · Seeing Theory. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "03-statistical-inference.html#check-your-understanding",
+    "href": "03-statistical-inference.html#check-your-understanding",
+    "title": "3  Statistical Inference",
+    "section": "3.5 Check your understanding",
+    "text": "3.5 Check your understanding\n\nCan you explain bootstrapping to someone without using the word “distribution” more than once?\nCan you state a null and alternative hypothesis for a comparison relevant to your own challenge?\nCan you list, from memory, the three pillars of a mature statistical conclusion?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "03-statistical-inference.html#practice-exercises",
+    "href": "03-statistical-inference.html#practice-exercises",
+    "title": "3  Statistical Inference",
+    "section": "3.6 Practice Exercises",
+    "text": "3.6 Practice Exercises\n\nOne standalone revision question, with a model answer to check yourself against.\n\n\n1. Confidence level vs. interval width. If you compute a 90% confidence interval instead of a 95% one for the same data, does the interval get wider or narrower? Explain why, in your own words, without writing down a formula.\n\n\nAnswer\n\nNarrower. A 90% interval only needs to capture the middle 90% of the bootstrap (or sampling) distribution instead of the middle 95%, so you can afford to cut off more from each tail. The price is a weaker guarantee: a 90% interval will fail to contain the true value more often, in the long run, than a 95% one. There is always this trade-off between how confident you are and how precise (narrow) your interval can be — you cannot improve both at once without collecting more data.\n\n\nContinue to Chapter 4, Statistical Modelling.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "04-statistical-modelling.html",
+    "href": "04-statistical-modelling.html",
+    "title": "4  Statistical Modelling",
+    "section": "",
+    "text": "4.1 Simple Linear Regression\nIn this area you will learn how to: investigate relationships between variables, use regression models, compare statistical models, evaluate model assumptions and interpret model results. (Source materials: OpenIntro IMS — Inference for Regression, r4ds — see Resources.)\nChapter 2 showed you that patterns exist (e.g. temperature seems to vary with sunshine duration). Chapter 3 showed you how to ask whether a difference is trustworthy. Statistical modelling goes one step further: it asks how much of a pattern one variable explains and lets you compare competing explanations against each other.\nA regression model describes a variable of interest (the response, e.g. Temperature_C) as a function of one or more predictors (e.g. Sunshine_hours), plus unavoidable noise:\n\\[\n\\text{Temperature}_i = \\beta_0 + \\beta_1 \\cdot \\text{Sunshine}_i + \\varepsilon_i\n\\]\nThink of it as fitting the straightest possible line through a scatterplot such that the total squared vertical distance between the line and every point (“residuals”) is as small as possible — the “least squares” line. You already saw the raw relationship as a scatterplot in Chapter 2; this chapter puts a number on it.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Statistical Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "04-statistical-modelling.html#simple-linear-regression",
+    "href": "04-statistical-modelling.html#simple-linear-regression",
+    "title": "4  Statistical Modelling",
+    "section": "",
+    "text": "\\(\\beta_0\\) (intercept): the model’s predicted response when the predictor is zero. Zero hours of annual sunshine is far outside our data’s real range, so here the intercept is a mathematical anchor, not a real-world claim.\n\\(\\beta_1\\) (slope): the predicted change in the response for a one-unit increase in the predictor, holding everything else constant. This is usually the number you actually care about.\n\n\nExercise 4.1 — Fit and read your first model\n\nmodel_simple &lt;- lm(Temperature_C ~ Sunshine_hours, data = states)\nsummary(model_simple)\ntidy(model_simple)\nglance(model_simple)\n\n\nCode walkthrough\n\n\nlm() — short for “linear model”; fits the straight line from the equation above. The formula reads “Temperature_C explained by Sunshine_hours”.\nsummary(model_simple) — base R’s traditional, verbose printout of the fitted model.\ntidy(model_simple) — the same coefficients, as a tidy table (from the broom package).\nglance(model_simple) — tidy model-level statistics (R², etc.), one row per model.\n\n\nQ1. Write, in a sentence, what the estimated slope for Sunshine_hours means in climate terms (units and direction included).\nQ2. What is \\(R^2\\) for this model? In plain language: what percentage of the variation in temperature does sunshine duration alone explain — and does that feel like a lot or a little to you?\n\nAsk your learning buddy to explain the difference between “the slope is statistically significant” and “the slope is practically important” — this is the same effect-size lesson from Chapter 3, now applied to a model coefficient instead of a group difference.\n\n\n\nExpected: a slope around \\(+0.0015\\) (temperature rises about 0.15°C for every 100 extra hours of annual sunshine) and \\(R^2 \\approx 0.08\\) — sunshine duration alone explains only around 8% of the variation in temperature, even though the slope is statistically significant (\\(p &lt; 0.001\\)) on \\(n = 170\\) (5 regions × 34 years). This is a real, honest example of a weak-but-real relationship: don’t expect every real predictor to explain as much as Chapter 3’s decade comparison did.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Statistical Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "04-statistical-modelling.html#modelling-relationships-adding-more-predictors",
+    "href": "04-statistical-modelling.html#modelling-relationships-adding-more-predictors",
+    "title": "4  Statistical Modelling",
+    "section": "4.2 Modelling Relationships: Adding More Predictors",
+    "text": "4.2 Modelling Relationships: Adding More Predictors\nReal environmental patterns rarely have one cause. Multiple regression extends the same idea to several predictors at once:\n\\[\n\\text{Temperature}_i = \\beta_0 + \\beta_1 \\cdot \\text{Sunshine}_i + \\beta_2 \\cdot \\text{Year}_i + \\beta_3 \\cdot \\text{Region}_i + \\varepsilon_i\n\\]\nFor a categorical predictor like Region, R automatically creates indicator (“dummy”) variables against a reference category, so each coefficient reads as “the average difference compared to the reference level, holding the other predictors fixed.” Analogy: think of each dummy variable as an on/off switch — “1” if a row belongs to that region, “0” otherwise. One region (alphabetically first, by default) gets no switch of its own and becomes the reference level; its effect is baked into the model’s intercept, and every other region’s coefficient is read as “how much warmer or colder than the reference region, on average.”\n\nExercise 4.2 — Build a multiple regression model\n\nmodel_multi &lt;- lm(Temperature_C ~ Sunshine_hours + Year + Region, data = states)\ntidy(model_multi)\nglance(model_multi)\nQ3. Which Region has the highest predicted temperature, holding sunshine and year constant, according to this model? Does that match what you saw visually in Chapter 2?\nQ4. Compare the Sunshine_hours coefficient in model_multi to the one in model_simple (Exercise 4.1). Did it change much once year and region were added? What might explain that?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Statistical Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "04-statistical-modelling.html#model-comparison",
+    "href": "04-statistical-modelling.html#model-comparison",
+    "title": "4  Statistical Modelling",
+    "section": "4.3 Model Comparison",
+    "text": "4.3 Model Comparison\nAdding predictors will (almost) always increase \\(R^2\\) — even a useless predictor adds a tiny bit of explained variance by chance. Two tools protect you from being fooled by this:\n\nAdjusted \\(R^2\\) penalises a model for every predictor it adds, so it only increases if a new predictor pulls more than its “fair share” of explanatory weight. Prefer adjusted \\(R^2\\) over plain \\(R^2\\) whenever you’re comparing models with a different number of predictors.\nanova() model comparison formally tests whether a more complex model explains significantly more variance than a simpler, nested one.\n\n\nAnalogy: imagine judging two students’ essays not just on word count, but on how much relevant content they packed into each additional page. Plain \\(R^2\\) rewards length; adjusted \\(R^2\\) rewards density.\n\n\nExercise 4.3 — Does the extra complexity earn its place?\n\nanova(model_simple, model_multi)\n\nglance(model_simple)$adj.r.squared\nglance(model_multi)$adj.r.squared\n\n\nCode walkthrough\n\n\nanova(model_simple, model_multi) — formally compares the two models: does the more complex one explain significantly more variance than the simpler one it’s built on top of?\nglance(...)$adj.r.squared — glance() returns a small tidy table of model statistics; the $ pulls just one column out of it, here the adjusted R².\n\n\nQ5. Did adjusted \\(R^2\\) increase meaningfully from model_simple to model_multi? What does the anova() p-value tell you about whether the added predictors are jointly worth their added complexity?\nQ6. Chapter 3 found a real, large year-over-year warming effect. Does that help you predict, before running the code, whether Year would turn out to be a useful predictor here?\n\n\nExpected: adjusted \\(R^2\\) jumps from about 0.07 (model_simple) to about 0.57 (model_multi) and the anova() p-value is far below 0.001. Unlike some textbook examples where extra predictors barely help, here the added complexity clearly does earn its place — Year alone captures a large, real warming trend (consistent with Chapter 3) and Region captures real, systematic differences in climate between Bavaria, Saxony and the other regions that Sunshine_hours alone could never explain.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Statistical Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "04-statistical-modelling.html#interpreting-models-and-checking-their-assumptions",
+    "href": "04-statistical-modelling.html#interpreting-models-and-checking-their-assumptions",
+    "title": "4  Statistical Modelling",
+    "section": "4.4 Interpreting Models — and Checking Their Assumptions",
+    "text": "4.4 Interpreting Models — and Checking Their Assumptions\nA regression model’s coefficients are only trustworthy if its underlying assumptions roughly hold. Four checks, done visually rather than by formula, catch most problems:\n\nLinearity. Does a straight line actually describe the relationship, or does a residuals-vs-fitted plot show a curve?\nConstant variance (homoscedasticity). Does the spread of residuals stay roughly constant across the range of fitted values, or does it fan out (a classic sign that a transformation, e.g. log(), might help)? Picture it: a healthy residual plot looks like a flat, even band of static across the whole width of the chart. A problem plot fans out like a megaphone — tightly bunched on one side, widely scattered on the other.\nIndependence. Are observations genuinely independent of each other, or — as with 34 repeated annual measurements at the same five regions — correlated over time or space? A warmer-than-average year in Bayern is more likely to also be a warmer-than-average year in neighbouring Baden-Württemberg, which is a real limitation worth naming in any report that uses this model, not a reason to throw it out.\nNormally distributed residuals (mainly matters for small samples and for the validity of exact p-values, less for the point estimates themselves).\n\n\nExercise 4.4 — Check before you trust\n\nplot(model_multi, which = 1)\nplot(model_multi, which = 2)\n\n\nCode walkthrough\n\n\nwhich = 1 — residuals vs. fitted plot (checks linearity and constant spread).\nwhich = 2 — normal Q-Q plot (checks whether the residuals look normally distributed).\n\n\nQ7. Does the residuals-vs-fitted plot look like a random scatter around zero, or is there a visible pattern? What would a pattern suggest about the linearity assumption?\nQ8. Given the repeated-measures structure of this dataset (each region sampled every year for 34 years), what is one sentence you should add to any report interpreting model_multi’s p-values?\nQ9. — Putting it together. In 3–4 sentences, write a plain-language interpretation of model_multi for a non-statistician reader: which factors matter most for temperature in this dataset, how confident are you and what are this model’s limitations?\n\n\n\nIf lm(), coefficients and \\(R^2\\) feel like a wall of new vocabulary at once: StatQuest — Linear Regression, Clearly Explained (Josh Starmer) builds the whole idea up visually, from a scatterplot to a fitted line, before any formula.\n\n\nIf you want to go beyond a single lm() call into the full modelling workflow — resampling, model comparison, tidy pipelines: Tidy Modeling with R (Kuhn & Silge, free online) is the natural next step.\n\n\n\nOpenIntro Modern Statistics — Inference for Regression · R for Data Science (2e) · StatQuest: Linear Regression · Tidy Modeling with R. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Statistical Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "04-statistical-modelling.html#check-your-understanding",
+    "href": "04-statistical-modelling.html#check-your-understanding",
+    "title": "4  Statistical Modelling",
+    "section": "4.5 Check your understanding",
+    "text": "4.5 Check your understanding\n\nCan you explain what a regression coefficient means, in words, without using the term “coefficient”?\nCan you explain why adjusted \\(R^2\\) is usually the better tool for comparing models of different sizes?\nCan you name at least two model assumptions and how you would check each visually?\nCould you explain, to a non-technical reader, what your model does and does not tell them?\n\nContinue to Chapter 5, Reproducible Research.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Statistical Modelling</span>"
+    ]
+  },
+  {
+    "objectID": "05-reproducible-research.html",
+    "href": "05-reproducible-research.html",
+    "title": "5  Reproducible Research",
+    "section": "",
+    "text": "5.1 Why Reproducibility Matters\nIn this area you will learn how to: document your analysis, combine code, text and results in Quarto, organise and share your work using GitHub and make your analytical process transparent and reproducible. This chapter leans more heavily on external open resources than Chapters 1–4, because reproducibility is best learned by doing it in your own project, not by working through another isolated exercise dataset.\nA result you cannot reproduce is a result no one — including future you — can fully trust. In environmental science specifically, claims often feed into policy; being able to show exactly how a number was produced, from raw download to final figure, is part of the scientific claim itself, not an optional extra.\nThe FAIR principles, widely used in Open Science, capture this as a checklist for data and code: Findable, Accessible, Interoperable, Reusable. A well-organised Quarto + GitHub project addresses all four almost automatically.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "05-reproducible-research.html#why-reproducibility-matters",
+    "href": "05-reproducible-research.html#why-reproducibility-matters",
+    "title": "5  Reproducible Research",
+    "section": "",
+    "text": "Analogy: a recipe that only works because the cook “just knows” to add a pinch of an unlisted ingredient is not a reproducible recipe, however good the dish tastes. A reproducible analysis is a recipe precise enough that someone else, in a different kitchen, gets the same dish.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "05-reproducible-research.html#from-scripts-to-literate-programming",
+    "href": "05-reproducible-research.html#from-scripts-to-literate-programming",
+    "title": "5  Reproducible Research",
+    "section": "5.2 From Scripts to Literate Programming",
+    "text": "5.2 From Scripts to Literate Programming\nA plain .R script separates code from explanation — comments help, but the reasoning usually lives in your head or a separate document. Literate programming (the idea behind Quarto and R Markdown before it) interleaves narrative text, code and the code’s output — tables, figures, model summaries — in a single document that renders to HTML, PDF or a website. This entire module is one example; your final report and dashboard should be another.\n\n\n\n\n\n\nGet started with Quarto\n\n\n\nThe official Quarto guide covers installation and the basics in under 30 minutes. If you already know R Markdown, the concepts transfer almost directly.\n\n\n\nGuided task 5.2 — Your first Quarto document\n\nInstall Quarto (bundled with recent RStudio, or standalone from quarto.org).\nCreate a new .qmd file with a YAML header (title, author, format: html).\nAdd one text section, one code chunk that loads data/clean/dwd_climate_clean.csv and prints glimpse() and one ggplot2 figure.\nRender it (quarto render your_file.qmd or the Render button in RStudio/Positron).\n\nReflect: what changed in how you wrote the analysis, compared to a plain script with separate comments?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "05-reproducible-research.html#organising-a-reproducible-project",
+    "href": "05-reproducible-research.html#organising-a-reproducible-project",
+    "title": "5  Reproducible Research",
+    "section": "5.3 Organising a Reproducible Project",
+    "text": "5.3 Organising a Reproducible Project\nGood project structure is a form of documentation in itself. A minimal, defensible layout:\nmy-challenge/\n├── data/              # raw, locked data + a data dictionary (README.md)\n├── R/                 # reusable functions, if any\n├── analysis.qmd        # the literate-programming narrative (or several, numbered)\n├── dashboard.qmd        # the interactive dashboard\n├── _quarto.yml          # project configuration\n└── README.md            # what this project is, how to run it\nThis directly extends the data-management principle from Chapter 1: the raw download never changes, every transformation is code and every code file has a clear place. Compare this module’s own repository structure — it follows exactly this pattern.\n\nAsk your learning buddy to critique your folder structure against this checklist and to explain why a given convention exists (e.g. “why keep data/ separate from analysis code?”) rather than asking it to generate the structure for you sight unseen — you need to be able to justify your own project’s organisation in your report.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "05-reproducible-research.html#version-control-with-git-and-github",
+    "href": "05-reproducible-research.html#version-control-with-git-and-github",
+    "title": "5  Reproducible Research",
+    "section": "5.4 Version Control with Git and GitHub",
+    "text": "5.4 Version Control with Git and GitHub\nGit tracks every change to your files over time; GitHub hosts that history online so others (and future you) can see it and so you have an off-machine backup. For this module, you need a working subset of Git, not the whole tool:\n\ngit init / cloning an existing repository\ngit add, git commit -m \"message\" — saving a snapshot with a clear description\ngit push / git pull — syncing with GitHub\nWriting a short, useful README.md at the project root\n\n\n\n\n\n\n\nLearn Git without the jargon\n\n\n\nHappy Git and GitHub for the useR is written specifically for researchers coming from R and is the recommended path if this is your first time with version control. Work through its “Connect to GitHub” and first-commit chapters before your challenge deadline, not the night before.\n\n\n\nGuided task 5.4 — Put your challenge under version control\n\nCreate a GitHub repository for your challenge analysis (public, CC-BY licence, unless your data source’s licence requires otherwise).\nCommit your project in stages, with meaningful commit messages, as you go — not one giant commit at the end. Three to five commits across the challenge is a reasonable minimum.\nWrite a README.md that a stranger could use to understand what the project does and how to reproduce it, in under two minutes of reading.\n\nReflect: look at your own commit history. Would you, reading it back in six months, understand what each commit changed and why?\n\n\n\nIf the command line and git add/commit/push feel like too much at once before your deadline: GitHub Desktop gives you the same version control through a point-and-click interface — Happy Git and GitHub for the useR covers it alongside the command line.\n\n\nIf Git already feels comfortable and you want to understand why it works the way it does (branches, the object model, merging): Pro Git (free online) is the standard reference, far beyond what this module needs but useful for later projects.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "05-reproducible-research.html#documentation-and-open-science",
+    "href": "05-reproducible-research.html#documentation-and-open-science",
+    "title": "5  Reproducible Research",
+    "section": "5.5 Documentation and Open Science",
+    "text": "5.5 Documentation and Open Science\nDocumentation is not an afterthought written at the end — it is the parts of §5.3’s project structure that explain themselves: a data dictionary next to the raw data (as in this module’s own data/README.md), comments explaining why a non-obvious cleaning decision was made (not just what the code does) and a README that states the project’s purpose, data sources and how to re-run it.\nOpen Science practice, concretely, for this module:\n\nPublish your code and (where licensing allows) your data openly, with a clear licence (this module and its practice dataset are CC-BY 4.0).\nCite your data sources properly, including dataset codes and access dates (Eurostat datasets are versioned and updated — record when you pulled the data).\nMake your dashboard and report’s methodology fully traceable back to the code that produced it — the requirement stated at the end of the overview.\n\n\nQuarto Guide · Happy Git and GitHub for the useR · GitHub Desktop · R Packages (2e) — Documentation. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "05-reproducible-research.html#check-your-understanding",
+    "href": "05-reproducible-research.html#check-your-understanding",
+    "title": "5  Reproducible Research",
+    "section": "5.6 Check your understanding",
+    "text": "5.6 Check your understanding\n\nCan you explain the FAIR principles in your own words, with one climate-data example each?\nCould someone unfamiliar with your project clone your repository and reproduce your dashboard from the README alone?\nCan you point to at least one commit message in your own repository that clearly explains why, not just what, changed?\n\nContinue to Chapter 6, AI-Assisted Learning and Analysis.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Reproducible Research</span>"
+    ]
+  },
+  {
+    "objectID": "06-ai-assisted-learning.html",
+    "href": "06-ai-assisted-learning.html",
+    "title": "6  AI-Assisted Learning and Analysis",
+    "section": "",
+    "text": "6.1 AI as a Learning Navigator, Not an Answer Machine\nIn this area you will learn how to: work effectively with your AI learning buddy, formulate useful prompts, use AI to support coding and analysis, verify AI-generated suggestions and reflect critically on the role of AI in scientific work.\nThis module places AI at the centre of its “digital literacy” goal, not as a shortcut around learning but as practice for a skill you will use throughout your career: working productively with an AI system that does not simply hand you finished answers. Recall from the welcome page: your AI learning buddy structures problems, identifies competencies, recommends exercises, answers comprehension questions and supports interpretation and reflection. It does not select your methods, check your code for you, evaluate your data quality, interpret your results, or draw your scientific conclusions. Those stay yours.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>AI-Assisted Learning and Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-ai-assisted-learning.html#socratic-dialogue-and-computational-offloading",
+    "href": "06-ai-assisted-learning.html#socratic-dialogue-and-computational-offloading",
+    "title": "6  AI-Assisted Learning and Analysis",
+    "section": "6.2 Socratic Dialogue and Computational Offloading",
+    "text": "6.2 Socratic Dialogue and Computational Offloading\nThis module’s AI approach is built on two linked ideas:\n\nSocratic dialogue. Rather than asking your AI learning buddy “what’s the answer?”, you engage it in a back-and-forth: you propose an approach, it asks a clarifying or challenging question, you refine your thinking and so on. This mirrors how a good human tutor works: the value is in the questions, not just the final statement.\nComputational offloading. You can legitimately hand off mechanical work to AI — boilerplate code, syntax lookups, first-draft phrasing — so you can spend your own cognitive effort on the parts that require judgement: which method fits the question, whether a result makes scientific sense, what a finding actually means.\n\n\nAnalogy: a calculator offloads arithmetic so you can focus on which calculation to run. AI can offload writing a ggplot2 boilerplate or a dplyr pipeline skeleton, so you can focus on which plot answers your research question and whether the numbers it produces make physical sense.\n\nThe distinction matters because the two are easy to blur: offloading the typing of a regression call is fine; offloading the decision of which predictors belong in your model, or what your R² means for your specific climate-data question, defeats the purpose of the module.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>AI-Assisted Learning and Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-ai-assisted-learning.html#prompt-literacy",
+    "href": "06-ai-assisted-learning.html#prompt-literacy",
+    "title": "6  AI-Assisted Learning and Analysis",
+    "section": "6.3 Prompt Literacy",
+    "text": "6.3 Prompt Literacy\nA vague prompt gets a vague, generic answer. Prompt literacy is the skill of asking in a way that gets you a useful, checkable response — for coding and for conceptual questions alike.\n\n\n\n\n\n\n\nWeak prompt\nStronger prompt\n\n\n\n\n“Fix my code”\n“This ggplot2 call throws object 'Sunshine_hours' not found. Here is my code and str(climate) output — what’s the mismatch?”\n\n\n“Explain regression”\n“I have a multiple regression with Sunshine_hours, Year and Region predicting Temperature_C. Explain what the Region coefficients mean, using my variable names.”\n\n\n“Is my p-value good?”\n“My hypothesis test gives p &lt; 0.001 comparing temperature in 1991–2000 vs. 2015–2024 at n = 50 observations per group. Walk me through, step by step, what conclusions I can and cannot draw — including effect size.”\n\n\n\nNotice the pattern: the stronger prompts give context (your actual variables, your actual numbers, your actual error message) and ask for reasoning, not just a verdict.\n\nIf you paste a lesson’s R code into your learning buddy and it “fixes” a line you didn’t ask about, don’t just accept the change — ask it to explain why the original line was wrong. If its explanation doesn’t hold up against what you learned in the chapter, the original line was probably fine.\n\n\nExercise 6.3 — Rewrite three weak prompts\nTake three prompts you have actually typed into an AI tool during this module (or would be tempted to). For each, rewrite it following the pattern above: add concrete context and ask for the reasoning rather than only the answer.\nQ1. Which of your three rewrites do you expect would produce the most different (and more useful) response from the original? Why?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>AI-Assisted Learning and Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-ai-assisted-learning.html#verifying-ai-generated-code-and-explanations",
+    "href": "06-ai-assisted-learning.html#verifying-ai-generated-code-and-explanations",
+    "title": "6  AI-Assisted Learning and Analysis",
+    "section": "6.4 Verifying AI-Generated Code and Explanations",
+    "text": "6.4 Verifying AI-Generated Code and Explanations\nAI-generated code and explanations can be wrong in ways that are easy to miss, because they are typically fluent and confident-sounding regardless of correctness. A working verification habit, for every substantial AI suggestion you use in this module:\n\nRun it, don’t just read it. Does the code actually execute against your real data, or only against an imagined version of it?\nCheck the output against what you already know. Does a claimed “mean annual temperature of 45°C for Bayern” pass a basic sanity check against the ranges you saw in Chapter 2?\nAsk “why”, not just “is this right”. A one-word confirmation from an AI tool is not verification. Ask it to explain why a line of code works and check that explanation against what you independently know.\nCross-check statistical claims against the module content. If an AI explanation of a p-value sounds like a yes/no verdict rather than the effect-size-plus-sample-size picture from Chapter 3, that’s a red flag, not a fact to copy into your report.\n\n\nExercise 6.4 — Spot the AI mistake\nBelow is a plausible-sounding but flawed AI explanation. Find the error(s) and correct them using what you’ve learned in this module.\n\n“I ran lm(Temperature_C ~ Sunshine_hours, data = states) and got R² = 0.08 with p &lt; 0.001, so sunshine duration clearly causes higher temperature in a strong, practically important way. Since p &lt; 0.05, we can conclude the relationship is real and important.”\n\nQ2. List every claim in this explanation that overreaches and explain — in your own words, referencing the relevant earlier chapter — what would need to be added or qualified for the statement to be defensible.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>AI-Assisted Learning and Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-ai-assisted-learning.html#reflect-on-your-own-ai-use",
+    "href": "06-ai-assisted-learning.html#reflect-on-your-own-ai-use",
+    "title": "6  AI-Assisted Learning and Analysis",
+    "section": "6.5 Reflect on Your Own AI Use",
+    "text": "6.5 Reflect on Your Own AI Use\n\nExercise 6.5 — A short reflection (for your final report’s Methods section)\nAnswer briefly, for inclusion in your final scientific report:\n\nWhere in your challenge did you use AI for computational offloading (mechanical, low-judgement tasks)?\nWhere did you deliberately keep a decision to yourself, even though AI could have suggested an answer? Why?\nName one instance where you checked (and, ideally, caught) an AI suggestion that was wrong or only partially right.\n\n\n\n\nIf writing an effective prompt still feels like guesswork: Anthropic’s own prompt engineering overview walks through concrete, beginner-friendly techniques (being specific, giving examples, asking for step-by-step reasoning) with worked before/after prompts.\n\n\nIf you want the research grounding behind “computational offloading” and AI as a learning support rather than an answer machine: Ng et al. (2021), “AI and Education: A 20-Year Roadmap”, discusses the pedagogical role of AI tutoring systems that this module’s AI-learning-buddy concept (Acemate) draws on.\n\n\n\nAnthropic — Prompt Engineering Overview · Ng et al. (2021), AI and Education: A 20-Year Roadmap. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>AI-Assisted Learning and Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-ai-assisted-learning.html#check-your-understanding",
+    "href": "06-ai-assisted-learning.html#check-your-understanding",
+    "title": "6  AI-Assisted Learning and Analysis",
+    "section": "6.6 Check your understanding",
+    "text": "6.6 Check your understanding\n\nCan you explain the difference between computational offloading and outsourcing a scientific judgement?\nGiven a vague prompt, could you rewrite it to include concrete context and ask for reasoning rather than a verdict?\nDo you have a habit — not just an intention — for verifying an AI-generated result before using it?\n\nContinue to Chapter 7, Sustainability Problem Solving.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>AI-Assisted Learning and Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "07-sustainability-problem-solving.html",
+    "href": "07-sustainability-problem-solving.html",
+    "title": "7  Sustainability Problem Solving",
+    "section": "",
+    "text": "7.1 Why “Global” Matters: Data, Perspective and Responsibility\nIn this area you will learn how to: translate an environmental problem into an analytical question, use data as evidence, consider different possible explanations and develop an evidence-based response.\nThis chapter is different from Chapters 1–6: it is not primarily a set of techniques, but a way of thinking that connects them all back to why you’re doing this module in the first place — this module’s broader aim of environmental stewardship, taking responsibility for global challenges and actively contributing to solving them, not only analysing them from a distance.\nData never arrives from nowhere. Someone decided what to measure, who would measure it and which categories a value could fall into: decisions shaped by the priorities, language and institutions of wherever that data comes from. Working with a dataset from a context other than your own is a chance to notice your own frame of reference, the assumptions you bring to a number without realising you brought them (Mezirow, 1997). If a figure surprises you, or a category doesn’t map neatly onto what you expected, that moment of friction is worth sitting with rather than smoothing over. It is usually where real learning starts.\nThis module’s idea of environmental stewardship follows Global Citizenship Education’s emancipatory strand (Rieckmann, 2021): environmental problems and the data describing them are shared across borders rather than isolated to wherever they happen to be measured. A warming trend measured in one place and a shifting rainfall pattern measured somewhere else are two local readings of one connected global system. Practising that recognition is itself part of this competency area, alongside the technical skill of turning a broad problem into a data-answerable question.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Sustainability Problem Solving</span>"
+    ]
+  },
+  {
+    "objectID": "07-sustainability-problem-solving.html#from-a-wicked-problem-to-an-analytical-question",
+    "href": "07-sustainability-problem-solving.html#from-a-wicked-problem-to-an-analytical-question",
+    "title": "7  Sustainability Problem Solving",
+    "section": "7.2 From a Wicked Problem to an Analytical Question",
+    "text": "7.2 From a Wicked Problem to an Analytical Question\nReal sustainability problems — shifting regional climates, urban heat stress, extreme weather becoming more frequent, biodiversity loss — start out broad, contested and not directly “answerable” with a dataset. The core move of this competency area is narrowing a broad problem into one specific, data-answerable question, without losing what made the problem matter in the first place.\nConsider this example problem statement:\n\n“Are the monitored weather stations showing signs of a shifting climate?”\n\nThis is not yet an analytical question — no single dataset or statistic settles it. A possible learning path, mirroring how your learning buddy would walk through it with you:\n\nYour learning buddy asks: Which data would be relevant? Which variables do you need? How would you initially examine the data? → points you to Rubric 1, Understanding and Managing Data\nStudents work on: understanding variables, getting to know the dataset, checking data quality.\nYour learning buddy, back at the problem: “Now that you understand the dataset, how could you explore possible patterns?” → Rubric 2, Exploring and Visualising Data\nYour learning buddy: “Can you justify whether the 1991–2000-vs-2015–2024 difference you saw is meaningful, or could it just be random variation?” → Rubric 3, Statistical Inference\nYour learning buddy: “Can you model the relationship between temperature and other climate variables and how much of the pattern each one explains?” → Rubric 4, Statistical Modelling\nYour learning buddy, at the end: “Document your analysis and make it reproducible.” → Rubric 5, Reproducible Research\n\nNotice what happened: the broad, contested problem (“is this safe?”) got narrowed into a sequence of specific, data-answerable sub-questions, each pointing to a competency area — without the original stewardship question disappearing. You return to it explicitly at the end (§7.4).\n\nExercise 7.1 — Narrow your own challenge\nTake the Real-World Challenge you selected in the overview. Write down: (a) the broad problem in one sentence, (b) the specific, data-answerable research question you formulated and (c) one thing your narrower question necessarily leaves out of scope. Being explicit about (c) is not a weakness in your work — it is exactly the kind of limitation a strong Discussion section names openly.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Sustainability Problem Solving</span>"
+    ]
+  },
+  {
+    "objectID": "07-sustainability-problem-solving.html#data-as-evidence-not-proof",
+    "href": "07-sustainability-problem-solving.html#data-as-evidence-not-proof",
+    "title": "7  Sustainability Problem Solving",
+    "section": "7.3 Data as Evidence, Not Proof",
+    "text": "7.3 Data as Evidence, Not Proof\nA dataset provides evidence toward answering a sustainability question — it does not provide proof in the way a mathematical theorem does. Two examples worth sitting with:\n\nFinding that mean temperature across five German regions is statistically higher in 2015–2024 than in 1991–2000 (Chapter 3) is evidence consistent with a real warming trend — but it is not, by itself, proof of a cause and 34 years of data from five regions of one country cannot establish a global climate mechanism on their own.\nA GHG-emissions dataset showing “higher share of renewable energy correlates with lower emissions” across countries is evidence for the plausibility of the claim — but correlation across countries conflates many differences (industrial structure, wealth, policy history) that a single scatterplot cannot separate out.\n\nThis is why Chapters 3 and 4 exist: statistical inference and modelling are the tools that let you say, carefully, how much evidential weight a pattern actually carries.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Sustainability Problem Solving</span>"
+    ]
+  },
+  {
+    "objectID": "07-sustainability-problem-solving.html#considering-alternative-explanations",
+    "href": "07-sustainability-problem-solving.html#considering-alternative-explanations",
+    "title": "7  Sustainability Problem Solving",
+    "section": "7.4 Considering Alternative Explanations",
+    "text": "7.4 Considering Alternative Explanations\nBefore treating a pattern as the explanation, deliberately generate at least one competing explanation and check whether your data can distinguish between them.\n\nExercise 7.3 — Generate competing explanations\nExample: “Does a higher share of renewable energy correlate with lower greenhouse gas emissions?” (the example challenge from an early rubric proposal for this module).\nQ1. List at least two explanations for an observed negative correlation between renewable-energy share and emissions, other than “renewables directly cause lower emissions” (for instance: wealthier countries can afford both more renewables and stricter industrial regulation; the causal arrow could run the other way if emissions targets drove renewable investment).\nQ2. For your own challenge question, do the same: name one alternative explanation for the pattern you expect (or found) in your data and state whether your current dataset lets you rule it out, partially address it, or not address it at all.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Sustainability Problem Solving</span>"
+    ]
+  },
+  {
+    "objectID": "07-sustainability-problem-solving.html#from-evidence-to-an-evidence-based-response",
+    "href": "07-sustainability-problem-solving.html#from-evidence-to-an-evidence-based-response",
+    "title": "7  Sustainability Problem Solving",
+    "section": "7.5 From Evidence to an Evidence-Based Response",
+    "text": "7.5 From Evidence to an Evidence-Based Response\nThe final step connects your analysis back to the sustainability problem you started from and to who might act on it. A useful check: could a specific, named audience (a regional climate-adaptation office, an EU policy team, a citizen-science group) actually do something differently based on your conclusion, stated as you’ve written it?\n\nExercise 7.4 — Write your evidence-based response\nIn 3–5 sentences, connect your Exercise 7.1 findings back to the original broad problem: what does your evidence support, what does it leave open and who could act on it and how? This paragraph is close to a first draft of your final report’s Conclusion section (see Chapter 8).",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Sustainability Problem Solving</span>"
+    ]
+  },
+  {
+    "objectID": "07-sustainability-problem-solving.html#a-short-self-check-global-citizenship-competencies",
+    "href": "07-sustainability-problem-solving.html#a-short-self-check-global-citizenship-competencies",
+    "title": "7  Sustainability Problem Solving",
+    "section": "7.6 A Short Self-Check: Global Citizenship Competencies",
+    "text": "7.6 A Short Self-Check: Global Citizenship Competencies\nGoodale, Gilmore and Griffiths (2024) describe six observable competencies that environmental stewardship draws on. You don’t need to master all six to complete this module, but pausing to check where you already stand and where this challenge pushed you, is itself useful material for your final report’s Discussion section.\n\nRate yourself briefly, a sentence each is enough, on:\n\nIntergroup empathy. Can you describe how this environmental issue is experienced differently in a country or community other than your own?\nValuing diversity. Did your analysis consider more than one region’s, country’s or group’s perspective?\nSocial justice orientation. Did you consider who is most affected by this problem and whether that differs from who has the most power to address it?\nWillingness to sustain the environment. Has working through this challenge changed anything about your own everyday choices, even a small one?\nIntergroup helping. Does your Exercise 7.4 response name who could act on it, beyond “someone should do something”?\nResponsibility to act. Is there one concrete next step you personally could take or advocate for, based on what you found?\n\n\n\n\nIf “narrowing a wicked problem into a data question” feels abstract with no example to anchor it: Our World in Data shows, across hundreds of real topics, how broad global challenges get turned into specific, chart-able questions — browse a few entries close to your own challenge topic before starting Exercise 7.1.\n\n\nIf you want the deeper conceptual framing behind treating sustainability as interconnected systems rather than isolated problems: Kate Raworth’s Doughnut Economics (2017) is the widely-cited starting point and pairs well with this module’s stewardship framing. For the transformative-learning and Global Citizenship Education ideas in this chapter’s opening section, Mezirow (1997) and Rieckmann (2021) are the primary sources; Lotz-Sisitka, Wals, Kronlid and McGarry (2015) go further into transgressive social learning for anyone writing more deeply on this in their final report.\n\n\n\nOur World in Data · Raworth, K. (2017), Doughnut Economics · Mezirow, J. (1997), Transformative Learning: Theory to Practice · Rieckmann, M. (2021), Emancipatory and Transformative Global Citizenship Education · Goodale, T. M., Gilmore, S., & Griffiths, M. (2024), 21st-Century Stewardship: An Interdisciplinary Approach to Cultivating Global Citizenship · Hernández Guzmán, A. & García de Velazco, J. (2024), Global Citizenship: Towards a Concept for Participatory Environmental Protection. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Sustainability Problem Solving</span>"
+    ]
+  },
+  {
+    "objectID": "07-sustainability-problem-solving.html#check-your-understanding",
+    "href": "07-sustainability-problem-solving.html#check-your-understanding",
+    "title": "7  Sustainability Problem Solving",
+    "section": "7.7 Check your understanding",
+    "text": "7.7 Check your understanding\n\nCan you narrow a broad sustainability problem into a specific, data-answerable question while keeping the original problem visible in your final conclusion?\nCan you name, for your own challenge, at least one alternative explanation for the pattern you found?\nCan you state clearly what your evidence does and does not establish?\nCan you name one assumption your own frame of reference brought to your dataset, especially if it comes from a context other than your own?\n\nContinue to Chapter 8, Scientific Communication.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Sustainability Problem Solving</span>"
+    ]
+  },
+  {
+    "objectID": "08-scientific-communication.html",
+    "href": "08-scientific-communication.html",
+    "title": "8  Scientific Communication",
+    "section": "",
+    "text": "8.1 Know Your Audience\nIn this area you will learn how to: present findings clearly, select effective visualisations, explain uncertainties and limitations, adapt communication to different audiences and create scientific reports, briefs or dashboards. (Source materials: Data Visualization: A Practical Introduction* (socviz.co), Fundamentals of Data Visualization (clauswilke.com/dataviz) — see Resources.)*\nThis chapter is where your work from every other competency area comes together into the two required final outputs from the overview: an interactive dashboard and a short scientific report.\nThe same finding needs different framing for different readers. Before building anything, decide:\nYour scientific report is written mainly for the first audience; your dashboard is usually written for something closer to the second, even though both draw on the same underlying analysis.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Scientific Communication</span>"
+    ]
+  },
+  {
+    "objectID": "08-scientific-communication.html#know-your-audience",
+    "href": "08-scientific-communication.html#know-your-audience",
+    "title": "8  Scientific Communication",
+    "section": "",
+    "text": "A specialist reader (e.g. another data-science student, your instructor) wants methodological detail, model diagnostics and explicit uncertainty.\nA policy or general audience wants the headline finding, its practical implications and honest caveats — without needing to parse a regression table.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Scientific Communication</span>"
+    ]
+  },
+  {
+    "objectID": "08-scientific-communication.html#selecting-effective-visualisations",
+    "href": "08-scientific-communication.html#selecting-effective-visualisations",
+    "title": "8  Scientific Communication",
+    "section": "8.2 Selecting Effective Visualisations",
+    "text": "8.2 Selecting Effective Visualisations\nA good visualisation answers a specific question at a glance; a bad one requires a paragraph of explanation to be understood at all. A few working rules, building directly on the Grammar of Graphics from Chapter 2:\n\nMatch the geometry to the question. Comparing categories → bars. Showing change over time → lines. Showing a relationship between two continuous variables → scatterplot. Showing a distribution → histogram or boxplot. Don’t default to a bar chart out of habit when a line or scatterplot answers the question more directly.\nLabel everything a stranger would need. Axis titles with units, a clear legend, a data source and access date and — for any interval or model estimate — a visible indication of uncertainty (error bars, a shaded confidence band).\nAvoid chartjunk. 3D effects, unnecessary gridlines and decorative colour gradients cost attention without adding information. Every visual element should earn its place.\nChoose colour deliberately. Use a sequential palette for an ordered quantity, a qualitative palette for unordered categories and check your plot still reads correctly in greyscale or to a colour-blind viewer (scale_colour_viridis_d() in ggplot2 is a reliable default).\n\n\nExercise 8.2 — Critique a chart\nTake the temperature–sunshine scatterplot you built in Exercise 2.4.\nQ1. Would a policy audience understand this plot without your commentary? What is missing — labels, a title that states the finding rather than just the variable names, a caption noting the data source?\nQ2. Rebuild it with a title that states a finding (e.g. “More sunshine, slightly higher temperatures, across all five regions”), proper axis labels with units and a caption citing the data source (remember: this is real DWD data, CC BY 4.0 — the caption should say so).",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Scientific Communication</span>"
+    ]
+  },
+  {
+    "objectID": "08-scientific-communication.html#communicating-uncertainty-and-limitations-honestly",
+    "href": "08-scientific-communication.html#communicating-uncertainty-and-limitations-honestly",
+    "title": "8  Scientific Communication",
+    "section": "8.3 Communicating Uncertainty and Limitations Honestly",
+    "text": "8.3 Communicating Uncertainty and Limitations Honestly\nA dashboard or report that hides its uncertainty is not more convincing — it is less trustworthy once a careful reader notices what’s missing. Concretely:\n\nState confidence intervals, not just point estimates, wherever you computed one in Chapter 3.\nName your model’s assumptions and any you couldn’t fully verify (recall the repeated-measures limitation from Exercise 4.4) — it’s better to name a limitation openly than to present a coefficient as if it came from an ideal, unlimited dataset.\nDistinguish explicitly between what your evidence supports and what it does not establish — this is exactly the Exercise 7.4 sentence you already drafted in Chapter 7.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Scientific Communication</span>"
+    ]
+  },
+  {
+    "objectID": "08-scientific-communication.html#building-the-interactive-dashboard",
+    "href": "08-scientific-communication.html#building-the-interactive-dashboard",
+    "title": "8  Scientific Communication",
+    "section": "8.4 Building the Interactive Dashboard",
+    "text": "8.4 Building the Interactive Dashboard\nYour final dashboard must be built with shinydashboard, the R package that gives a Shiny app a structured dashboard layout (header, sidebar menu and a grid of boxes) instead of a plain single-page app. This is a deliberate, required choice for this module — not one option among several — because it gives every student’s final output the same recognisable structure and because live, user-driven filtering (picking a region or year range and watching every panel update) is itself part of what this competency area is assessing.\n\n\napp.R — minimal shinydashboard skeleton\n\nlibrary(shiny)\nlibrary(shinydashboard)\nlibrary(tidyverse)\nlibrary(plotly)\n\nclimate &lt;- read_csv(\"data/clean/dwd_climate_clean.csv\")\n\nui &lt;- dashboardPage(\n  dashboardHeader(title = \"German Regional Climate — DWD, 1991-2024\"),\n  dashboardSidebar(\n    selectInput(\"period\", \"Period:\", choices = c(\"1991-2000\", \"2015-2024\", \"Both\"), selected = \"Both\"),\n    selectInput(\"region\", \"Region:\", choices = c(\"All\", unique(climate$Region)))\n  ),\n  dashboardBody(\n    fluidRow(\n      box(title = \"Temperature over time\", width = 6, plotlyOutput(\"temp_plot\")),\n      box(title = \"Precipitation by region\",  width = 6, plotlyOutput(\"precip_plot\"))\n    ),\n    fluidRow(\n      box(title = \"Key finding\", width = 12, textOutput(\"finding_text\"))\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  # filter `climate` reactively based on input$period / input$region,\n  # then render each plotlyOutput() and the finding_text from that filtered data\n}\n\nshinyApp(ui, server)\n\nRequired elements — your submitted dashboard must include all of the following, not just a working app shell:\n\nAt least two linked, interactive panels (box()es) built with plotly outputs, each addressing a distinct part of your research question — not two views of the same single chart.\nAt least one input control (selectInput(), sliderInput(), or similar) that actually changes what the panels show — a dashboard where every widget is decorative does not meet this requirement.\nLabels a stranger would need: axis titles with units, a legend where relevant and a visible data-source caption (dataset name and access/generation date) somewhere on the page.\nA visible indication of uncertainty on at least one panel where you computed one in Chapter 3 (a confidence band, error bars, or the interval stated in a caption) — a dashboard that only shows point estimates hides exactly the information §8.3 asks you to communicate honestly.\nOne short, written “key finding” panel or caption stating, in plain language, what the dashboard’s main pattern is — the same discipline as a plot title that states a finding rather than just variable names (§8.2).\nA short qualitative reflection panel, alongside the key-finding panel: in a sentence or two, who is affected by this pattern, whose data or perspective might be missing from your dataset and why does this local result matter beyond this one place? This is the quantitative-and-qualitative pairing this module asks for and the same habit of mind from Chapter 7 — your dashboard should say something in words, not only in charts.\nDeployability. Your app.R (or ui.R/server.R) must run with shiny::runApp() from a clean checkout of your repository — see the Resources page for shinydashboard setup and deployment tutorials (including free hosting via shinyapps.io, if you want a shareable link rather than a local-only app).\n\n\nExercise 8.4 — Build your shinydashboard\nUsing the skeleton above as a starting point, build your dashboard against your own challenge dataset, meeting all seven required elements listed above.\nQ3. Show your dashboard to a classmate who hasn’t seen your data. Can they state your main finding back to you, correctly, within 30 seconds of using it? If not, what would you change — a clearer input label, a better chart title, a more prominent key-finding panel?\nQ4. Which input control did you choose and why does it matter for your research question specifically (not just “because dashboards usually have filters”)?",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Scientific Communication</span>"
+    ]
+  },
+  {
+    "objectID": "08-scientific-communication.html#writing-the-short-scientific-report",
+    "href": "08-scientific-communication.html#writing-the-short-scientific-report",
+    "title": "8  Scientific Communication",
+    "section": "8.5 Writing the Short Scientific Report",
+    "text": "8.5 Writing the Short Scientific Report\nRevisit the required structure from the overview’s final-challenge section: Research Question, Environmental Context, Data, Methods, Results, Discussion, Conclusion, References and Data Sources. Write it in the order it will finally appear — this is also the order a reader experiences it in:\n\nIntroduction (your Research Question) — state the problem and the specific, data-answerable question you’re addressing.\nA short theoretical framing (your Environmental Context) — a few sentences grounding the problem in why it matters and what is already known, not a full literature review.\nMethods — document your steps precisely; this doubles as your reproducibility documentation from Chapter 5.\nResults — the figures and numbers from Chapters 2–4.\nDiscussion, drawing directly on your Chapter 7 evidence-based response.\nConclusion.\n\n\nAsk your learning buddy to read a draft section back to you and ask “what would a reader still want to know here?” rather than asking it to write the section for you outright — the Discussion and Conclusion in particular need to reflect your judgement about what the evidence does and doesn’t support.\n\n\n\nIf shinydashboard’s ui/server split feels confusing at first: RStudio’s own Shiny tutorial builds up a basic app step by step before introducing the dashboard layout on top of it — work through that first if the skeleton above doesn’t yet make sense.\n\n\nIf you want to go beyond the required elements — better chart design, storytelling structure, or a more polished report: Storytelling with Data (Cole Nussbaumer Knaflic) is the widely-used reference for turning correct charts into genuinely persuasive ones.\n\n\n\nshinydashboard documentation · Shiny — Getting Started · Data Visualization: A Practical Introduction · Fundamentals of Data Visualization · Storytelling with Data. Full list with descriptions: Resources.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Scientific Communication</span>"
+    ]
+  },
+  {
+    "objectID": "08-scientific-communication.html#check-your-understanding",
+    "href": "08-scientific-communication.html#check-your-understanding",
+    "title": "8  Scientific Communication",
+    "section": "8.6 Check your understanding",
+    "text": "8.6 Check your understanding\n\nCan you justify, for each figure in your dashboard, why that chart type fits that question better than the alternatives?\nDoes every figure state its data source, units and (where relevant) its uncertainty?\nCould a reader unfamiliar with your project state your main finding correctly after reading your report’s Conclusion alone?\n\n\n\n\n\n\n\nTip\n\n\n\nThis completes the eight competency areas. Return to the overview to check your final submission against the full requirements, or browse the Resources page for the underlying open materials each chapter draws on.",
+    "crumbs": [
+      "Competency Areas",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Scientific Communication</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Practice Dataset\nThis page collects the open resources referenced throughout the module, plus the practice dataset used in Rubrics 1–4. Everything here is either open-access or explicitly licensed for reuse — check each source’s own licence before adapting it.\nThe worked example used across Chapter 1 through Chapter 4 is real, open climate data from the Deutscher Wetterdienst (DWD, Germany’s national meteorological service): annual regional averages of air temperature, precipitation and sunshine duration for five German Bundesländer (Bayern, Sachsen, Nordrhein-Westfalen, Schleswig-Holstein, Baden-Württemberg) plus the national “Deutschland” series, covering 1991–2024 (34 years — long enough to see a real, substantial warming trend). Source: DWD Climate Data Center, regional averages, licensed CC BY 4.0. data/raw/dwd_climate_raw.csv (the real DWD values, with a small number of disclosed, deliberately reintroduced formatting issues for Chapter 1’s data-quality exercises) and data/clean/dwd_climate_clean.csv (tidy, analysis-ready). Full column definitions, exact source URLs and a full disclosure of exactly what was changed for teaching purposes are in data/README.md in the project folder. Regenerate the dataset with data/generate_climate_dataset.py.",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#by-competency-area",
+    "href": "resources.html#by-competency-area",
+    "title": "Resources",
+    "section": "By Competency Area",
+    "text": "By Competency Area\n\nUnderstanding and Managing Data\n(Rubric 1 — Chapter 1)\n\nEnvironmental Statistics with R — Christina Bogner’s open lecture notes; the module’s overall blueprint. See especially “Data”, “Import, Explore, Visualize” and “Tidyverse”.\nstatistik_uebung — statistics exercises (German-language companion material).\nOpenIntro Modern Statistics — Data — variable types and structure.\nDataCamp — Data Analyst with R career track\nBeginner: Hands-On Programming with R — starts from zero R syntax.\nGoing deeper: R for Data Science (2e) — Data Tidying\n\n\n\nExploring and Visualising Data\n(Rubric 2 — Chapter 2)\n\nR for Data Science (r4ds) — the standard reference for dplyr/ggplot2 workflows.\nDataCamp — Data Analyst with R career track\nData Visualization: A Practical Introduction (socviz.co)\nFundamentals of Data Visualization (clauswilke.com/dataviz)\nBeginner: swirl — interactive R exercises in your own console.\nGoing deeper: ggplot2: Elegant Graphics for Data Analysis\n\n\n\nStatistical Inference\n(Rubric 3 — Chapter 3)\n\nstatistik_uebung\nOpenIntro Modern Statistics (IMS)\nIMS Tutorials\nBeginner: Seeing Theory — interactive visual introduction to probability and inference.\nGoing deeper: infer package documentation\n\n\n\nStatistical Modelling\n(Rubric 4 — Chapter 4)\n\nOpenIntro IMS — Inference for Regression\nOpenIntro IMS — Regression Modeling\nBeginner: StatQuest — Linear Regression, Clearly Explained\nGoing deeper: Tidy Modeling with R\n\n\n\nReproducible Research\n(Rubric 5 — Chapter 5)\n\nQuarto Guide\nHappy Git and GitHub for the useR\nR for Data Science (r4ds)\nBeginner: GitHub Desktop — point-and-click Git, no command line required.\nGoing deeper: Pro Git\n\n\n\nAI-Assisted Learning and Analysis\n(Rubric 6 — Chapter 6)\n\nYour AI learning buddy’s documentation (internal: add Acemate’s onboarding link here once available).\nGeneral prompt-literacy practice: apply the pattern in Chapter 6 to your own tool.\nBeginner: Anthropic — Prompt Engineering Overview\nGoing deeper: Ng et al. (2021), AI and Education: A 20-Year Roadmap.\n\n\n\nSustainability Problem Solving\n(Rubric 7 — Chapter 7)\n\nEurostat Data Browser — Environment\nOpen Government Data (OGD) Platform India — GODL-India licensed datasets from bodies such as the India Meteorological Department (IMD) and the Central Pollution Control Board (CPCB); an Indian alternative to Eurostat for your own challenge dataset.\nEnvironmental Data Science courses (earthdatascience.org)\nBeginner: Our World in Data — real examples of broad problems turned into data questions.\nGoing deeper: Raworth, K. (2017), Doughnut Economics.\n\nTransformative learning and Global Citizenship Education, the theoretical grounding behind Chapter 7’s opening section and its reflection prompts:\n\nMezirow, J. (1997), Transformative Learning: Theory to Practice, New Directions for Adult and Continuing Education.\nRieckmann, M. (2021), Emancipatory and Transformative Global Citizenship Education: Rethinking Political Agency.\nGoodale, T. M., Gilmore, S., & Griffiths, M. (2024), 21st-Century Stewardship: An Interdisciplinary Approach to Cultivating Global Citizenship — source of the six-competency self-check used at the end of Chapter 7.\nHernández Guzmán, A. & García de Velazco, J. (2024), Global Citizenship: Towards a Concept for Participatory Environmental Protection.\nGoing further: Lotz-Sisitka, H., Wals, A. E. J., Kronlid, D., & McGarry, D. (2015), Transformative, Transgressive Social Learning: Rethinking Higher Education Pedagogy in Times of Systemic Global Dysfunction; Yanniris, C. (2021), Education for Sustainability, Peace, and Global Citizenship: An Integrated Approach.\n\n\n\nScientific Communication\n(Rubric 8 — Chapter 8)\n\nData Visualization: A Practical Introduction (socviz.co)\nFundamentals of Data Visualization (clauswilke.com/dataviz)\nshinydashboard — required for the final interactive dashboard (see Chapter 8 for the exact requirements).\nShiny — Getting Started — build a basic Shiny app first if shinydashboard feels like a big jump.\nBeginner: the Shiny tutorial above.\nGoing deeper: Storytelling with Data",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#about-the-blueprint",
+    "href": "resources.html#about-the-blueprint",
+    "title": "Resources",
+    "section": "About the Blueprint",
+    "text": "About the Blueprint\nThis module’s structure and tone take inspiration from Christina Bogner’s Environmental Statistics lecture notes (Bookdown, CC BY-NC-SA 4.0) — numbered chapters building from data basics through modelling, worked exercises throughout and an appendix of further resources. This module is built in Quarto rather than Bookdown (Quarto is Bookdown/R Markdown’s direct successor, same underlying idea, actively developed), which is why the two sites look different, but the pedagogical shape is deliberately close.",
+    "crumbs": [
+      "Resources"
+    ]
+  }
+]

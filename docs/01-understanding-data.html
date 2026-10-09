@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Understanding and Managing Data – Data Analysis in STEM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-exploring-visualizing.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-08731ecd0d226a52c85d4cd3313dadfd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2213e3bfb2ceb1e73a7d7364ae98b957.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-understanding-data.html">Competency Areas</a></li><li class="breadcrumb-item"><a href="./01-understanding-data.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding and Managing Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Analysis in STEM</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Competency Areas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-understanding-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding and Managing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-exploring-visualizing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring and Visualising Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-statistical-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Inference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-statistical-modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Statistical Modelling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-reproducible-research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ai-assisted-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">AI-Assisted Learning and Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-sustainability-problem-solving.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sustainability Problem Solving</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-scientific-communication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Scientific Communication</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#two-questions-before-any-graph" id="toc-two-questions-before-any-graph" class="nav-link active" data-scroll-target="#two-questions-before-any-graph"><span class="header-section-number">1.1</span> Two Questions Before Any Graph</a>
+  <ul class="collapse">
+  <li><a href="#the-running-case" id="toc-the-running-case" class="nav-link" data-scroll-target="#the-running-case">The running case</a></li>
+  </ul></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">1.2</span> Data Types</a></li>
+  <li><a href="#understanding-datasets-and-data-quality" id="toc-understanding-datasets-and-data-quality" class="nav-link" data-scroll-target="#understanding-datasets-and-data-quality"><span class="header-section-number">1.3</span> Understanding Datasets and Data Quality</a>
+  <ul class="collapse">
+  <li><a href="#checking-types" id="toc-checking-types" class="nav-link" data-scroll-target="#checking-types">Checking types</a></li>
+  <li><a href="#checking-ranges" id="toc-checking-ranges" class="nav-link" data-scroll-target="#checking-ranges">Checking ranges</a></li>
+  <li><a href="#one-more-thing-worth-checking-duplicates" id="toc-one-more-thing-worth-checking-duplicates" class="nav-link" data-scroll-target="#one-more-thing-worth-checking-duplicates">One more thing worth checking: duplicates</a></li>
+  </ul></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">1.4</span> Missing Values</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1.1-decide-dont-just-delete" id="toc-exercise-1.1-decide-dont-just-delete" class="nav-link" data-scroll-target="#exercise-1.1-decide-dont-just-delete">Exercise 1.1 — Decide, don’t just delete</a></li>
+  </ul></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="header-section-number">1.5</span> Data Management</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">1.6</span> Chapter Summary</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">1.7</span> Common Mistakes</a></li>
+  <li><a href="#check-your-understanding" id="toc-check-your-understanding" class="nav-link" data-scroll-target="#check-your-understanding"><span class="header-section-number">1.8</span> Check Your Understanding</a></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises"><span class="header-section-number">1.9</span> Practice Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-understanding-data.html">Competency Areas</a></li><li class="breadcrumb-item"><a href="./01-understanding-data.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding and Managing Data</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-understanding-data" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Understanding and Managing Data</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="guiding-question">
+<p>Guiding question: <strong>What data do I have and how reliable is it?</strong></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+By the end of this chapter you will be able to:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Classify</strong> any variable you meet as continuous, discrete, nominal or ordinal — and explain why that classification decides which summaries and plots are valid.</li>
+<li><strong>Check</strong> a downloaded dataset against the tidy-data rules and catch a type error before it silently breaks a later calculation.</li>
+<li><strong>Diagnose</strong> missing values with <code>is.na()</code> — how much is missing, where and what that pattern suggests — and pick a defensible strategy for handling them.</li>
+<li><strong>Protect</strong> the raw data and turn every cleaning step into a permanent, re-runnable script.</li>
+</ol>
+</div>
+</div>
+<p><em>(Source materials: Environmental Statistics with R, DataCamp — see <a href="./resources.html">Resources</a>. Real-world data: Deutscher Wetterdienst, CC BY 4.0 — see below.)</em></p>
+<section id="two-questions-before-any-graph" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="two-questions-before-any-graph"><span class="header-section-number">1.1</span> Two Questions Before Any Graph</h2>
+<p>Every analysis in this course starts the same way, before a single plot or test: <strong>What data do I have?</strong> and <strong>How reliable is it?</strong></p>
+<p>These are not formalities. Data downloaded from a website has not been checked by anyone on your behalf. A column may have been mistyped, a value may be missing and a row may have been duplicated by an overlapping download. If you skip these questions, every later chapter (graphs, confidence intervals, regression) will produce confident-looking answers built on unchecked ground.</p>
+<section id="the-running-case" class="level3">
+<h3 class="anchored" data-anchor-id="the-running-case">The running case</h3>
+<p>Throughout this chapter you are a student who has downloaded <strong>real climate records</strong> published by the <strong>Deutscher Wetterdienst (DWD)</strong>, Germany’s national weather service — annual mean temperature, total precipitation and total sunshine duration, for five German Bundesländer and for Germany as a whole, from 1991 to 2024. The file is called <code>dwd_climate_raw.csv</code> and has six columns: <code>Region</code>, <code>Region_Code</code>, <code>Year</code>, <code>Temperature_C</code>, <code>Precipitation_mm</code> and <code>Sunshine_hours</code>. Of these three climate variables, <strong>annual mean temperature is the one this module follows all the way through to Chapter 4.</strong> This chapter’s cleaning exercises, though, work with whichever columns actually contain the real, disclosed formatting issues: a stray unit suffix in <code>Precipitation_mm</code>, three blanked values in <code>Sunshine_hours</code>. Inventing a fake problem in <code>Temperature_C</code> just to keep one column in the spotlight would break this chapter’s own promise that nothing here is invented. Once the file is clean, from Chapter 2 onward, temperature becomes the one variable you follow all the way through.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+About the data in this document
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Everything you see in this chapter’s numbers is <strong>real, official DWD data</strong> — nothing is invented. On top of those real values, a small number of formatting issues were <strong>deliberately added and fully disclosed</strong> (a stray unit suffix, some duplicated rows, a few blanked-out readings) so this chapter has something concrete to practice finding and fixing. Every one of these is listed exactly, with exact counts, in <a href="data/README.md"><code>data/README.md</code></a> — nothing here pretends a teaching device is a genuine DWD error. The file is produced by <a href="data/generate_climate_dataset.py"><code>data/generate_climate_dataset.py</code></a>, which contains every real value plus the source URLs it was read from, so you can regenerate it (or verify it against DWD’s own files) yourself.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-fig-width="6.5" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A["Download&lt;br/&gt;dwd_climate_raw.csv"] --&gt; B["Data&lt;br/&gt;Types"]
+    B --&gt; C["Data quality:&lt;br/&gt;tidy, type, range"]
+    C --&gt; D["Missing&lt;br/&gt;Values"]
+    D --&gt; E["Data&lt;br/&gt;Management"]
+    E --&gt; F["Clean file,&lt;br/&gt;ready for Ch. 2"]
+    style A fill:#2c8c99,color:#fff
+    style F fill:#d98c2b,color:#fff
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="data-types" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="data-types"><span class="header-section-number">1.2</span> Data Types</h2>
+<p>Every column in a dataset has a <strong>type</strong> and the type decides which summaries and plots are even mathematically valid. There are two families, each with two members.</p>
+<p><strong>Numerical variables</strong></p>
+<ul>
+<li><strong>Continuous.</strong> Think of time on a stopwatch. It doesn’t jump — it moves smoothly through decimals and you can always split it into smaller and smaller fractions. A continuous variable can take a wide range of numeric values where it is sensible to add, subtract, or average and it varies without fixed gaps. <code>Temperature_C</code>, <code>Precipitation_mm</code> and <code>Sunshine_hours</code> are all continuous — a temperature of 9.37°C is a perfectly meaningful value.</li>
+<li><strong>Discrete.</strong> Now think of eggs in a carton. You count them in whole numbers; you cannot buy 2.5 eggs. A discrete variable can only take numeric values with jumps — typically non-negative counts. <code>Year</code> behaves this way here: it only takes whole values.</li>
+</ul>
+<p><strong>Categorical variables</strong></p>
+<ul>
+<li><strong>Nominal.</strong> Think of a box of crayons. A green crayon isn’t “higher” or “better” than a yellow one — they are simply different, unordered categories. A nominal variable’s possible values are called <strong>levels</strong> and those levels have no natural mathematical hierarchy. <code>Region</code> is nominal: <code>"Bayern"</code> is not more or less than <code>"Sachsen"</code>, they are simply different places.</li>
+<li><strong>Ordinal.</strong> Think of coffee cup sizes. They are distinct categories, not continuous numbers — but you universally know that a medium is larger than a small and smaller than a large. An ordinal variable is fundamentally categorical, but its levels have a natural order. None of our columns are ordinal here, but you will meet this type in your own challenge dataset (for example, an air-quality index reported as “good / moderate / poor”).</li>
+</ul>
+<div class="acemate-box">
+<p>If you’re unsure whether a column is discrete or continuous, ask your learning buddy for three real-world examples of each — but check its answer against the “can you meaningfully have half of one?” test yourself, rather than taking the label on trust.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A note on units
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Strictly speaking, the SI base unit for temperature is the kelvin — but climate science (and DWD’s own data) reports temperature in <strong>degrees Celsius (°C)</strong>, precipitation in <strong>millimetres (mm)</strong> and sunshine duration in <strong>hours (h)</strong>, because these are the practical, universally understood units for this domain and changing them would make the numbers harder to sanity-check, not easier. Every chart, table and figure in this module states its unit explicitly and consistently — get in the habit of checking the unit on every axis and every number before you trust it, here and in your own challenge dataset.</p>
+</div>
+</div>
+</section>
+<section id="understanding-datasets-and-data-quality" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="understanding-datasets-and-data-quality"><span class="header-section-number">1.3</span> Understanding Datasets and Data Quality</h2>
+<p>As a student, you downloaded real climate data from a website. This is our base case. To move ahead and produce a trustworthy analysis, you first need to check the file against the <strong>tidy data</strong> rules and then check the values inside it.</p>
+<p><strong>The tidy data rules:</strong></p>
+<ul>
+<li><strong>Columns must be variables.</strong> Each column tracks exactly one thing (<code>Temperature_C</code>, <code>Precipitation_mm</code>, never both mixed into one).</li>
+<li><strong>Rows must be observations.</strong> Each row is a single, distinct data-collection event — here, one region in one year.</li>
+<li><strong>Cells must hold single values.</strong> A cell can never combine two things, such as writing <code>"9.4C / 60mm"</code> in one field. Each measurement gets its own cell.</li>
+</ul>
+<p><em>Analogy:</em> think of an ice-cube tray. Rows are the tray’s horizontal bars, columns are its vertical lines of pockets and each individual pocket is a cell meant to hold exactly one splash of water. If whoever built the file merged pockets together or poured data across the dividers, the structure breaks and no analysis tool can “freeze” it into something usable.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>climate <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/raw/dwd_climate_raw.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(climate)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(climate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Code walkthrough
+</summary>
+<ul>
+<li><code>dim(climate)</code> — rows × columns.</li>
+<li><code>glimpse(climate)</code> — one line per column, with its type and a few example values.</li>
+</ul>
+</details>
+<p>Our file already has this shape — one row per region-year combination, one column per variable — which is exactly what lets you <code>filter()</code>, <code>group_by()</code> and plot it directly once the values inside it are clean.</p>
+<section id="checking-types" class="level3">
+<h3 class="anchored" data-anchor-id="checking-types">Checking types</h3>
+<p>After opening a downloaded file in R, the very first thing to check is whether every column has the type it claims to have.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(climate)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(climate<span class="sc">$</span>Precipitation_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>Precipitation_mm</code> should be numeric throughout — but <code>str()</code> shows it as <code>character</code>. Somewhere in the file, at least one value contains something other than digits and a decimal point and R is protecting you from silently losing information: a column can only have one type, so if even one cell contains non-numeric text, the <em>entire</em> column is read as text.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(<span class="fu">suppressWarnings</span>(<span class="fu">as.numeric</span>(Precipitation_mm)))) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Region, Year, Precipitation_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This turns up <strong>5</strong> entries of the form <code>"885.0mm"</code> — a real number with a stray unit suffix typed in. <code>parse_number()</code> (or <code>readr</code>’s own numeric parsing) strips the unit and recovers the real value.</p>
+<p><em>Analogy:</em> think of an automated conveyor-belt scanner at checkout. Instead of manually weighing every item, the scanner reads each barcode and checks it against what that product should weigh. <code>class()</code> is the same idea applied to a column: it checks whether what came down the belt actually matches the type it was supposed to be.</p>
+</section>
+<section id="checking-ranges" class="level3">
+<h3 class="anchored" data-anchor-id="checking-ranges">Checking ranges</h3>
+<p>Once every column has the right type, check whether every value is physically plausible for what it claims to measure.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">temp_min =</span> <span class="fu">min</span>(Temperature_C, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">temp_max =</span> <span class="fu">max</span>(Temperature_C, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">precip_min =</span> <span class="fu">min</span>(<span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"mm"</span>, <span class="st">""</span>, Precipitation_mm)), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sun_min =</span> <span class="fu">min</span>(Sunshine_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">sun_max =</span> <span class="fu">max</span>(Sunshine_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Annual mean temperatures across these five regions fall between about 6.7°C and 11.5°C — entirely plausible for Germany. Precipitation and sunshine values are likewise within the range you’d expect for a temperate European climate. <strong>This check passes.</strong> That is not a wasted step: you only know that because you looked, not because nothing seemed obviously wrong. Continuing the conveyor-belt picture: range checks are the belt’s alarm light. If a box came through weighing 500kg instead of 5kg, the light would trip — here, it stays off.</p>
+</section>
+<section id="one-more-thing-worth-checking-duplicates" class="level3">
+<h3 class="anchored" data-anchor-id="one-more-thing-worth-checking-duplicates">One more thing worth checking: duplicates</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span> <span class="fu">count</span>(Region, Year) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This turns up <strong>4</strong> region-year combinations appearing twice — for example, <code>Baden-Württemberg</code>, 1994. This isn’t a measurement error; it’s what happens when two overlapping export files get concatenated without checking. <code>distinct()</code> removes the repeats.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A real detail worth knowing: where the numbers actually came from
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>DWD’s full historical files (1881–present) list columns like <code>Niedersachsen</code> <em>and</em> <code>Niedersachsen/Hamburg/Bremen</code> side by side, because Hamburg and Bremen were reported jointly with Niedersachsen in earlier decades before being split out. That’s not a quality problem to fix — it’s exactly the kind of thing you can only know by reading a provider’s own documentation, not by guessing from a column name. The five regions used in this chapter were chosen specifically because each was reported as one stable region for the entire 1991–2024 period. Source: <a href="https://opendata.dwd.de/climate_environment/CDC/regional_averages_DE/annual/">DWD Climate Data Center</a>, CC BY 4.0, retrieved 24 September 2026.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="missing-values" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">1.4</span> Missing Values</h2>
+<p>Even a mostly-clean file can have gaps. R treats missing data as a strict structural state: it forces missing observations into a vector as <code>NA</code> (“Not Available”) and if a column contains even one <code>NA</code>, running a basic math function like <code>mean()</code> on it automatically returns <code>NA</code> too. This is a safety feature — it stops you from silently ignoring a gap — not a bug.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>Sunshine_hours</code> has <strong>3</strong> missing values out of 208 raw rows — scattered across different regions and years, with no single region or year responsible for all of them. Rather than visually hunting for blank cells, <code>is.na()</code> lets you map every missing entry across the whole file at once:</p>
+<p><img src="images/fig-missing-heatmap.png" class="img-fluid" alt="Heatmap of Region by Year showing three isolated missing Sunshine_hours values: Schleswig-Holstein 1998, Baden-Württemberg 2000 and Bayern 2007."></p>
+<p><em>Analogy:</em> think of a broken link in a bicycle chain. If one link is missing, trying to pedal moves nothing — the chain simply won’t turn. That’s <code>NA</code> doing its job: an intentional stop sign, not something to route around silently. Appending <code>na.rm = TRUE</code> to a function is like removing the broken link and snapping the remaining good pieces back together so you can move forward again — deliberately, not by accident.</p>
+<p>But <em>how</em> you go around a gap depends on what you’re trying to calculate. Three strategies, in order of how much they assume:</p>
+<p><strong>Strategy A — Column-specific omission.</strong> When analysing temperature trends, use the whole row as normal. When analysing sunshine specifically, tell R to skip just the missing entries with <code>na.rm = TRUE</code> (e.g.&nbsp;<code>mean(climate$Sunshine_hours, na.rm = TRUE)</code>). Every other column in that row stays fully usable.</p>
+<p><strong>Strategy B — Linear interpolation.</strong> Because this file is recorded once per year, you can estimate a single missing year’s value as the average of the year before and the year after, <em>for that same region</em>. Schleswig-Holstein’s missing 1998 sunshine value, for instance, could reasonably be estimated from its 1997 and 1999 values. This only makes sense when the gap is a single isolated point in an otherwise regular series — not when several consecutive years are missing.</p>
+<p><strong>Strategy C — Complete-case analysis (listwise deletion).</strong> If your goal is specifically a multi-variable calculation that needs all three climate variables at the exact same region-year — for example, the regression in <a href="./04-statistical-modelling.html">Chapter 4</a> — remove that row entirely with <code>na.omit()</code> or <code>drop_na()</code>. You lose the row’s other variables too, but you avoid quietly mixing real and estimated values into one model.</p>
+<section id="exercise-1.1-decide-dont-just-delete" class="level3 exercise-box">
+<h3 class="anchored" data-anchor-id="exercise-1.1-decide-dont-just-delete">Exercise 1.1 — Decide, don’t just delete</h3>
+<!-- Checks: match a missing-value strategy to what you are actually about to calculate, instead of applying one default rule everywhere. -->
+<p><strong>Q1.</strong> With only 3 missing values, scattered rather than concentrated, which strategy (A, B or C) would you choose for a 34-year trend line of <code>Sunshine_hours</code> alone? Which would you choose if you were about to fit the multiple regression from <a href="./04-statistical-modelling.html">Chapter 4</a>, which uses <code>Sunshine_hours</code>, <code>Year</code> <em>and</em> <code>Region</code> together? Justify the difference.</p>
+<p><strong>Q2.</strong> Now imagine instead that all 3 missing values belonged to the same region in the same decade. Would your answer change? Why?</p>
+</section>
+</section>
+<section id="data-management" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="data-management"><span class="header-section-number">1.5</span> Data Management</h2>
+<p>Web data can change, update, or disappear from a site tomorrow. Two habits protect every analysis you build on top of today’s download:</p>
+<ol type="1">
+<li><strong>Never overwrite the raw file.</strong> Save <code>dwd_climate_raw.csv</code> into a dedicated, locked-down folder and never modify it by hand — not even to fix the one thing you already know is wrong. Every cleaning step (stripping the <code>"mm"</code> suffix, <code>distinct()</code>-ing the duplicates, deciding how to handle the 3 missing values) happens in code that reads the raw file and writes a <em>separate</em> clean one.</li>
+<li><strong>Make cleaning reproducible.</strong> Typing a fix directly into the R console vanishes the moment you close the session. Write every adjustment into a permanent, re-runnable script file, so that any researcher — including you, in six months — can click “Run” and recreate exactly the same clean dataset from a fresh copy of the raw download.</li>
+</ol>
+<div class="acemate-box">
+<p>If you ask your learning buddy to “clean my data,” ask it to show you the code rather than hand you an already-cleaned file — you want to be able to re-run the same steps yourself on a future download and to catch it if it silently drops a row you didn’t ask it to.</p>
+</div>
+<div class="differentiation-box">
+<div class="struggling">
+<p>If <code>class()</code>, <code>str()</code> and the idea of a column “type” still feel unfamiliar: <a href="https://swirlstats.com/students.html">swirl</a>’s “R Programming” module runs short, interactive exercises on exactly this, directly in your own R console.</p>
+</div>
+<div class="deeper">
+<p>If the tidy-data rules clicked and you want the full reasoning behind them, straight from the source: Hadley Wickham’s <a href="https://www.jstatsoft.org/article/view/v059i10">“Tidy Data”</a> (Journal of Statistical Software, 2014) is the short, readable paper that defined the rules you just used.</p>
+</div>
+</div>
+<div class="sources-box">
+<p><a href="https://opendata.dwd.de/climate_environment/CDC/">Deutscher Wetterdienst — Climate Data Center</a> · <a href="https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.pdf">DWD Terms of use (CC BY 4.0)</a> · <a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a> · <a href="https://r4ds.hadley.nz/">R for Data Science</a>. Full list with descriptions: <a href="./resources.html#understanding-and-managing-data">Resources</a>.</p>
+</div>
+</section>
+<section id="chapter-summary" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">1.6</span> Chapter Summary</h2>
+<p>You now have a repeatable process: classify every variable by type, check a downloaded file against the tidy-data rules, check that every column’s type and range are what they claim to be, map and diagnose missing values with <code>is.na()</code> and protect the raw download behind a reproducible script — so that everything you build in Chapters 2–4 rests on ground you’ve actually checked, not just glanced at.</p>
+</section>
+<section id="common-mistakes" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">1.7</span> Common Mistakes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Why it matters</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Assuming a column is numeric because it “looks like numbers”</td>
+<td>One stray text value (a unit suffix, a typo) forces the whole column to <code>character</code></td>
+<td>Always run <code>class()</code> / <code>str()</code> before summarising</td>
+</tr>
+<tr class="even">
+<td>Deleting every row with any <code>NA</code> by default</td>
+<td>Throws away real, usable data in every <em>other</em> column of that row</td>
+<td>Match the strategy (A/B/C) to what you’re actually calculating</td>
+</tr>
+<tr class="odd">
+<td>Editing the raw CSV by hand</td>
+<td>Not reproducible — the next download won’t get the same fix</td>
+<td>Clean via a script that reads raw and writes clean</td>
+</tr>
+<tr class="even">
+<td>Treating “nothing looked wrong” as “I didn’t need to check”</td>
+<td>A passing check is still a checked, reportable fact</td>
+<td>Run the type and range checks every time, even when the data looks fine</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="check-your-understanding" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="check-your-understanding"><span class="header-section-number">1.8</span> Check Your Understanding</h2>
+<ul>
+<li>Could you explain, to someone who has never seen this dataset, the difference between a discrete and a continuous variable using two of its actual columns?</li>
+<li>Why does one stray unit suffix like <code>"885.0mm"</code> force an entire numeric column to be read as text?</li>
+<li>Given 3 scattered missing values, could you explain when Strategy A, B or C is the right choice — and when it isn’t?</li>
+</ul>
+</section>
+<section id="practice-exercises" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="practice-exercises"><span class="header-section-number">1.9</span> Practice Exercises</h2>
+<!-- Internal note for whoever maintains this module: each item below has an HTML
+comment right before it stating what it checks, e.g. this one is for Fabian/the intern
+team, not for students — it doesn't render on the published page. Item 7 is adapted
+from Christina Bogner's environmental_stat, Appendix C "Additional exercises"
+(chrisbogner.github.io/environmental_stat, CC BY-NC-SA 4.0), one of the few genuinely
+self-contained conceptual questions in that material that doesn't require its own
+dataset — most of Bogner's other exercises are tied to a specific dataset (penguins,
+nycflights, etc.) and don't lift out cleanly as standalone revision questions. -->
+<p><em>A short set of standalone revision questions, each with a model answer to check yourself against.</em></p>
+<div class="exercise-box">
+<!-- Checks: can you assign the right variable type from a real column name alone, including one you haven't seen before? -->
+<p><strong>1. Classify.</strong> For each of the following, state the variable type: <code>Region</code>, <code>Year</code>, <code>Temperature_C</code>, a hypothetical “heatwave severity: mild/moderate/severe” column.</p>
+<details>
+<summary>
+Answer
+</summary>
+<code>Region</code> — categorical (nominal). <code>Year</code> — discrete numeric. <code>Temperature_C</code> — continuous numeric. The hypothetical severity column — categorical (ordinal): it has a natural order, unlike <code>Region</code>.
+</details>
+<!-- Checks: can you explain, without running any code, why one bad cell breaks a whole column's type? -->
+<p><strong>2. Find the type error.</strong> Look at <code>"885.0mm"</code>. Why does even one value like this force the whole <code>Precipitation_mm</code> column to be read as <code>character</code> instead of <code>numeric</code>?</p>
+<details>
+<summary>
+Answer
+</summary>
+A column can only have one type in R. If even one cell contains non-numeric characters, R (or <code>read_csv()</code>) reads the entire column as text/character to avoid silently discarding the one bad cell.
+</details>
+<!-- Checks: can you predict the correct row count of a cleaned file from its stated coverage and use that as a sanity check on your own work? -->
+<p><strong>3. Coverage arithmetic.</strong> Five regions, 34 years each, plus one national series of 34 years and 4 duplicated rows in the raw download. How many rows should the <em>clean</em> file have after removing the duplicates? Show your work.</p>
+<details>
+<summary>
+Answer
+</summary>
+<span class="math inline">\(5 \times 34 = 170\)</span> region-year rows, plus <span class="math inline">\(34\)</span> national rows, for <span class="math inline">\(170 + 34 = 204\)</span> total after <code>distinct()</code> removes the 4 duplicates from the 208-row raw file.
+</details>
+<!-- Checks: can you tell a real repeated measurement apart from a true duplicate row, using the same column values? -->
+<p><strong>4. Duplicates vs.&nbsp;legitimate repeats.</strong> <code>Region == "Bayern"</code> naturally appears 34 times (once per year) in a tidy file. How is that different from the kind of duplicate you found in the “Understanding Datasets and Data Quality” section above?</p>
+<details>
+<summary>
+Answer
+</summary>
+34 rows for Bayern across 34 <em>different</em> years are 34 distinct observations — that’s expected. A true duplicate is the <em>same</em> Region-Year combination appearing more than once, which should be a single observation.
+</details>
+<!-- Checks: can you pick the right missing-value strategy (A, B or C) for a specific calculation and explain why the other two would fit worse? -->
+<p><strong>5. Strategy choice.</strong> You need the exact multi-variable correlation between <code>Temperature_C</code>, <code>Precipitation_mm</code> and <code>Sunshine_hours</code> at the same region-year. One of those three values is missing for one row. Which strategy (A, B or C) fits and why would the other two be a worse fit here specifically?</p>
+<details>
+<summary>
+Answer
+</summary>
+Strategy C (complete-case analysis / <code>na.omit()</code>): a joint multi-variable calculation needs all three real values at the same row, so estimating the missing one (B) would mix real and invented data into the correlation and column-specific omission (A) doesn’t apply once you need all three columns together.
+</details>
+<!-- Checks: do you know what an open licence actually requires of you in practice, not just its name? -->
+<p><strong>6. License and attribution.</strong> What does “CC BY 4.0” require you to do if you publish a chart built from this data?</p>
+<details>
+<summary>
+Answer
+</summary>
+Attribute the source — e.g.&nbsp;“Source: Deutscher Wetterdienst (DWD), Climate Data Center, CC BY 4.0” — but you are otherwise free to use, adapt and republish it, including commercially.
+</details>
+<!-- Checks: do you understand NA propagation well enough to fix a broken summary
+statistic, not just avoid it by habit? Adapted from Christina Bogner, environmental_stat,
+Appendix C.1.2 "Missing values" (CC BY-NC-SA 4.0). -->
+<p><strong>7. NA propagation.</strong> Suppose <code>Sunshine_hours</code> for one region’s 34 years is stored as a plain vector and you run <code>sum(Sunshine_hours)</code>. One value in that vector is <code>NA</code>. What does <code>sum()</code> return and why? How would you correct the call so it returns the total of the non-missing values instead?</p>
+<details>
+<summary>
+Answer
+</summary>
+<code>sum()</code> returns <code>NA</code>: R treats “unknown plus anything” as itself unknown, so a single missing value poisons the whole sum rather than being silently skipped. Fix it with <code>sum(Sunshine_hours, na.rm = TRUE)</code>, which tells R explicitly to remove the <code>NA</code> values before summing — the same <code>na.rm = TRUE</code> pattern from Strategy A earlier in this chapter.
+</details>
+</div>
+<p>Continue to <a href="./02-exploring-visualizing.html">Chapter 2, Exploring and Visualising Data</a>.</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-exploring-visualizing.html" class="pagination-link" aria-label="Exploring and Visualising Data">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring and Visualising Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Understanding and Managing Data {#sec-understanding-data}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>::: {.guiding-question}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Guiding question: **What data do I have and how reliable is it?**</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## By the end of this chapter you will be able to:</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Classify** any variable you meet as continuous, discrete, nominal or ordinal — and</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>   explain why that classification decides which summaries and plots are valid.</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Check** a downloaded dataset against the tidy-data rules and catch a type error</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>   before it silently breaks a later calculation.</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Diagnose** missing values with <span class="in">`is.na()`</span> — how much is missing, where and what</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>   that pattern suggests — and pick a defensible strategy for handling them.</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Protect** the raw data and turn every cleaning step into a permanent, re-runnable</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>   script.</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>*(Source materials: Environmental Statistics with R, DataCamp — see [Resources](resources.qmd). Real-world data: Deutscher Wetterdienst, CC BY 4.0 — see below.)*</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Two Questions Before Any Graph</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>Every analysis in this course starts the same way, before a single plot or test:</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>**What data do I have?** and **How reliable is it?**</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>These are not formalities. Data downloaded from a website has not been checked by</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>anyone on your behalf. A column may have been mistyped, a value may be missing and a</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>row may have been duplicated by an overlapping download. If you skip these questions,</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>every later chapter (graphs, confidence intervals, regression) will produce</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>confident-looking answers built on unchecked ground.</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### The running case</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>Throughout this chapter you are a student who has downloaded **real climate records**</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>published by the **Deutscher Wetterdienst (DWD)**, Germany's national weather service —</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>annual mean temperature, total precipitation and total sunshine duration, for five</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>German Bundesländer and for Germany as a whole, from 1991 to 2024. The file is called</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="in">`dwd_climate_raw.csv`</span> and has six columns: <span class="in">`Region`</span>, <span class="in">`Region_Code`</span>, <span class="in">`Year`</span>,</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="in">`Temperature_C`</span>, <span class="in">`Precipitation_mm`</span> and <span class="in">`Sunshine_hours`</span>. Of these three climate</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>variables, **annual mean temperature is the one this module follows all the way through</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>to Chapter 4.** This chapter's cleaning exercises, though, work with whichever columns</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>actually contain the real, disclosed formatting issues: a stray unit suffix in</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="in">`Precipitation_mm`</span>, three blanked values in <span class="in">`Sunshine_hours`</span>. Inventing a fake problem in</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="in">`Temperature_C`</span> just to keep one column in the spotlight would break this chapter's own</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>promise that nothing here is invented. Once the file is clean, from Chapter 2 onward,</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>temperature becomes the one variable you follow all the way through.</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## About the data in this document</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>Everything you see in this chapter's numbers is **real, official DWD data** — nothing</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>is invented. On top of those real values, a small number of formatting issues were</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>**deliberately added and fully disclosed** (a stray unit suffix, some duplicated rows, a</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>few blanked-out readings) so this chapter has something concrete to practice finding and</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>fixing. Every one of these is listed exactly, with exact counts, in</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`data/README.md`</span><span class="co">](data/README.md)</span> — nothing here pretends a teaching device is a</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>genuine DWD error. The file is produced by</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`data/generate_climate_dataset.py`</span><span class="co">](data/generate_climate_dataset.py)</span>, which contains</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>every real value plus the source URLs it was read from, so you can regenerate it (or</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>verify it against DWD's own files) yourself.</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-width: 6.5</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="in">%%| echo: false</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="in">    A["Download&lt;br/&gt;dwd_climate_raw.csv"] --&gt; B["Data&lt;br/&gt;Types"]</span></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="in">    B --&gt; C["Data quality:&lt;br/&gt;tidy, type, range"]</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="in">    C --&gt; D["Missing&lt;br/&gt;Values"]</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="in">    D --&gt; E["Data&lt;br/&gt;Management"]</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="in">    E --&gt; F["Clean file,&lt;br/&gt;ready for Ch. 2"]</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="in">    style A fill:#2c8c99,color:#fff</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="in">    style F fill:#d98c2b,color:#fff</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Types</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>Every column in a dataset has a **type** and the type decides which summaries and plots</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>are even mathematically valid. There are two families, each with two members.</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>**Numerical variables**</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Continuous.** Think of time on a stopwatch. It doesn't jump — it moves smoothly</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>  through decimals and you can always split it into smaller and smaller fractions. A</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>  continuous variable can take a wide range of numeric values where it is sensible to</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>  add, subtract, or average and it varies without fixed gaps. <span class="in">`Temperature_C`</span>,</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>  <span class="in">`Precipitation_mm`</span> and <span class="in">`Sunshine_hours`</span> are all continuous — a temperature of 9.37°C</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>  is a perfectly meaningful value.</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Discrete.** Now think of eggs in a carton. You count them in whole numbers; you</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>  cannot buy 2.5 eggs. A discrete variable can only take numeric values with jumps —</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>  typically non-negative counts. <span class="in">`Year`</span> behaves this way here: it only takes whole</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>  values.</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>**Categorical variables**</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Nominal.** Think of a box of crayons. A green crayon isn't "higher" or "better" than</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>  a yellow one — they are simply different, unordered categories. A nominal variable's</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>  possible values are called **levels** and those levels have no natural mathematical</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>  hierarchy. <span class="in">`Region`</span> is nominal: <span class="in">`"Bayern"`</span> is not more or less than <span class="in">`"Sachsen"`</span>, they</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>  are simply different places.</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ordinal.** Think of coffee cup sizes. They are distinct categories, not continuous</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>  numbers — but you universally know that a medium is larger than a small and smaller</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>  than a large. An ordinal variable is fundamentally categorical, but its levels have a</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>  natural order. None of our columns are ordinal here, but you will meet this type in</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>  your own challenge dataset (for example, an air-quality index reported as</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>  "good / moderate / poor").</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>::: {.acemate-box}</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>If you're unsure whether a column is discrete or continuous, ask your learning buddy for</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>three real-world examples of each — but check its answer against the "can you meaningfully</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>have half of one?" test yourself, rather than taking the label on trust.</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## A note on units</span></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>Strictly speaking, the SI base unit for temperature is the kelvin — but climate science</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>(and DWD's own data) reports temperature in **degrees Celsius (°C)**, precipitation in</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>**millimetres (mm)** and sunshine duration in **hours (h)**, because these are the</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>practical, universally understood units for this domain and changing them would make</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>the numbers harder to sanity-check, not easier. Every chart, table and figure in this</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>module states its unit explicitly and consistently — get in the habit of checking the</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>unit on every axis and every number before you trust it, here and in your own challenge</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>dataset.</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## Understanding Datasets and Data Quality</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>As a student, you downloaded real climate data from a website. This is our base case. To</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>move ahead and produce a trustworthy analysis, you first need to check the file against</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>the **tidy data** rules and then check the values inside it.</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>**The tidy data rules:**</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Columns must be variables.** Each column tracks exactly one thing (<span class="in">`Temperature_C`</span>,</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>  <span class="in">`Precipitation_mm`</span>, never both mixed into one).</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Rows must be observations.** Each row is a single, distinct data-collection event —</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>  here, one region in one year.</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cells must hold single values.** A cell can never combine two things, such as</span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>  writing <span class="in">`"9.4C / 60mm"`</span> in one field. Each measurement gets its own cell.</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>*Analogy:* think of an ice-cube tray. Rows are the tray's horizontal bars, columns are</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>its vertical lines of pockets and each individual pocket is a cell meant to hold exactly</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>one splash of water. If whoever built the file merged pockets together or poured data</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>across the dividers, the structure breaks and no analysis tool can "freeze" it into</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>something usable.</span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>climate <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/raw/dwd_climate_raw.csv"</span>)</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(climate)</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(climate)</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Code walkthrough&lt;/summary&gt;</span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`dim(climate)`</span> — rows × columns.</span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`glimpse(climate)`</span> — one line per column, with its type and a few example values.</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>Our file already has this shape — one row per region-year combination, one column per</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>variable — which is exactly what lets you <span class="in">`filter()`</span>, <span class="in">`group_by()`</span> and plot it directly</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>once the values inside it are clean.</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### Checking types</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>After opening a downloaded file in R, the very first thing to check is whether every</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>column has the type it claims to have.</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(climate)</span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(climate<span class="sc">$</span>Precipitation_mm)</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="in">`Precipitation_mm`</span> should be numeric throughout — but <span class="in">`str()`</span> shows it as <span class="in">`character`</span>.</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>Somewhere in the file, at least one value contains something other than digits and a</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>decimal point and R is protecting you from silently losing information: a column can</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>only have one type, so if even one cell contains non-numeric text, the *entire* column</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>is read as text.</span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(<span class="fu">suppressWarnings</span>(<span class="fu">as.numeric</span>(Precipitation_mm)))) <span class="sc">%&gt;%</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Region, Year, Precipitation_mm)</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>This turns up **5** entries of the form <span class="in">`"885.0mm"`</span> — a real number with a stray unit</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>suffix typed in. <span class="in">`parse_number()`</span> (or <span class="in">`readr`</span>'s own numeric parsing) strips the unit and</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>recovers the real value.</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>*Analogy:* think of an automated conveyor-belt scanner at checkout. Instead of manually</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>weighing every item, the scanner reads each barcode and checks it against what that</span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>product should weigh. <span class="in">`class()`</span> is the same idea applied to a column: it checks whether</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>what came down the belt actually matches the type it was supposed to be.</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a><span class="fu">### Checking ranges</span></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>Once every column has the right type, check whether every value is physically plausible</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>for what it claims to measure.</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>    <span class="at">temp_min =</span> <span class="fu">min</span>(Temperature_C, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">temp_max =</span> <span class="fu">max</span>(Temperature_C, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>    <span class="at">precip_min =</span> <span class="fu">min</span>(<span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"mm"</span>, <span class="st">""</span>, Precipitation_mm)), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>    <span class="at">sun_min =</span> <span class="fu">min</span>(Sunshine_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">sun_max =</span> <span class="fu">max</span>(Sunshine_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>Annual mean temperatures across these five regions fall between about 6.7°C and 11.5°C —</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>entirely plausible for Germany. Precipitation and sunshine values are likewise within the</span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>range you'd expect for a temperate European climate. **This check passes.** That is not a</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>wasted step: you only know that because you looked, not because nothing seemed obviously</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>wrong. Continuing the conveyor-belt picture: range checks are the belt's alarm light. If</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>a box came through weighing 500kg instead of 5kg, the light would trip — here, it stays</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>off.</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="fu">### One more thing worth checking: duplicates</span></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span> <span class="fu">count</span>(Region, Year) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>This turns up **4** region-year combinations appearing twice — for example,</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a><span class="in">`Baden-Württemberg`</span>, 1994. This isn't a measurement error; it's what happens when two</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>overlapping export files get concatenated without checking. <span class="in">`distinct()`</span> removes the</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>repeats.</span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## A real detail worth knowing: where the numbers actually came from</span></span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>DWD's full historical files (1881–present) list columns like <span class="in">`Niedersachsen`</span> *and*</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="in">`Niedersachsen/Hamburg/Bremen`</span> side by side, because Hamburg and Bremen were reported</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>jointly with Niedersachsen in earlier decades before being split out. That's not a</span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>quality problem to fix — it's exactly the kind of thing you can only know by reading a</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>provider's own documentation, not by guessing from a column name. The five regions used</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a>in this chapter were chosen specifically because each was reported as one stable region</span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a>for the entire 1991–2024 period. Source: [DWD Climate Data</span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>Center](https://opendata.dwd.de/climate_environment/CDC/regional_averages_DE/annual/),</span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a>CC BY 4.0, retrieved 24 September 2026.</span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="fu">## Missing Values</span></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>Even a mostly-clean file can have gaps. R treats missing data as a strict structural</span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a>state: it forces missing observations into a vector as <span class="in">`NA`</span> ("Not Available") and if a</span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a>column contains even one <span class="in">`NA`</span>, running a basic math function like <span class="in">`mean()`</span> on it</span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a>automatically returns <span class="in">`NA`</span> too. This is a safety feature — it stops you from silently</span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a>ignoring a gap — not a bug.</span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a>climate <span class="sc">%&gt;%</span></span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.))))</span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="in">`Sunshine_hours`</span> has **3** missing values out of 208 raw rows — scattered across</span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>different regions and years, with no single region or year responsible for all of them.</span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a>Rather than visually hunting for blank cells, <span class="in">`is.na()`</span> lets you map every missing entry</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>across the whole file at once:</span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/fig-missing-heatmap.png)</span>{fig-alt="Heatmap of Region by Year showing three isolated missing Sunshine_hours values: Schleswig-Holstein 1998, Baden-Württemberg 2000 and Bayern 2007."}</span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a>*Analogy:* think of a broken link in a bicycle chain. If one link is missing, trying to</span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a>pedal moves nothing — the chain simply won't turn. That's <span class="in">`NA`</span> doing its job: an</span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>intentional stop sign, not something to route around silently. Appending <span class="in">`na.rm = TRUE`</span></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a>to a function is like removing the broken link and snapping the remaining good pieces</span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>back together so you can move forward again — deliberately, not by accident.</span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>But *how* you go around a gap depends on what you're trying to calculate. Three</span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a>strategies, in order of how much they assume:</span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a>**Strategy A — Column-specific omission.** When analysing temperature trends, use the</span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a>whole row as normal. When analysing sunshine specifically, tell R to skip just the</span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a>missing entries with <span class="in">`na.rm = TRUE`</span> (e.g. <span class="in">`mean(climate$Sunshine_hours, na.rm = TRUE)`</span>).</span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a>Every other column in that row stays fully usable.</span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a>**Strategy B — Linear interpolation.** Because this file is recorded once per year, you</span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a>can estimate a single missing year's value as the average of the year before and the</span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a>year after, *for that same region*. Schleswig-Holstein's missing 1998 sunshine value, for</span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a>instance, could reasonably be estimated from its 1997 and 1999 values. This only makes</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a>sense when the gap is a single isolated point in an otherwise regular series — not when</span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a>several consecutive years are missing.</span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a>**Strategy C — Complete-case analysis (listwise deletion).** If your goal is specifically</span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a>a multi-variable calculation that needs all three climate variables at the exact same</span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a>region-year — for example, the regression in [Chapter</span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a>4](04-statistical-modelling.qmd) — remove that row entirely with <span class="in">`na.omit()`</span> or</span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a><span class="in">`drop_na()`</span>. You lose the row's other variables too, but you avoid quietly mixing real</span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a>and estimated values into one model.</span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a>::: {.exercise-box}</span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 1.1 — Decide, don't just delete</span></span>
+<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: match a missing-value strategy to what you are actually about to calculate, instead of applying one default rule everywhere. --&gt;</span></span>
+<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a>**Q1.** With only 3 missing values, scattered rather than concentrated, which strategy</span>
+<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a>(A, B or C) would you choose for a 34-year trend line of <span class="in">`Sunshine_hours`</span> alone? Which</span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a>would you choose if you were about to fit the multiple regression from</span>
+<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Chapter 4</span><span class="co">](04-statistical-modelling.qmd)</span>, which uses <span class="in">`Sunshine_hours`</span>, <span class="in">`Year`</span> *and*</span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a><span class="in">`Region`</span> together? Justify the difference.</span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>**Q2.** Now imagine instead that all 3 missing values belonged to the same region in the</span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a>same decade. Would your answer change? Why?</span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Management {#data-management}</span></span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a>Web data can change, update, or disappear from a site tomorrow. Two habits protect every</span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a>analysis you build on top of today's download:</span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Never overwrite the raw file.** Save <span class="in">`dwd_climate_raw.csv`</span> into a dedicated,</span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a>   locked-down folder and never modify it by hand — not even to fix the one thing you</span>
+<span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a>   already know is wrong. Every cleaning step (stripping the <span class="in">`"mm"`</span> suffix,</span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a>   <span class="in">`distinct()`</span>-ing the duplicates, deciding how to handle the 3 missing values) happens</span>
+<span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a>   in code that reads the raw file and writes a *separate* clean one.</span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Make cleaning reproducible.** Typing a fix directly into the R console vanishes the</span>
+<span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a>   moment you close the session. Write every adjustment into a permanent,</span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a>   re-runnable script file, so that any researcher — including you, in six months — can</span>
+<span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a>   click "Run" and recreate exactly the same clean dataset from a fresh copy of the raw</span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a>   download.</span>
+<span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a>::: {.acemate-box}</span>
+<span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a>If you ask your learning buddy to "clean my data," ask it to show you the code rather</span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a>than hand you an already-cleaned file — you want to be able to re-run the same steps</span>
+<span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a>yourself on a future download and to catch it if it silently drops a row you didn't ask</span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a>it to.</span>
+<span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a>::: {.differentiation-box}</span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>::: {.struggling}</span>
+<span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a>If <span class="in">`class()`</span>, <span class="in">`str()`</span> and the idea of a column "type" still feel unfamiliar:</span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">swirl</span><span class="co">](https://swirlstats.com/students.html)</span>'s "R Programming" module runs short,</span>
+<span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a>interactive exercises on exactly this, directly in your own R console.</span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a>::: {.deeper}</span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a>If the tidy-data rules clicked and you want the full reasoning behind them, straight</span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a>from the source: Hadley Wickham's ["Tidy</span>
+<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a>Data"](https://www.jstatsoft.org/article/view/v059i10) (Journal of Statistical Software,</span>
+<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a>2014) is the short, readable paper that defined the rules you just used.</span>
+<span id="cb7-338"><a href="#cb7-338" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-339"><a href="#cb7-339" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-340"><a href="#cb7-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-341"><a href="#cb7-341" aria-hidden="true" tabindex="-1"></a>::: {.sources-box}</span>
+<span id="cb7-342"><a href="#cb7-342" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Deutscher Wetterdienst — Climate Data Center</span><span class="co">](https://opendata.dwd.de/climate_environment/CDC/)</span> ·</span>
+<span id="cb7-343"><a href="#cb7-343" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">DWD Terms of use (CC BY 4.0)</span><span class="co">](https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.pdf)</span> ·</span>
+<span id="cb7-344"><a href="#cb7-344" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Hands-On Programming with R</span><span class="co">](https://rstudio-education.github.io/hopr/)</span> ·</span>
+<span id="cb7-345"><a href="#cb7-345" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">R for Data Science</span><span class="co">](https://r4ds.hadley.nz/)</span>.</span>
+<span id="cb7-346"><a href="#cb7-346" aria-hidden="true" tabindex="-1"></a>Full list with descriptions: <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources.qmd#understanding-and-managing-data)</span>.</span>
+<span id="cb7-347"><a href="#cb7-347" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-348"><a href="#cb7-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-349"><a href="#cb7-349" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter Summary</span></span>
+<span id="cb7-350"><a href="#cb7-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-351"><a href="#cb7-351" aria-hidden="true" tabindex="-1"></a>You now have a repeatable process: classify every variable by type, check a downloaded</span>
+<span id="cb7-352"><a href="#cb7-352" aria-hidden="true" tabindex="-1"></a>file against the tidy-data rules, check that every column's type and range are what they</span>
+<span id="cb7-353"><a href="#cb7-353" aria-hidden="true" tabindex="-1"></a>claim to be, map and diagnose missing values with <span class="in">`is.na()`</span> and protect the raw</span>
+<span id="cb7-354"><a href="#cb7-354" aria-hidden="true" tabindex="-1"></a>download behind a reproducible script — so that everything you build in Chapters 2–4</span>
+<span id="cb7-355"><a href="#cb7-355" aria-hidden="true" tabindex="-1"></a>rests on ground you've actually checked, not just glanced at.</span>
+<span id="cb7-356"><a href="#cb7-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-357"><a href="#cb7-357" aria-hidden="true" tabindex="-1"></a><span class="fu">## Common Mistakes</span></span>
+<span id="cb7-358"><a href="#cb7-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-359"><a href="#cb7-359" aria-hidden="true" tabindex="-1"></a>| Mistake | Why it matters | Fix |</span>
+<span id="cb7-360"><a href="#cb7-360" aria-hidden="true" tabindex="-1"></a>|---|---|---|</span>
+<span id="cb7-361"><a href="#cb7-361" aria-hidden="true" tabindex="-1"></a>| Assuming a column is numeric because it "looks like numbers" | One stray text value (a unit suffix, a typo) forces the whole column to <span class="in">`character`</span> | Always run <span class="in">`class()`</span> / <span class="in">`str()`</span> before summarising |</span>
+<span id="cb7-362"><a href="#cb7-362" aria-hidden="true" tabindex="-1"></a>| Deleting every row with any <span class="in">`NA`</span> by default | Throws away real, usable data in every *other* column of that row | Match the strategy (A/B/C) to what you're actually calculating |</span>
+<span id="cb7-363"><a href="#cb7-363" aria-hidden="true" tabindex="-1"></a>| Editing the raw CSV by hand | Not reproducible — the next download won't get the same fix | Clean via a script that reads raw and writes clean |</span>
+<span id="cb7-364"><a href="#cb7-364" aria-hidden="true" tabindex="-1"></a>| Treating "nothing looked wrong" as "I didn't need to check" | A passing check is still a checked, reportable fact | Run the type and range checks every time, even when the data looks fine |</span>
+<span id="cb7-365"><a href="#cb7-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-366"><a href="#cb7-366" aria-hidden="true" tabindex="-1"></a><span class="fu">## Check Your Understanding</span></span>
+<span id="cb7-367"><a href="#cb7-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-368"><a href="#cb7-368" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Could you explain, to someone who has never seen this dataset, the difference between</span>
+<span id="cb7-369"><a href="#cb7-369" aria-hidden="true" tabindex="-1"></a>  a discrete and a continuous variable using two of its actual columns?</span>
+<span id="cb7-370"><a href="#cb7-370" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Why does one stray unit suffix like <span class="in">`"885.0mm"`</span> force an entire numeric column to be</span>
+<span id="cb7-371"><a href="#cb7-371" aria-hidden="true" tabindex="-1"></a>  read as text?</span>
+<span id="cb7-372"><a href="#cb7-372" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Given 3 scattered missing values, could you explain when Strategy A, B or C is the</span>
+<span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a>  right choice — and when it isn't?</span>
+<span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-375"><a href="#cb7-375" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practice Exercises</span></span>
+<span id="cb7-376"><a href="#cb7-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-377"><a href="#cb7-377" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Internal note for whoever maintains this module: each item below has an HTML</span></span>
+<span id="cb7-378"><a href="#cb7-378" aria-hidden="true" tabindex="-1"></a><span class="co">comment right before it stating what it checks, e.g. this one is for Fabian/the intern</span></span>
+<span id="cb7-379"><a href="#cb7-379" aria-hidden="true" tabindex="-1"></a><span class="co">team, not for students — it doesn't render on the published page. Item 7 is adapted</span></span>
+<span id="cb7-380"><a href="#cb7-380" aria-hidden="true" tabindex="-1"></a><span class="co">from Christina Bogner's environmental_stat, Appendix C "Additional exercises"</span></span>
+<span id="cb7-381"><a href="#cb7-381" aria-hidden="true" tabindex="-1"></a><span class="co">(chrisbogner.github.io/environmental_stat, CC BY-NC-SA 4.0), one of the few genuinely</span></span>
+<span id="cb7-382"><a href="#cb7-382" aria-hidden="true" tabindex="-1"></a><span class="co">self-contained conceptual questions in that material that doesn't require its own</span></span>
+<span id="cb7-383"><a href="#cb7-383" aria-hidden="true" tabindex="-1"></a><span class="co">dataset — most of Bogner's other exercises are tied to a specific dataset (penguins,</span></span>
+<span id="cb7-384"><a href="#cb7-384" aria-hidden="true" tabindex="-1"></a><span class="co">nycflights, etc.) and don't lift out cleanly as standalone revision questions. --&gt;</span></span>
+<span id="cb7-385"><a href="#cb7-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-386"><a href="#cb7-386" aria-hidden="true" tabindex="-1"></a>*A short set of standalone revision questions, each with a model answer to check</span>
+<span id="cb7-387"><a href="#cb7-387" aria-hidden="true" tabindex="-1"></a>yourself against.*</span>
+<span id="cb7-388"><a href="#cb7-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-389"><a href="#cb7-389" aria-hidden="true" tabindex="-1"></a>::: {.exercise-box}</span>
+<span id="cb7-390"><a href="#cb7-390" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: can you assign the right variable type from a real column name alone, including one you haven't seen before? --&gt;</span></span>
+<span id="cb7-391"><a href="#cb7-391" aria-hidden="true" tabindex="-1"></a>**1. Classify.** For each of the following, state the</span>
+<span id="cb7-392"><a href="#cb7-392" aria-hidden="true" tabindex="-1"></a>variable type: <span class="in">`Region`</span>, <span class="in">`Year`</span>,</span>
+<span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a><span class="in">`Temperature_C`</span>, a hypothetical "heatwave severity: mild/moderate/severe" column.</span>
+<span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-395"><a href="#cb7-395" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Answer&lt;/summary&gt;</span>
+<span id="cb7-396"><a href="#cb7-396" aria-hidden="true" tabindex="-1"></a><span class="in">`Region`</span> — categorical (nominal). <span class="in">`Year`</span> — discrete numeric. <span class="in">`Temperature_C`</span> —</span>
+<span id="cb7-397"><a href="#cb7-397" aria-hidden="true" tabindex="-1"></a>continuous numeric. The hypothetical severity column — categorical (ordinal): it has a</span>
+<span id="cb7-398"><a href="#cb7-398" aria-hidden="true" tabindex="-1"></a>natural order, unlike <span class="in">`Region`</span>.</span>
+<span id="cb7-399"><a href="#cb7-399" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-400"><a href="#cb7-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-401"><a href="#cb7-401" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: can you explain, without running any code, why one bad cell breaks a whole column's type? --&gt;</span></span>
+<span id="cb7-402"><a href="#cb7-402" aria-hidden="true" tabindex="-1"></a>**2. Find the type error.** Look at <span class="in">`"885.0mm"`</span>. Why does even one value</span>
+<span id="cb7-403"><a href="#cb7-403" aria-hidden="true" tabindex="-1"></a>like this force the whole <span class="in">`Precipitation_mm`</span> column to be read as <span class="in">`character`</span> instead of</span>
+<span id="cb7-404"><a href="#cb7-404" aria-hidden="true" tabindex="-1"></a><span class="in">`numeric`</span>?</span>
+<span id="cb7-405"><a href="#cb7-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-406"><a href="#cb7-406" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Answer&lt;/summary&gt;</span>
+<span id="cb7-407"><a href="#cb7-407" aria-hidden="true" tabindex="-1"></a>A column can only have one type in R. If even one cell contains non-numeric characters,</span>
+<span id="cb7-408"><a href="#cb7-408" aria-hidden="true" tabindex="-1"></a>R (or <span class="in">`read_csv()`</span>) reads the entire column as text/character to avoid silently</span>
+<span id="cb7-409"><a href="#cb7-409" aria-hidden="true" tabindex="-1"></a>discarding the one bad cell.</span>
+<span id="cb7-410"><a href="#cb7-410" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-411"><a href="#cb7-411" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-412"><a href="#cb7-412" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: can you predict the correct row count of a cleaned file from its stated coverage and use that as a sanity check on your own work? --&gt;</span></span>
+<span id="cb7-413"><a href="#cb7-413" aria-hidden="true" tabindex="-1"></a>**3. Coverage arithmetic.** Five</span>
+<span id="cb7-414"><a href="#cb7-414" aria-hidden="true" tabindex="-1"></a>regions, 34 years each, plus one national series of 34 years and 4 duplicated rows in</span>
+<span id="cb7-415"><a href="#cb7-415" aria-hidden="true" tabindex="-1"></a>the raw download. How many rows should the *clean* file have after removing the</span>
+<span id="cb7-416"><a href="#cb7-416" aria-hidden="true" tabindex="-1"></a>duplicates? Show your work.</span>
+<span id="cb7-417"><a href="#cb7-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-418"><a href="#cb7-418" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Answer&lt;/summary&gt;</span>
+<span id="cb7-419"><a href="#cb7-419" aria-hidden="true" tabindex="-1"></a>$5 \times 34 = 170$ region-year rows, plus $34$ national rows, for $170 + 34 = 204$</span>
+<span id="cb7-420"><a href="#cb7-420" aria-hidden="true" tabindex="-1"></a>total after <span class="in">`distinct()`</span> removes the 4 duplicates from the 208-row raw file.</span>
+<span id="cb7-421"><a href="#cb7-421" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-422"><a href="#cb7-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-423"><a href="#cb7-423" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: can you tell a real repeated measurement apart from a true duplicate row, using the same column values? --&gt;</span></span>
+<span id="cb7-424"><a href="#cb7-424" aria-hidden="true" tabindex="-1"></a>**4. Duplicates vs. legitimate repeats.**</span>
+<span id="cb7-425"><a href="#cb7-425" aria-hidden="true" tabindex="-1"></a><span class="in">`Region == "Bayern"`</span> naturally appears 34 times (once per year) in a tidy file. How is</span>
+<span id="cb7-426"><a href="#cb7-426" aria-hidden="true" tabindex="-1"></a>that different from the kind of duplicate you found in the "Understanding Datasets and</span>
+<span id="cb7-427"><a href="#cb7-427" aria-hidden="true" tabindex="-1"></a>Data Quality" section above?</span>
+<span id="cb7-428"><a href="#cb7-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-429"><a href="#cb7-429" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Answer&lt;/summary&gt;</span>
+<span id="cb7-430"><a href="#cb7-430" aria-hidden="true" tabindex="-1"></a>34 rows for Bayern across 34 *different* years are 34 distinct observations — that's</span>
+<span id="cb7-431"><a href="#cb7-431" aria-hidden="true" tabindex="-1"></a>expected. A true duplicate is the *same* Region-Year combination appearing more than</span>
+<span id="cb7-432"><a href="#cb7-432" aria-hidden="true" tabindex="-1"></a>once, which should be a single observation.</span>
+<span id="cb7-433"><a href="#cb7-433" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-434"><a href="#cb7-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-435"><a href="#cb7-435" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: can you pick the right missing-value strategy (A, B or C) for a specific calculation and explain why the other two would fit worse? --&gt;</span></span>
+<span id="cb7-436"><a href="#cb7-436" aria-hidden="true" tabindex="-1"></a>**5. Strategy choice.** You need</span>
+<span id="cb7-437"><a href="#cb7-437" aria-hidden="true" tabindex="-1"></a>the exact multi-variable correlation between</span>
+<span id="cb7-438"><a href="#cb7-438" aria-hidden="true" tabindex="-1"></a><span class="in">`Temperature_C`</span>, <span class="in">`Precipitation_mm`</span> and <span class="in">`Sunshine_hours`</span> at the same region-year. One of</span>
+<span id="cb7-439"><a href="#cb7-439" aria-hidden="true" tabindex="-1"></a>those three values is missing for one row. Which strategy (A, B or C) fits and why would</span>
+<span id="cb7-440"><a href="#cb7-440" aria-hidden="true" tabindex="-1"></a>the other two be a worse fit here specifically?</span>
+<span id="cb7-441"><a href="#cb7-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-442"><a href="#cb7-442" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Answer&lt;/summary&gt;</span>
+<span id="cb7-443"><a href="#cb7-443" aria-hidden="true" tabindex="-1"></a>Strategy C (complete-case analysis / <span class="in">`na.omit()`</span>): a joint multi-variable calculation</span>
+<span id="cb7-444"><a href="#cb7-444" aria-hidden="true" tabindex="-1"></a>needs all three real values at the same row, so estimating the missing one (B) would mix</span>
+<span id="cb7-445"><a href="#cb7-445" aria-hidden="true" tabindex="-1"></a>real and invented data into the correlation and column-specific omission (A) doesn't</span>
+<span id="cb7-446"><a href="#cb7-446" aria-hidden="true" tabindex="-1"></a>apply once you need all three columns together.</span>
+<span id="cb7-447"><a href="#cb7-447" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-448"><a href="#cb7-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-449"><a href="#cb7-449" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: do you know what an open licence actually requires of you in practice, not just its name? --&gt;</span></span>
+<span id="cb7-450"><a href="#cb7-450" aria-hidden="true" tabindex="-1"></a>**6. License and attribution.** What does "CC BY 4.0" require you to do</span>
+<span id="cb7-451"><a href="#cb7-451" aria-hidden="true" tabindex="-1"></a>if you publish a chart built from this data?</span>
+<span id="cb7-452"><a href="#cb7-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-453"><a href="#cb7-453" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Answer&lt;/summary&gt;</span>
+<span id="cb7-454"><a href="#cb7-454" aria-hidden="true" tabindex="-1"></a>Attribute the source — e.g. "Source: Deutscher Wetterdienst (DWD), Climate Data Center,</span>
+<span id="cb7-455"><a href="#cb7-455" aria-hidden="true" tabindex="-1"></a>CC BY 4.0" — but you are otherwise free to use, adapt and republish it, including</span>
+<span id="cb7-456"><a href="#cb7-456" aria-hidden="true" tabindex="-1"></a>commercially.</span>
+<span id="cb7-457"><a href="#cb7-457" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-458"><a href="#cb7-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-459"><a href="#cb7-459" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Checks: do you understand NA propagation well enough to fix a broken summary</span></span>
+<span id="cb7-460"><a href="#cb7-460" aria-hidden="true" tabindex="-1"></a><span class="co">statistic, not just avoid it by habit? Adapted from Christina Bogner, environmental_stat,</span></span>
+<span id="cb7-461"><a href="#cb7-461" aria-hidden="true" tabindex="-1"></a><span class="co">Appendix C.1.2 "Missing values" (CC BY-NC-SA 4.0). --&gt;</span></span>
+<span id="cb7-462"><a href="#cb7-462" aria-hidden="true" tabindex="-1"></a>**7. NA propagation.** Suppose <span class="in">`Sunshine_hours`</span> for one region's 34 years is stored as a</span>
+<span id="cb7-463"><a href="#cb7-463" aria-hidden="true" tabindex="-1"></a>plain vector and you run <span class="in">`sum(Sunshine_hours)`</span>. One value in that vector is <span class="in">`NA`</span>. What</span>
+<span id="cb7-464"><a href="#cb7-464" aria-hidden="true" tabindex="-1"></a>does <span class="in">`sum()`</span> return and why? How would you correct the call so it returns the total of</span>
+<span id="cb7-465"><a href="#cb7-465" aria-hidden="true" tabindex="-1"></a>the non-missing values instead?</span>
+<span id="cb7-466"><a href="#cb7-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-467"><a href="#cb7-467" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Answer&lt;/summary&gt;</span>
+<span id="cb7-468"><a href="#cb7-468" aria-hidden="true" tabindex="-1"></a><span class="in">`sum()`</span> returns <span class="in">`NA`</span>: R treats "unknown plus anything" as itself unknown, so a single</span>
+<span id="cb7-469"><a href="#cb7-469" aria-hidden="true" tabindex="-1"></a>missing value poisons the whole sum rather than being silently skipped. Fix it with</span>
+<span id="cb7-470"><a href="#cb7-470" aria-hidden="true" tabindex="-1"></a><span class="in">`sum(Sunshine_hours, na.rm = TRUE)`</span>, which tells R explicitly to remove the <span class="in">`NA`</span> values</span>
+<span id="cb7-471"><a href="#cb7-471" aria-hidden="true" tabindex="-1"></a>before summing — the same <span class="in">`na.rm = TRUE`</span> pattern from Strategy A earlier in this</span>
+<span id="cb7-472"><a href="#cb7-472" aria-hidden="true" tabindex="-1"></a>chapter.</span>
+<span id="cb7-473"><a href="#cb7-473" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
+<span id="cb7-474"><a href="#cb7-474" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-475"><a href="#cb7-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-476"><a href="#cb7-476" aria-hidden="true" tabindex="-1"></a>Continue to <span class="co">[</span><span class="ot">Chapter 2, Exploring and Visualising Data</span><span class="co">](02-exploring-visualizing.qmd)</span>.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Global Citizenship and Environmental Stewardship (DAAD/BMBF, P24)</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>CC BY 4.0</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

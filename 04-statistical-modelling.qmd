@@ -1,0 +1,274 @@
+# Statistical Modelling {#sec-statistical-modelling}
+
+::: {.guiding-question}
+Guiding question: **Which factors explain the observed patterns?**
+:::
+
+In this area you will learn how to: investigate relationships between variables, use
+regression models, compare statistical models, evaluate model assumptions and interpret
+model results. *(Source materials: OpenIntro IMS — Inference for Regression, r4ds — see
+[Resources](resources.qmd).)*
+
+```r
+library(tidyverse)
+library(broom)
+climate <- read_csv("data/clean/dwd_climate_clean.csv")
+states <- climate %>% filter(Region != "Deutschland")
+```
+
+<details><summary>Code walkthrough</summary>
+- `broom` — turns base R's often-messy model output (from `lm()` and others) into tidy
+  data frames, via functions like `tidy()` and `glance()` used throughout this chapter.
+</details>
+
+Chapter 2 showed you *that* patterns exist (e.g. temperature seems to vary with
+sunshine duration). Chapter 3 showed you how to ask whether a *difference* is
+trustworthy. Statistical modelling goes one step further: it asks **how much** of a
+pattern one variable explains and lets you compare competing explanations against each
+other.
+
+## Simple Linear Regression
+
+A regression model describes a variable of interest (the **response**, e.g.
+`Temperature_C`) as a function of one or more **predictors** (e.g. `Sunshine_hours`),
+plus unavoidable noise:
+
+$$
+\text{Temperature}_i = \beta_0 + \beta_1 \cdot \text{Sunshine}_i + \varepsilon_i
+$$
+
+Think of it as fitting the straightest possible line through a scatterplot such that the
+total squared vertical distance between the line and every point ("residuals") is as
+small as possible — the "least squares" line. You already saw the raw relationship as a
+scatterplot in [Chapter 2](02-exploring-visualizing.qmd#fig-temp-vs-sunshine); this
+chapter puts a number on it.
+
+- $\beta_0$ (**intercept**): the model's predicted response when the predictor is zero.
+  Zero hours of annual sunshine is far outside our data's real range, so here the
+  intercept is a mathematical anchor, not a real-world claim.
+- $\beta_1$ (**slope**): the predicted change in the response for a one-unit increase in
+  the predictor, holding everything else constant. This is usually the number you
+  actually care about.
+
+::: {.exercise-box}
+### Exercise 4.1 — Fit and read your first model
+
+<!-- Checks: fit a simple linear regression, read its slope and R² in plain language and judge whether a statistically significant relationship is also a practically large one. -->
+
+```r
+model_simple <- lm(Temperature_C ~ Sunshine_hours, data = states)
+summary(model_simple)
+tidy(model_simple)
+glance(model_simple)
+```
+
+<details><summary>Code walkthrough</summary>
+- `lm()` — short for "linear model"; fits the straight line from the equation above. The
+  formula reads "`Temperature_C` explained by `Sunshine_hours`".
+- `summary(model_simple)` — base R's traditional, verbose printout of the fitted model.
+- `tidy(model_simple)` — the same coefficients, as a tidy table (from the `broom`
+  package).
+- `glance(model_simple)` — tidy model-level statistics (R², etc.), one row per model.
+</details>
+
+**Q1.** Write, in a sentence, what the estimated slope for `Sunshine_hours` means in
+climate terms (units and direction included).
+
+**Q2.** What is $R^2$ for this model? In plain language: what percentage of the
+variation in temperature does sunshine duration alone explain — and does that feel like
+a lot or a little to you?
+
+::: {.acemate-box}
+Ask your learning buddy to explain the difference between "the slope is statistically significant"
+and "the slope is practically important" — this is the same effect-size lesson from
+Chapter 3, now applied to a model coefficient instead of a group difference.
+:::
+:::
+
+::: {.expected-output}
+**Expected:** a slope around $+0.0015$ (temperature rises about 0.15°C for every 100
+extra hours of annual sunshine) and $R^2 \approx 0.08$ — sunshine duration alone
+explains only around 8% of the variation in temperature, even though the slope is
+statistically significant ($p < 0.001$) on $n = 170$ (5 regions × 34 years). This is a
+real, honest example of
+a weak-but-real relationship: don't expect every real predictor to explain as much as
+Chapter 3's decade comparison did.
+:::
+
+## Modelling Relationships: Adding More Predictors
+
+Real environmental patterns rarely have one cause. **Multiple regression** extends the
+same idea to several predictors at once:
+
+$$
+\text{Temperature}_i = \beta_0 + \beta_1 \cdot \text{Sunshine}_i + \beta_2 \cdot \text{Year}_i + \beta_3 \cdot \text{Region}_i + \varepsilon_i
+$$
+
+For a **categorical** predictor like `Region`, R automatically creates indicator
+("dummy") variables against a reference category, so each coefficient reads as "the
+average difference compared to the reference level, holding the other predictors
+fixed." *Analogy:* think of each dummy variable as an on/off switch — "1" if a row
+belongs to that region, "0" otherwise. One region (alphabetically first, by default)
+gets no switch of its own and becomes the **reference level**; its effect is baked into
+the model's intercept, and every other region's coefficient is read as "how much warmer
+or colder than the reference region, on average."
+
+::: {.exercise-box}
+### Exercise 4.2 — Build a multiple regression model
+
+<!-- Checks: extend a single-predictor model to several predictors at once and read a categorical predictor's coefficients as "difference from the reference level." -->
+
+```r
+model_multi <- lm(Temperature_C ~ Sunshine_hours + Year + Region, data = states)
+tidy(model_multi)
+glance(model_multi)
+```
+
+**Q3.** Which `Region` has the highest predicted temperature, holding sunshine and year
+constant, according to this model? Does that match what you saw visually in
+[Chapter 2](02-exploring-visualizing.qmd)?
+
+**Q4.** Compare the `Sunshine_hours` coefficient in `model_multi` to the one in
+`model_simple` (Exercise 4.1). Did it change much once year and region were added? What
+might explain that?
+:::
+
+## Model Comparison
+
+Adding predictors will (almost) always increase $R^2$ — even a useless predictor adds a
+tiny bit of explained variance by chance. Two tools protect you from being fooled by
+this:
+
+- **Adjusted $R^2$** penalises a model for every predictor it adds, so it only increases
+  if a new predictor pulls more than its "fair share" of explanatory weight. Prefer
+  adjusted $R^2$ over plain $R^2$ whenever you're comparing models with a different
+  number of predictors.
+- **`anova()` model comparison** formally tests whether a more complex model explains
+  significantly more variance than a simpler, nested one.
+
+> *Analogy:* imagine judging two students' essays not just on word count, but on how
+> much *relevant* content they packed into each additional page. Plain $R^2$ rewards
+> length; adjusted $R^2$ rewards density.
+
+::: {.exercise-box}
+### Exercise 4.3 — Does the extra complexity earn its place?
+
+<!-- Checks: use adjusted R² and `anova()` to judge whether extra predictors are actually worth their added complexity, rather than trusting plain R² alone. -->
+
+```r
+anova(model_simple, model_multi)
+
+glance(model_simple)$adj.r.squared
+glance(model_multi)$adj.r.squared
+```
+
+<details><summary>Code walkthrough</summary>
+- `anova(model_simple, model_multi)` — formally compares the two models: does the more
+  complex one explain significantly more variance than the simpler one it's built on top
+  of?
+- `glance(...)$adj.r.squared` — `glance()` returns a small tidy table of model
+  statistics; the `$` pulls just one column out of it, here the adjusted R².
+</details>
+
+**Q5.** Did adjusted $R^2$ increase meaningfully from `model_simple` to `model_multi`?
+What does the `anova()` p-value tell you about whether the added predictors are jointly
+worth their added complexity?
+
+**Q6.** Chapter 3 found a real, large year-over-year warming effect. Does that help you
+predict, before running the code, whether `Year` would turn out to be a useful predictor
+here?
+:::
+
+::: {.expected-output}
+**Expected:** adjusted $R^2$ jumps from about 0.07 (`model_simple`) to about 0.57
+(`model_multi`) and the `anova()` p-value is far below 0.001. Unlike some textbook
+examples where extra predictors barely help, here the added complexity clearly *does*
+earn its place — `Year` alone captures a large, real warming trend (consistent with
+Chapter 3) and `Region` captures real, systematic differences in climate between
+Bavaria, Saxony and the other regions that `Sunshine_hours` alone could never explain.
+:::
+
+## Interpreting Models — and Checking Their Assumptions
+
+A regression model's coefficients are only trustworthy if its underlying assumptions
+roughly hold. Four checks, done visually rather than by formula, catch most problems:
+
+1. **Linearity.** Does a straight line actually describe the relationship, or does a
+   residuals-vs-fitted plot show a curve?
+2. **Constant variance (homoscedasticity).** Does the spread of residuals stay roughly
+   constant across the range of fitted values, or does it fan out (a classic sign that a
+   transformation, e.g. `log()`, might help)? *Picture it:* a healthy residual plot looks
+   like a flat, even band of static across the whole width of the chart. A problem plot
+   fans out like a megaphone — tightly bunched on one side, widely scattered on the
+   other.
+3. **Independence.** Are observations genuinely independent of each other, or — as with
+   34 repeated annual measurements at the same five regions — correlated over time or
+   space? A warmer-than-average year in Bayern is more likely to also be a
+   warmer-than-average year in neighbouring Baden-Württemberg, which is a real
+   limitation worth naming in any report that uses this model, not a reason to throw it
+   out.
+4. **Normally distributed residuals** (mainly matters for small samples and for the
+   validity of exact p-values, less for the point estimates themselves).
+
+::: {.exercise-box}
+### Exercise 4.4 — Check before you trust
+
+<!-- Checks: visually check a regression model's key assumptions and state a model's limitations in plain language for a non-statistician reader. -->
+
+```r
+plot(model_multi, which = 1)
+plot(model_multi, which = 2)
+```
+
+<details><summary>Code walkthrough</summary>
+- `which = 1` — residuals vs. fitted plot (checks linearity and constant spread).
+- `which = 2` — normal Q-Q plot (checks whether the residuals look normally
+  distributed).
+</details>
+
+**Q7.** Does the residuals-vs-fitted plot look like a random scatter around zero, or is
+there a visible pattern? What would a pattern suggest about the linearity assumption?
+
+**Q8.** Given the repeated-measures structure of this dataset (each region sampled every
+year for 34 years), what is one sentence you should add to any report interpreting
+`model_multi`'s p-values?
+
+**Q9. — Putting it together.** In 3–4 sentences, write a plain-language interpretation
+of `model_multi` for a non-statistician reader: which factors matter most for
+temperature in this dataset, how confident are you and what are this model's
+limitations?
+:::
+
+::: {.differentiation-box}
+::: {.struggling}
+If `lm()`, coefficients and $R^2$ feel like a wall of new vocabulary at once:
+[StatQuest — Linear Regression, Clearly
+Explained](https://www.youtube.com/watch?v=nk2CQITm_eo) (Josh Starmer) builds the whole
+idea up visually, from a scatterplot to a fitted line, before any formula.
+:::
+::: {.deeper}
+If you want to go beyond a single `lm()` call into the full modelling workflow —
+resampling, model comparison, tidy pipelines: [Tidy Modeling with
+R](https://www.tmwr.org/) (Kuhn & Silge, free online) is the natural next step.
+:::
+:::
+
+::: {.sources-box}
+[OpenIntro Modern Statistics — Inference for Regression](https://openintro-ims.netlify.app/) ·
+[R for Data Science (2e)](https://r4ds.hadley.nz/) ·
+[StatQuest: Linear Regression](https://www.youtube.com/watch?v=nk2CQITm_eo) ·
+[Tidy Modeling with R](https://www.tmwr.org/).
+Full list with descriptions: [Resources](resources.qmd#statistical-modelling).
+:::
+
+## Check your understanding
+
+- Can you explain what a regression coefficient means, in words, without using the term
+  "coefficient"?
+- Can you explain why adjusted $R^2$ is usually the better tool for comparing models of
+  different sizes?
+- Can you name at least two model assumptions and how you would check each visually?
+- Could you explain, to a non-technical reader, what your model does and does not tell
+  them?
+
+Continue to [Chapter 5, Reproducible Research](05-reproducible-research.qmd).
