@@ -1,7 +1,7 @@
 # GIANT — Data Analysis in STEM
 
-Ein klickbares, Quarto-basiertes Lernmodul für das GIANT-Projekt (DAAD/BMBF, Uni Köln &
-IISc Bangalore). Problembasiertes Lernen mit Eurostat-Umweltdaten, begleitet von der
+Ein klickbares, Quarto-basiertes Lernmodul für das GIANT-Projekt (Uni Köln &
+IISc Bangalore). Problembasiertes Lernen mit Umweltdaten, begleitet von der
 KI-Lernbegleitung *Acemate*.
 
 Diese README ist für dich als absoluten Quarto-Einsteiger geschrieben. Für die
