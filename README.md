@@ -100,31 +100,7 @@ kann reiner Anzeige-Code auch bewusst so bleiben.
 3. Dateinamen in `_quarto.yml` unter `chapters:` an der gewünschten Stelle eintragen —
    erst dann erscheint die Lektion in der Seitenleiste.
 
-## Auf GitHub veröffentlichen
 
-1. Repository auf GitHub anlegen, dieses Projekt pushen.
-2. `quarto render` ausführen — erzeugt `docs/`.
-3. In den Repository-Einstellungen: **Settings → Pages → Source: Deploy from a
-   branch**, Branch `main`, Ordner `/docs` auswählen.
-4. Nach ein paar Minuten ist die Seite unter `https://<org>.github.io/<repo>/` live.
-
-(Alternative für später, wenn ihr mit Git vertrauter seid: `quarto publish gh-pages`
-übernimmt Schritte 2–4 automatisch über einen separaten `gh-pages`-Branch.)
-
-## Nächste Schritte
-
-- [ ] Repository unter der echten GIANT-GitHub-Organisation anlegen (aktuell zeigt
-      `_quarto.yml` auf einen Platzhalter-Link).
-- [ ] Mit Prof. Bogner die Kapitel 4–8 (neue Entwürfe) gegenlesen, bevor sie an die
-      Praktikant:in zur Ausgestaltung gehen (siehe `INTERN_GUIDE.md` für den genauen
-      Bearbeitungsstand jeder Datei).
-- [ ] Acemate-Anbindung: Sobald klar ist, wie/wo Acemate technisch eingebunden wird,
-      die entsprechenden Boxen in `index.qmd` und Kapitel 6 aktualisieren.
-- [ ] Für die eigene Challenge der Studierenden (Kapitel 7) ggf. Beispiel-Datensätze von
-      Eurostat bzw. einer indischen Open-Data-Quelle (data.gov.in) kuratieren — der
-      Übungsdatensatz in Kapitel 1–4 selbst ist bereits real (DWD), siehe
-      `data/README.md`.
-- [ ] Favicon/Logo ergänzen, falls gewünscht (aktuell keins gesetzt).
 
 ## Lizenz
 
