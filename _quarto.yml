@@ -8,7 +8,6 @@ book:
   author: "University of Cologne & Indian Institute of Science"
   date: last-modified
   page-footer:
-    left: "Global Citizenship and Environmental Stewardship (DAAD/BMBF, P24)"
     right: "CC BY 4.0"
   # repo-url / repo-actions intentionally omitted: no public repository exists yet.
   # Once the module is pushed to its real GitHub org, add:
