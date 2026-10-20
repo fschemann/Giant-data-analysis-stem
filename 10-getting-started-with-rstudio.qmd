@@ -1,0 +1,106 @@
+# Getting Started with RStudio {#sec-getting-started-with-rstudio}
+
+::: {.guiding-question}
+Guiding question: **How do I set up and navigate RStudio, the environment this module's instructions assume?**
+:::
+
+::: {.callout-note}
+## By the end of this chapter you will be able to:
+1. **Install** RStudio, after R itself.
+2. **Navigate** its four panes: Console, Source, Environment/History and
+   Files/Plots/Packages/Help.
+3. **Create and run** an R script from inside RStudio.
+4. **Find help** when something breaks.
+:::
+
+*(Source materials: Posit's official RStudio IDE user guide — see [Resources](resources.qmd).)*
+
+## Who This Chapter Is For
+
+If you've just installed R for the first time in [Rubric
+9](09-getting-started-with-r.qmd), this chapter is the natural next step. RStudio is not
+R itself — it's an **integrated development environment (IDE)**: a window around R that
+adds a code editor, a file browser, a plot viewer and a few dozen conveniences, so you
+rarely need R's own plain console. Every code example and screenshot elsewhere in this
+module assumes you're working in RStudio (or [Positron](https://positron.posit.co/), its
+newer sibling from the same company) rather than R's bare console.
+
+::: {.callout-important}
+Install R itself first (see [Rubric 9](09-getting-started-with-r.qmd)) — RStudio needs an
+existing R installation to run and is useless without one.
+:::
+
+## Installing RStudio
+
+Download **RStudio Desktop** (the free, open-source edition — that's all this module
+needs) from [posit.co](https://posit.co/download/rstudio-desktop/). Install it the same
+way as any other application on your system. When you open it for the first time, RStudio
+automatically detects the R installation from Rubric 9 and uses it in the background —
+you won't normally interact with plain R directly again.
+
+## Finding Your Way Around
+
+RStudio's default layout splits into four panes, each with a specific job:
+
+- **Source** (top-left): where you write and edit `.R` scripts or `.qmd` documents — the
+  actual files you save and come back to.
+- **Console** (bottom-left): where code actually runs and prints its output, one command
+  at a time — the same console from Rubric 9, just inside this friendlier window.
+- **Environment / History** (top-right): every variable you've created in this session,
+  and what you've typed so far.
+- **Files / Plots / Packages / Help** (bottom-right): a file browser, your rendered plots,
+  installed packages and R's built-in help pages.
+
+The official **[Posit RStudio IDE User Guide](https://docs.posit.co/ide/user/)** covers
+this layout — and everything else about the IDE, from keyboard shortcuts to project
+management — in much more depth than this short chapter can. Treat it as your reference
+whenever something in RStudio's interface is unfamiliar.
+
+::: {.exercise-box}
+### Exercise 10.1 — Open RStudio and run a script
+
+1. Open RStudio and locate the four panes described above.
+2. In the **Source** pane, create a new R script (File → New File → R Script).
+3. Type a short line, e.g. `print("Hello, RStudio")`, then run it with Ctrl+Enter
+   (Windows/Linux) or Cmd+Enter (Mac) — the line should run in the Console below and
+   print its output there.
+4. Create a variable in the script (`y <- 5 * 5`) and run that line too. Find `y` listed
+   in the Environment pane.
+
+**Reflect:** which pane did the code's output appear in, and which pane shows the
+variable you created? Being able to answer that quickly will save you time throughout
+the rest of this module.
+:::
+
+::: {.differentiation-box}
+::: {.struggling}
+If the four-pane layout still feels overwhelming after Exercise 10.1: revisit the
+[Posit RStudio IDE User Guide](https://docs.posit.co/ide/user/) and work through its
+introductory tour slowly, pane by pane, with your own RStudio window open side by side —
+it's written for exactly this situation.
+:::
+::: {.deeper}
+Once the basics feel comfortable, the same guide covers RStudio Projects (keeping a
+module's files self-contained — directly relevant to [Chapter
+5](05-reproducible-research.qmd#organising-a-reproducible-project)) and keyboard shortcuts
+that noticeably speed up day-to-day work.
+:::
+:::
+
+::: {.sources-box}
+[Posit — RStudio IDE User Guide](https://docs.posit.co/ide/user/) ·
+[RStudio Desktop download](https://posit.co/download/rstudio-desktop/) ·
+[Positron](https://positron.posit.co/).
+Full list with descriptions: [Resources](resources.qmd#getting-started-with-rstudio).
+:::
+
+## Check Your Understanding
+
+- Do you have RStudio installed and open?
+- Can you name the four panes and what each one is for?
+- Can you create, save and run a short R script from inside RStudio?
+- Do you know where to look (inside RStudio, or the official guide) when something in the
+  interface confuses you?
+
+Ready? Continue to
+[Chapter 1, Understanding and Managing Data](01-understanding-data.qmd).

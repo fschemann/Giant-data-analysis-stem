@@ -118,6 +118,20 @@ behind Chapter 7's opening section and its reflection prompts:
 - *Beginner:* the Shiny tutorial above.
 - *Going deeper:* [Storytelling with Data](https://www.storytellingwithdata.com/books)
 
+### Getting Started with R {#getting-started-with-r}
+*(Rubric 9 — [Chapter 9](09-getting-started-with-r.qmd))*
+
+- [DataCamp — Data Analyst with R career track](https://app.datacamp.com/learn/career-tracks/data-analyst-with-r)
+- [CRAN](https://cran.r-project.org/) — official R download.
+- *Beginner:* [Hands-On Programming with R](https://rstudio-education.github.io/hopr/) — starts from zero R syntax.
+- *Alternative, hands-on:* [swirl](https://swirlstats.com/students.html) — interactive R exercises in your own console.
+
+### Getting Started with RStudio {#getting-started-with-rstudio}
+*(Rubric 10 — [Chapter 10](10-getting-started-with-rstudio.qmd))*
+
+- [Posit — RStudio IDE User Guide](https://docs.posit.co/ide/user/) — official documentation covering installation, the four-pane layout, Projects and keyboard shortcuts.
+- [RStudio Desktop download](https://posit.co/download/rstudio-desktop/)
+
 ## About the Blueprint
 
 This module's structure and tone take inspiration from Christina Bogner's

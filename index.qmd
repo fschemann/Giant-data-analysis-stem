@@ -64,6 +64,19 @@ complete in the same order. It has two parts:
   Challenge and challenge dataset (Eurostat or an Indian open-data source).
 - **The eight lessons that follow:** competency areas you draw on as your challenge
   requires them.
+- **Two optional getting-started lessons at the end** ([Rubric
+  9](09-getting-started-with-r.qmd) and [Rubric 10](10-getting-started-with-rstudio.qmd)):
+  for readers who have never used R or RStudio before.
+
+::: {.callout-tip appearance="simple"}
+## New to R or RStudio?
+Chapters 1–8 assume you can already run R code. If that's not yet true for you, don't
+start at Chapter 1 — go to [Rubric 9, Getting Started with
+R](09-getting-started-with-r.qmd) first, then [Rubric 10, Getting Started with
+RStudio](10-getting-started-with-rstudio.qmd). Both are short, point you to focused
+external resources (DataCamp for R, Posit's own guide for RStudio) rather than teaching
+programming from scratch here, and bring you right back to Chapter 1 once you're ready.
+:::
 
 You will begin by selecting a Real-World Challenge. You will then analyse the task and
 identify which data, methods and competencies you need. Your learning process will

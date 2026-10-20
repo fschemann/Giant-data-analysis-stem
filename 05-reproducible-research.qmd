@@ -42,6 +42,14 @@ behind Quarto and R Markdown before it) interleaves narrative text, code and the
 HTML, PDF or a website. This entire module is one example; your final report and
 dashboard should be another.
 
+::: {.callout-tip appearance="simple" collapse="true"}
+## Haven't installed R or RStudio yet?
+This chapter assumes R and RStudio (or Positron) are already set up on your machine. If
+not, see [Rubric 9, Getting Started with R](09-getting-started-with-r.qmd) and [Rubric 10,
+Getting Started with RStudio](10-getting-started-with-rstudio.qmd) first — Quarto itself
+installs on top of that, covered just below.
+:::
+
 ::: {.callout-tip}
 ## Get started with Quarto
 The official [Quarto guide](https://quarto.org/docs/guide/) covers installation and the

@@ -1,0 +1,114 @@
+# Getting Started with R {#sec-getting-started-with-r}
+
+::: {.guiding-question}
+Guiding question: **How do I install R and learn enough of its syntax to follow this module's code?**
+:::
+
+::: {.callout-note}
+## By the end of this chapter you will be able to:
+1. **Install** R on your own computer.
+2. **Run** a line of code in the R console and read its output.
+3. **Recognise** the core syntax used throughout this module: assignment (`<-`), function
+   calls, vectors and the pipe (`%>%` / `|>`).
+4. **Install** an R package and load it with `library()`.
+:::
+
+*(Source materials: DataCamp, Hands-On Programming with R, swirl — see [Resources](resources.qmd).)*
+
+## Who This Chapter Is For
+
+Chapters 1–8 all assume you can already run R code and read what it prints back — they
+teach data analysis *with* R, not R itself. If you have never written a line of R before,
+start here rather than at [Chapter 1](01-understanding-data.qmd). This chapter and
+[Rubric 10](10-getting-started-with-rstudio.qmd) build exactly the foundation you need,
+without requiring you to already know any statistics — that part comes later.
+
+If you already have R installed and have written at least a little R or another
+programming language before, skim this chapter for anything unfamiliar and move on to
+[Rubric 10](10-getting-started-with-rstudio.qmd) or straight to [Chapter
+1](01-understanding-data.qmd).
+
+## Installing R
+
+**R** is a free, open-source language and environment for statistical computing. Download
+it from [CRAN](https://cran.r-project.org/), the official R repository, and pick the
+installer for your operating system (Windows, macOS or Linux). Accept the default
+options during installation — nothing here needs customising for this module.
+
+R on its own gives you a very plain console window. [Rubric
+10](10-getting-started-with-rstudio.qmd) covers **RStudio**, the friendlier interface this
+module's instructions assume you're using — install R first, then RStudio.
+
+## Learning the Basics
+
+Rather than duplicating a full introduction to R here, this module points you to
+**[DataCamp's "Data Analyst with R" career track](https://app.datacamp.com/learn/career-tracks/data-analyst-with-r)**,
+an interactive, browser-based course that teaches R hands-on, no prior programming
+experience assumed. You don't need to complete the whole track before moving on — the
+early "Introduction to R" course is enough to follow Chapters 1–4.
+
+As you work through it, pay particular attention to the handful of concepts that recur
+constantly in this module's own code:
+
+- **Assignment** (`<-`): `x <- 10` stores the value `10` in a variable named `x`. You'll
+  see this on nearly every line.
+- **Function calls**: `mean(x)`, `read_csv("file.csv")` — a function name followed by its
+  arguments in parentheses.
+- **Vectors and data frames**: a vector is an ordered list of values of the same type; a
+  data frame is a table — rows and columns, like a spreadsheet. Every dataset you touch in
+  this module is a data frame.
+- **The pipe** (`%>%` from the `tidyverse`, or base R's `|>`): reads as "and then" — it
+  takes what's on its left and feeds it as the first argument into what's on its right, so
+  a sequence of steps reads top to bottom instead of nested inside-out. [Chapter
+  2](02-exploring-visualizing.qmd) introduces it again with a conveyor-belt analogy, once
+  you have real data to use it on.
+
+::: {.exercise-box}
+### Exercise 9.1 — Install R and run your first commands
+
+1. Install R from [CRAN](https://cran.r-project.org/) for your operating system.
+2. Open R (or, once you've also read [Rubric 10](10-getting-started-with-rstudio.qmd),
+   RStudio) and, in the console, type `2 + 2` and press Enter.
+3. Create a variable: type `x <- 10`, press Enter, then type `x` on its own and press
+   Enter again — R should print `10`.
+4. Install the package this module uses throughout: `install.packages("tidyverse")`, then
+   load it with `library(tidyverse)`.
+
+**Reflect:** what did the console print after each step, and did it match what you
+expected?
+:::
+
+::: {.differentiation-box}
+::: {.struggling}
+If reading someone else's R code still feels like reading a foreign language: start with
+[DataCamp's free "Introduction to R" course](https://app.datacamp.com/learn/career-tracks/data-analyst-with-r)
+specifically rather than the full career track, and don't move on until variables,
+vectors and function calls feel ordinary. [swirl](https://swirlstats.com/students.html)'s
+"R Programming" module is a good companion — short, interactive exercises that run
+directly in your own R console, so you learn by doing rather than reading.
+:::
+::: {.deeper}
+If you'd rather work from a short, structured book than an interactive course:
+[Hands-On Programming with R](https://rstudio-education.github.io/hopr/) starts from
+absolute zero and builds toward writing your own small functions and simulations.
+:::
+:::
+
+::: {.sources-box}
+[DataCamp — Data Analyst with R career track](https://app.datacamp.com/learn/career-tracks/data-analyst-with-r) ·
+[Hands-On Programming with R](https://rstudio-education.github.io/hopr/) ·
+[swirl](https://swirlstats.com/students.html) ·
+[CRAN](https://cran.r-project.org/).
+Full list with descriptions: [Resources](resources.qmd#getting-started-with-r).
+:::
+
+## Check Your Understanding
+
+- Do you have R installed and running on your own computer?
+- Can you explain, in your own words, what `<-` does?
+- Given a short function call like `mean(x)`, could you say what it does even without
+  having seen that exact function before?
+- Do you know how to install and load an R package?
+
+Continue to
+[Rubric 10, Getting Started with RStudio](10-getting-started-with-rstudio.qmd).
